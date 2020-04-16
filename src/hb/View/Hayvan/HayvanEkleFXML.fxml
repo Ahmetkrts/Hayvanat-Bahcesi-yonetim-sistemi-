@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hayvan.EkleHayvanController">
+   <children>
+      <Pane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #b0eacd;">
+         <children>
+            <Label layoutX="64.0" layoutY="27.0" prefHeight="29.0" prefWidth="131.0" text="Hayvan Ekleme">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/more.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="187.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/snake.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="765.0" layoutY="11.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/left.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="anaGeriButon" layoutX="58.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" prefHeight="31.0" prefWidth="59.0" style="-fx-background-color: transparent;" text="Geri">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               
+               <styleClass>
+                  <String fx:value="buttons" />
+                  <String fx:value="anchora" />
+               </styleClass>
+            </AnchorPane>
+         </children>
+      </Pane>
+      <AnchorPane prefHeight="415.0" prefWidth="900.0" style="-fx-background-color: #EEEEEE;">
+         <children>
+            <ImageView fitHeight="120.0" fitWidth="117.0" layoutX="413.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/lion.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="85.0" layoutY="55.0" prefHeight="59.0" prefWidth="131.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="79.0" text="Sınıf Seçiniz">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox layoutX="18.0" layoutY="17.0" prefHeight="25.0" prefWidth="101.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="651.0" layoutY="178.0" prefHeight="59.0" prefWidth="200.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="91.0" text="Doğum Tarihi">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <DatePicker layoutX="15.0" layoutY="17.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="653.0" layoutY="55.0" prefHeight="59.0" prefWidth="200.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="79.0" text="Geliş Tarihi">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <DatePicker layoutX="13.0" layoutY="17.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="482.0" layoutY="178.0" prefHeight="59.0" prefWidth="131.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="62.0" text="Cinsiyeti">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox layoutX="18.0" layoutY="17.0" prefHeight="25.0" prefWidth="101.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="326.0" layoutY="55.0" prefHeight="59.0" prefWidth="248.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="30.0" text="Adı">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="14.0" layoutY="17.0" prefHeight="25.0" prefWidth="220.0" />
+                
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="302.0" layoutY="178.0" prefHeight="59.0" prefWidth="131.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="46.0" text="İlaçları">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox layoutX="18.0" layoutY="17.0" prefHeight="25.0" prefWidth="101.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="85.0" layoutY="308.0" prefHeight="59.0" prefWidth="131.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="46.0" text="Aşıları">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox layoutX="18.0" layoutY="17.0" prefHeight="25.0" prefWidth="101.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="85.0" layoutY="178.0" prefHeight="59.0" prefWidth="131.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="79.0" text="Tür Seçiniz">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox layoutX="18.0" layoutY="17.0" prefHeight="25.0" prefWidth="101.0" />
+                  <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="88.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/shark.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="695.0" layoutY="307.0" prefHeight="59.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;" styleClass="buttons">
+               <children>
+                  <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="16.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
+                     <image>
+                        <Image url="@../Images/audit.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="49.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Ekle">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               
+            </AnchorPane>
+            <ImageView fitHeight="25.0" fitWidth="36.0" layoutX="562.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/gender.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="753.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/calendar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="46.0" layoutX="179.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/cow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="761.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/born.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="138.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/medical.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="368.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/pet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="62.0" layoutX="782.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/sloth.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="29.0" fitWidth="46.0" layoutX="366.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/doctor.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.ListeleBakiciController">
+   <children>
+      <AnchorPane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #ff5722;">
+         <children>
+            <AnchorPane layoutX="850.0" layoutY="14.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/left.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="anaGeriButon" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transaparent;" text="Geri">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               
+               <styleClass>
+                  <String fx:value="buttons" />
+                  <String fx:value="anchora" />
+               </styleClass>
+            </AnchorPane>
+            <Label layoutX="66.0" layoutY="31.0" prefHeight="29.0" prefWidth="170.0" text="Kayıtlı Bakıcı Listesi">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/exam.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="395.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="96.0" fitWidth="81.0" layoutX="475.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/parrot.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="29.0" layoutY="98.0" prefHeight="486.0" prefWidth="479.0" style="-fx-border-color: #000000; -fx-border-width: 0 5 1 1;">
+               <children>
+                  <Label layoutX="223.0" layoutY="-10.0" text="Liste">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TableView layoutX="4.0" layoutY="15.0" prefHeight="470.0" prefWidth="470.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Bakıcı No" />
+                      <TableColumn prefWidth="75.0" text="Bakıcı Ad" />
+                        <TableColumn prefWidth="125.0" text="Bakıcı Dogum Tarihi" />
+                        <TableColumn prefWidth="95.0" text="Bakıcı Nitelikleri" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="591.0" layoutY="213.0" prefHeight="94.0" prefWidth="315.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <VBox layoutX="15.0" layoutY="26.0" prefHeight="46.0" prefWidth="81.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Adı">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="78.0" text="Nitelikleri">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                     </children>
+                  </VBox>
+                  <TextField layoutX="104.0" layoutY="40.0" />
+                  <Button layoutX="266.0" layoutY="40.0" mnemonicParsing="false" text="Ara">
+                    
+                  </Button>
+                  <TextField layoutX="107.0" layoutY="40.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="711.0" layoutY="203.0" text="Hızlı Arama">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="769.0" layoutY="318.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/update.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="guncelleButon" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#bakiciGuncelleController" style="-fx-background-color: transaparent;" text="Guncelle">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <styleClass>
+                  <String fx:value="buttons" />
+                  <String fx:value="anchora" />
+               </styleClass>
+            </AnchorPane>
+            <AnchorPane layoutX="769.0" layoutY="387.0" prefHeight="61.0" prefWidth="137.0" style="-fx-border-color: #4E4E4E;">
+               <children>
+                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/undo.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="silButon" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transaparent;" text="Sil">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+               <styleClass>
+                  <String fx:value="buttons" />
+                  <String fx:value="anchora" />
+               </styleClass>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
