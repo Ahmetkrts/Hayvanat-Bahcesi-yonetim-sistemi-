@@ -13,11 +13,12 @@ import java.util.List;
  *
  * @author Casper
  */
-public class memeliOlustur extends Hayvan {
+public class memeliDenizCanlisiOlustur extends Hayvan {
 
     private int ofkeli;
+    private int aquaDisindaYasar;
 
-    public memeliOlustur(String irki, String hucre, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+    public memeliDenizCanlisiOlustur(String irki, String hucre, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(irki, hucre, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
 
     }
@@ -30,7 +31,24 @@ public class memeliOlustur extends Hayvan {
         this.ofkeli = ofkeli;
     }
 
+    public int getAquaDisindaYasar() {
+        return aquaDisindaYasar;
+    }
+
+    public void setAquaDisindaYasar(int aquaDisindaYasar) {
+        this.aquaDisindaYasar = aquaDisindaYasar;
+    }
+
     public String ofkeliMi(int a) {
+
+        if (a == 1) {
+            return "Evet";
+        } else {
+            return "Hayır";
+        }
+    }
+
+    public String aquaDisindaYasarMi(int a) {
 
         if (a == 1) {
             return "Evet";
@@ -43,7 +61,8 @@ public class memeliOlustur extends Hayvan {
     public List<String> huyListesi() {
         List<String> list = super.huyListesi();
         list.add(ofkeliMi(ofkeli));
-        return list; 
+        list.add(aquaDisindaYasarMi(aquaDisindaYasar));
+        return list;
     }
 
 }

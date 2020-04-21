@@ -5,6 +5,9 @@
  */
 package hb.Model.Hayvan;
 
+import hb.Model.Ilac;
+import hb.Model.Asi;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +24,7 @@ public class Hayvan {
     private String dogumTarihi;
     private String gelisTarihi;
     private String cinsiyeti;
-    private List<String> huyList;
+
     private Ilac ilac;
     private Asi asi;
 
@@ -44,7 +47,6 @@ public class Hayvan {
         } else if (cinsiyeti == 0) {
             this.cinsiyeti = "Dişi";
         }
-
         this.ilac = ilac;
         this.asi = asi;
     }
@@ -117,20 +119,17 @@ public class Hayvan {
         return cinsiyeti;
     }
 
-    public List<String> getHuyList() {
-        return huyList;
-    }
-
-    public void setHuyList(List<String> huyList) {
-        this.huyList = huyList;
-    }
-
     public Ilac getIlac() {
         return ilac;
     }
 
     public Asi getAsi() {
         return asi;
+    }
+    public List<String> huyListesi()
+    {
+        List<String> list=new ArrayList<>();        
+        return list;
     }
 
 }

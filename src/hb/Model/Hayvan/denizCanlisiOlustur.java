@@ -13,24 +13,24 @@ import java.util.List;
  *
  * @author Casper
  */
-public class memeliOlustur extends Hayvan {
+public class denizCanlisiOlustur extends Hayvan {
 
-    private int ofkeli;
+    private int aquaDisindaYasar;
 
-    public memeliOlustur(String irki, String hucre, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+    public denizCanlisiOlustur(String irki, String hucre, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(irki, hucre, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
 
     }
 
-    public int getOfkeli() {
-        return ofkeli;
+    public int getAquaDisindaYasar() {
+        return aquaDisindaYasar;
     }
 
-    public void setOfkeli(int ofkeli) {
-        this.ofkeli = ofkeli;
+    public void setAquaDisindaYasar(int aquaDisindaYasar) {
+        this.aquaDisindaYasar = aquaDisindaYasar;
     }
 
-    public String ofkeliMi(int a) {
+    public String aquaDisindaYasarMi(int a) {
 
         if (a == 1) {
             return "Evet";
@@ -42,7 +42,7 @@ public class memeliOlustur extends Hayvan {
     @Override
     public List<String> huyListesi() {
         List<String> list = super.huyListesi();
-        list.add(ofkeliMi(ofkeli));
+        list.add(aquaDisindaYasarMi(aquaDisindaYasar));
         return list; 
     }
 
