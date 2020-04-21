@@ -5,6 +5,10 @@
  */
 package hb.Model.Hayvan;
 
+import hb.Model.Ilac;
+import hb.Model.Asi;
+import hb.Model.Hucre.Hucre;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,21 +20,20 @@ public class Hayvan {
     private static int id;
     private final int hayvanNo;
     private String irki;
-    private String hucre;
     private String ismi;
     private String dogumTarihi;
     private String gelisTarihi;
     private String cinsiyeti;
-    private List<String> huyList;
     private Ilac ilac;
     private Asi asi;
+    private Hucre hucre;
 
     public Hayvan() {
         hayvanNo = id;
         id++;
     }
 
-    public Hayvan(String irki, String hucre, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+    public Hayvan(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
 
         hayvanNo = id;
         id++;
@@ -44,7 +47,6 @@ public class Hayvan {
         } else if (cinsiyeti == 0) {
             this.cinsiyeti = "Dişi";
         }
-
         this.ilac = ilac;
         this.asi = asi;
     }
@@ -53,11 +55,17 @@ public class Hayvan {
         Hayvan.id = id;
     }
 
+    public Hayvan(String string, String string0, String string1, String string2, String string3, int i, Ilac ilac, Asi asi, Hucre hucre) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+
     public void setIrki(String irki) {
         this.irki = irki;
     }
 
-    public void setHucre(String hucre) {
+    public void setHucre(Hucre hucre) {
         this.hucre = hucre;
     }
 
@@ -97,7 +105,7 @@ public class Hayvan {
         return irki;
     }
 
-    public String getHucre() {
+    public Hucre getHucre() {
         return hucre;
     }
 
@@ -117,20 +125,17 @@ public class Hayvan {
         return cinsiyeti;
     }
 
-    public List<String> getHuyList() {
-        return huyList;
-    }
-
-    public void setHuyList(List<String> huyList) {
-        this.huyList = huyList;
-    }
-
     public Ilac getIlac() {
         return ilac;
     }
 
     public Asi getAsi() {
         return asi;
+    }
+
+    public List<String> huyListesi() {
+        List<String> list = new ArrayList<>();
+        return list;
     }
 
 }

@@ -6,9 +6,9 @@
 package hb.Controller.Bakici;
 
 import hb.Controller.Hayvan.*;
-import hb.Model.Hayvan.Asi;
+import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan;
-import hb.Model.Hayvan.Ilac;
+import hb.Model.Ilac;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

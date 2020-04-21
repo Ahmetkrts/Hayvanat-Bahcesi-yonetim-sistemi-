@@ -5,9 +5,10 @@
  */
 package hb.Controller.Hayvan;
 
-import hb.Model.Hayvan.Asi;
+import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan;
-import hb.Model.Hayvan.Ilac;
+import hb.Model.Hucre.Hucre;
+import hb.Model.Ilac;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -136,12 +137,12 @@ public class ListeleHayvanController implements Initializable {
 
     private void loadDate() {
         ObservableList<Hayvan> data_table = FXCollections.observableArrayList();
-
+/*
         for (int i = 0; i < 10; i++) {
             data_table.add(new Hayvan("Memeli-" + i, "Kafes-" + i, "Deneme-" + i, ""
-                    + "15.03.1998-" + i, "15.03.2001-" + i, 1, new Ilac("Parol" + i), new Asi("Tetenoz" + i)));
+                    + "15.03.1998-" + i, "15.03.2001-" + i, 1, new Ilac("Parol" + i), new Asi("Tetenoz" + i),new Hucre(i, i, "ahmet", "asd", i, i)));
 
         }
-        tableBilgi.setItems(data_table);
+        tableBilgi.setItems(data_table);*/
     }
 }
