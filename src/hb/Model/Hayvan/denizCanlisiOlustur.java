@@ -14,6 +14,8 @@ import java.util.List;
  *
  * @author Casper
  */
+
+
 public class denizCanlisiOlustur extends Hayvan {
 
     private int aquaDisindaYasar;
@@ -21,8 +23,6 @@ public class denizCanlisiOlustur extends Hayvan {
     public denizCanlisiOlustur(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
         super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
     }
-
-    
 
     public int getAquaDisindaYasar() {
         return aquaDisindaYasar;
@@ -45,7 +45,7 @@ public class denizCanlisiOlustur extends Hayvan {
     public List<String> huyListesi() {
         List<String> list = super.huyListesi();
         list.add(aquaDisindaYasarMi(aquaDisindaYasar));
-        return list; 
+        return list;
     }
 
 }

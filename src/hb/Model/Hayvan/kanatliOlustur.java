@@ -23,8 +23,6 @@ public class kanatliOlustur extends Hayvan {
         super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
     }
 
-    
-
     public int getUcaBilir() {
         return ucaBilir;
     }
@@ -48,7 +46,8 @@ public class kanatliOlustur extends Hayvan {
             return "Hayır";
         }
     }
-     public String besleyicisiVarMi(int a) {
+
+    public String besleyicisiVarMi(int a) {
         if (a == 1) {
             return "Evet";
         } else {

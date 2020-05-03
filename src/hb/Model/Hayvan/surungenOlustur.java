@@ -22,7 +22,6 @@ public class surungenOlustur extends Hayvan {
         super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
     }
 
-    
 
     public int getZehirli() {
         return zehirli;

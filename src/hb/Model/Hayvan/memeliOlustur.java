@@ -18,11 +18,11 @@ public class memeliOlustur extends Hayvan {
 
     private int ofkeli;
 
+
     public memeliOlustur(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
         super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
     }
 
-    
 
     public int getOfkeli() {
         return ofkeli;

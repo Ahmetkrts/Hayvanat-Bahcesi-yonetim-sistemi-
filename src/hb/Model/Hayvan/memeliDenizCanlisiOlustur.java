@@ -23,7 +23,6 @@ public class memeliDenizCanlisiOlustur extends Hayvan {
         super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
     }
 
-   
     public int getOfkeli() {
         return ofkeli;
     }

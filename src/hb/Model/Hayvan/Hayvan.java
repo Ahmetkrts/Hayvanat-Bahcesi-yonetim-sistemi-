@@ -55,11 +55,10 @@ public class Hayvan {
         Hayvan.id = id;
     }
 
-    public Hayvan(String string, String string0, String string1, String string2, String string3, int i, Ilac ilac, Asi asi, Hucre hucre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<String> huyListesi() {
+        List<String> list = new ArrayList<>();
+        return list;
     }
-
-    
 
     public void setIrki(String irki) {
         this.irki = irki;
@@ -131,11 +130,6 @@ public class Hayvan {
 
     public Asi getAsi() {
         return asi;
-    }
-
-    public List<String> huyListesi() {
-        List<String> list = new ArrayList<>();
-        return list;
     }
 
 }
