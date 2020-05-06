@@ -55,11 +55,6 @@ public class Hayvan {
         Hayvan.id = id;
     }
 
-    public List<String> huyListesi() {
-        List<String> list = new ArrayList<>();
-        return list;
-    }
-
     public void setIrki(String irki) {
         this.irki = irki;
     }
@@ -131,5 +126,36 @@ public class Hayvan {
     public Asi getAsi() {
         return asi;
     }
+    public ArrayList<String> hayvanListesi(){
+        ArrayList<String> list = new ArrayList<>();
+        list.add(String.valueOf(getHayvanNo()));
+        list.add(getIrki());
+        list.add(getIsmi());
+        list.add(getDogumTarihi());
+        list.add(getGelisTarihi());
+        list.add(String.valueOf(getCinsiyeti()));
+        list.add(getIlac().toString());
+        list.add(getAsi().toString());
+        list.add(getHucre().toString());
+        return list;
+    }
+    
+    public ArrayList<String> isim(){
+        ArrayList<String> isim = new ArrayList<>();
+        isim.add("HayvanNo");
+        isim.add("Irki");
+        isim.add("isim");
+        isim.add("DogumTarihi");
+        isim.add("GelisTarihi");
+        isim.add("Cinsiyeti");
+        isim.add("Ilac");
+        isim.add("Asi");
+        isim.add("Hucre");
+        return isim;
+    }
 
+    ArrayList<String> toArrayList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

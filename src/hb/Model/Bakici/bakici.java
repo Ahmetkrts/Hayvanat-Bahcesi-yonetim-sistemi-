@@ -6,6 +6,7 @@
 package hb.Model.Bakici;
 
 import hb.Model.Hayvan.Hayvan;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,6 +43,15 @@ public class bakici {
             this.cinsiyeti = "Bayan";
         }
         this.hayvanList = hayvanList;
+    }
+
+    public ArrayList<String> bakiciListesi() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add(String.valueOf(getBakiciNo()));
+        list.add(getDogumTarihi());
+        list.add(getIsim());
+        list.add(String.valueOf(getCinsiyeti()));
+        return list;
     }
 
     public static int getId() {
@@ -98,6 +108,10 @@ public class bakici {
 
     public void setHayvanList(List<Hayvan> hayvanList) {
         this.hayvanList = hayvanList;
+    }
+
+    public int getBakiciNo() {
+        return bakiciNo;
     }
 
 }
