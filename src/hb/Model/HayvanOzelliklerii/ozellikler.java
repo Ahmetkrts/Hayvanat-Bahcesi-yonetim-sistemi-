@@ -5,11 +5,13 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
+import java.io.Serializable;
+
 /**
  *
  * @author techn
  */
-public class ozellikler {
+public class ozellikler implements Serializable {
 
     public String ucaBilirMi(int a) {
         if (a == 1) {

@@ -8,6 +8,7 @@ package hb.Model.Hayvan;
 import hb.Model.Ilac;
 import hb.Model.Asi;
 import hb.Model.Hucre.Hucre;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +16,11 @@ import java.util.List;
  *
  * @author Casper
  */
-public class Hayvan {
+public class Hayvan implements Serializable {
 
     private static int id;
     private final int hayvanNo;
+    private String sinif;
     private String irki;
     private String ismi;
     private String dogumTarihi;
@@ -27,10 +29,29 @@ public class Hayvan {
     private Ilac ilac;
     private Asi asi;
     private Hucre hucre;
+    private Long serialVersionUID = 1L;
 
     public Hayvan() {
         hayvanNo = id;
         id++;
+    }
+
+    public Hayvan(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+
+        hayvanNo = id;
+        id++;
+        this.sinif = sinif;
+        this.irki = irki;
+        this.ismi = ismi;
+        this.dogumTarihi = dogumTarihi;
+        this.gelisTarihi = gelisTarihi;
+        if (cinsiyeti == 1) {
+            this.cinsiyeti = "Erkek";
+        } else if (cinsiyeti == 0) {
+            this.cinsiyeti = "Dişi";
+        }
+        this.ilac = ilac;
+        this.asi = asi;
     }
 
     public Hayvan(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
@@ -53,6 +74,14 @@ public class Hayvan {
 
     public static void setId(int id) {
         Hayvan.id = id;
+    }
+
+    public String getSinif() {
+        return sinif;
+    }
+
+    public void setSinif(String sinif) {
+        this.sinif = sinif;
     }
 
     public void setIrki(String irki) {
@@ -126,22 +155,24 @@ public class Hayvan {
     public Asi getAsi() {
         return asi;
     }
-    public ArrayList<String> hayvanListesi(){
+
+    public ArrayList<String> hayvanListesi() {
         ArrayList<String> list = new ArrayList<>();
+        list.add(getSinif());
         list.add(String.valueOf(getHayvanNo()));
         list.add(getIrki());
         list.add(getIsmi());
         list.add(getDogumTarihi());
         list.add(getGelisTarihi());
-        list.add(String.valueOf(getCinsiyeti()));
-        list.add(getIlac().toString());
-        list.add(getAsi().toString());
-        list.add(getHucre().toString());
+        list.add(getCinsiyeti());
+        list.add(getIlac().getIlacIsmi().get(0));
+        list.add(getAsi().getAsiIsmi().get(0));
         return list;
     }
-    
-    public ArrayList<String> isim(){
+
+    public ArrayList<String> isim() {
         ArrayList<String> isim = new ArrayList<>();
+        isim.add("Sınıfı");
         isim.add("HayvanNo");
         isim.add("Irki");
         isim.add("isim");
@@ -150,12 +181,13 @@ public class Hayvan {
         isim.add("Cinsiyeti");
         isim.add("Ilac");
         isim.add("Asi");
-        isim.add("Hucre");
+
         return isim;
     }
 
-    ArrayList<String> toArrayList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public String toString() {
+        return "Hayvan{" + "hayvanNo=" + hayvanNo + ", sinif=" + sinif + ", irki=" + irki + ", ismi=" + ismi + ", dogumTarihi=" + dogumTarihi + ", gelisTarihi=" + gelisTarihi + ", cinsiyeti=" + cinsiyeti + ", ilac=" + ilac + ", asi=" + asi + '}';
     }
-    
+
 }

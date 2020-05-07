@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -101,7 +102,7 @@
                 </AnchorPane>
                 <AnchorPane layoutX="38.0" layoutY="77.0" prefHeight="486.0" prefWidth="479.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
                     <children>
-                        <TableView fx:id="tableBilgi" layoutX="2.0" layoutY="13.0" prefHeight="467.0" prefWidth="479.0">
+                        <TableView fx:id="hayvanTablosu" layoutX="2.0" layoutY="13.0" onMouseClicked="#dataTableSecim" prefHeight="467.0" prefWidth="479.0">
                             <columns>
                                 <TableColumn fx:id="col_hayvanNo" prefWidth="68.0" text="Hayvan No" />
                                 <TableColumn fx:id="col_irk" prefWidth="82.0" text="Irkı" />
@@ -158,6 +159,16 @@
                   <String fx:value="buttons" />
                   <String fx:value="anchora" />
                </styleClass>
+            </AnchorPane>
+            <AnchorPane fx:id="hayvanOzellikleri" layoutX="533.0" layoutY="236.0" prefHeight="328.0" prefWidth="251.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <Label layoutX="67.0" layoutY="-10.0" text="Hayvan Özellikleri">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="hayvanOzellikTextArea" layoutX="4.0" layoutY="9.0" prefHeight="313.0" prefWidth="243.0" />
+               </children>
             </AnchorPane>
             </children>
         </AnchorPane>

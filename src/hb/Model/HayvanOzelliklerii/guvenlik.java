@@ -5,11 +5,13 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
+import java.io.Serializable;
+
 /**
  *
  * @author techn
  */
-public class guvenlik {
+public class guvenlik implements Serializable{
     public String guvenlik(int a){
         if(a == 1){
             return "yuksek guvenlik gerektirir";

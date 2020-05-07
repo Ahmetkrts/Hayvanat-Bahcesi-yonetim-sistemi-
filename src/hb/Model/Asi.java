@@ -5,13 +5,14 @@
  */
 package hb.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Casper
  */
-public class Asi {
+public class Asi implements Serializable{
 
     private int id;
     private final int seri;

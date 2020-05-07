@@ -5,13 +5,14 @@
  */
 package hb.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Casper
  */
-public class Ilac {
+public class Ilac implements Serializable {
 
     private int id;
     private final int seri;
@@ -31,17 +32,6 @@ public class Ilac {
         this.ilacIsmi.add(ilacIsmi);
     }
 
-    public void AsiEkle(String ilacIsmi) {
-        this.ilacIsmi.add(ilacIsmi);
-    }
-
-    public void AsiEkle(ArrayList<String> ilacIsmi) {
-        for (String s : ilacIsmi) {
-            this.ilacIsmi.add(s);
-        }
-
-    }
-
     public int getId() {
         return id;
     }
@@ -53,8 +43,6 @@ public class Ilac {
     public int getSeri() {
         return seri;
     }
-
-   
 
     public ArrayList<String> getIlacIsmi() {
         return ilacIsmi;

@@ -5,11 +5,13 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
+import java.io.Serializable;
+
 /**
  *
  * @author techn
  */
-public class beslenmeBicimi {
+public class beslenmeBicimi implements Serializable {
     
     public String et_yem_yemekBicimi(int a) {
 

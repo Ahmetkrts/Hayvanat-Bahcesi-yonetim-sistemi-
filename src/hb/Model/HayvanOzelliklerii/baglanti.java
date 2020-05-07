@@ -5,11 +5,13 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
+import java.io.Serializable;
+
 /**
  *
  * @author techn
  */
-public class baglanti {
+public class baglanti implements Serializable{
 
     private beslenmeBicimi beslenmeBicimi;
     private guvenlik guvenlik;

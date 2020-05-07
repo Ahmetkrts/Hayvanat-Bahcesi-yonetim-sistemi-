@@ -9,6 +9,7 @@ import hb.Model.Ilac;
 import hb.Model.Asi;
 import hb.Model.HayvanOzelliklerii.baglanti;
 import hb.Model.Hucre.Hucre;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +17,14 @@ import java.util.List;
  *
  * @author Casper
  */
-public class memeliDenizCanlisiOlustur extends Hayvan {
+public class memeliDenizCanlisiOlustur extends Hayvan  implements Serializable {
 
     private int ofkeli;
     private int aquaDisindaYasar;
     private baglanti baglanti;
 
-    public memeliDenizCanlisiOlustur(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
-        super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
+    public memeliDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
     @Override
@@ -32,6 +33,22 @@ public class memeliDenizCanlisiOlustur extends Hayvan {
         list.add(getBaglanti().getOzellikler().aquaDisindaYasarMi(aquaDisindaYasar));
         list.add(getBaglanti().getHayvanhuy().ofkeliMi(ofkeli));
         return list;
+    }
+    @Override
+    public String toString() {
+        return "Hayvan Numarası: " + super.getHayvanNo() + "\n"
+                + "İsim: " + super.getIsmi() + "\n"
+                + "Sınıfı: " + super.getSinif() + "\n"
+                + "Tür: " + super.getIrki() + "\n"
+                + "Doğum Tarihi: " + super.getDogumTarihi() + "\n"
+                + "Geliş Tarihi: " + super.getGelisTarihi() + "\n"
+                + "Cinsiyeti: " + super.getCinsiyeti() + "\n"
+                + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
+                + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
+                + "Extra Özellikleri: \n"
+                + "Aqua Dışında Yaşar: " + getBaglanti().getOzellikler().aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
+                + "Öfekeli: "+getBaglanti().getHayvanhuy().ofkeliMi(ofkeli)+"\n";
+
     }
 
     @Override

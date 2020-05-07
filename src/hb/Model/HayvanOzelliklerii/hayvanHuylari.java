@@ -5,11 +5,13 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
+import java.io.Serializable;
+
 /**
  *
  * @author techn
  */
-public class hayvanHuylari {
+public class hayvanHuylari implements Serializable {
 
     public String yirticiMi(int a) {
 

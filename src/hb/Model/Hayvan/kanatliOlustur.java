@@ -9,6 +9,7 @@ import hb.Model.Ilac;
 import hb.Model.Asi;
 import hb.Model.HayvanOzelliklerii.baglanti;
 import hb.Model.Hucre.Hucre;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,16 +17,16 @@ import java.util.List;
  *
  * @author Casper
  */
-public class kanatliOlustur extends Hayvan {
+public class kanatliOlustur extends Hayvan  implements Serializable {
 
     private int ucaBilir;
     private int yirtici;
     private int beslenme;
-    private int guvenlikk;
+    private int guvenlik;
     private baglanti baglanti;
 
-    public kanatliOlustur(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
-        super(irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, hucre);
+    public kanatliOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
     @Override
@@ -34,7 +35,26 @@ public class kanatliOlustur extends Hayvan {
         list.add(getBaglanti().getHayvanhuy().yirticiMi(yirtici));
         list.add(getBaglanti().getBeslenmeBicimi().et_yem_yemekBicimi(beslenme));
         list.add(getBaglanti().getOzellikler().ucaBilirMi(ucaBilir));
+        list.add(getBaglanti().getGuvenlik().guvenlik(guvenlik));
         return list;
+    }
+    @Override
+    public String toString() {
+        return "Hayvan Numarası: " + super.getHayvanNo() + "\n"
+                + "İsim: " + super.getIsmi() + "\n"
+                + "Sınıfı: " + super.getSinif() + "\n"
+                + "Tür: " + super.getIrki() + "\n"
+                + "Doğum Tarihi: " + super.getDogumTarihi() + "\n"
+                + "Geliş Tarihi: " + super.getGelisTarihi() + "\n"
+                + "Cinsiyeti: " + super.getCinsiyeti() + "\n"
+                + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
+                + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
+                + "Extra Özellikleri: \n"            
+                + "Yırtıcı: "+getBaglanti().getHayvanhuy().yirticiMi(yirtici)+"\n"
+                + "Beslenme: "+getBaglanti().getBeslenmeBicimi().et_yem_yemekBicimi(beslenme)+"\n"
+                + "Uça Bilir: "+getBaglanti().getOzellikler().ucaBilirMi(ucaBilir)+"\n"
+                + "Güvenlik: "+getBaglanti().getGuvenlik().guvenlik(guvenlik)+"\n";
+
     }
 
     @Override
@@ -43,6 +63,7 @@ public class kanatliOlustur extends Hayvan {
         isim.add("yirtici");
         isim.add("beslenme");
         isim.add("ucabilir");
+        isim.add("güvenlik");
         return isim;
     }
 
@@ -57,12 +78,12 @@ public class kanatliOlustur extends Hayvan {
         this.baglanti = baglanti;
     }
 
-    public int getGuvenlikk() {
-        return guvenlikk;
+    public int getGuvenlik() {
+        return guvenlik;
     }
 
-    public void setGuvenlikk(int guvenlikk) {
-        this.guvenlikk = guvenlikk;
+    public void setGuvenlik(int guvenlik) {
+        this.guvenlik = guvenlik;
     }
 
     public int getBeslenme() {
