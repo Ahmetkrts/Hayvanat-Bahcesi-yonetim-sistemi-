@@ -14,10 +14,10 @@ import java.io.Serializable;
 public class guvenlik implements Serializable{
     public String guvenlik(int a){
         if(a == 1){
-            return "yuksek guvenlik gerektirir";
+            return "Yüksek Güvenlik Gerektirir";
         }
         else {
-            return "normal guvenlik gerektirir";
+            return "Normal Güvenlik Gerektirir";
         }
     }
 }

@@ -124,7 +124,7 @@
                         <Image url="@../Images/chicken.png" />
                     </image>
                 </ImageView>
-            <AnchorPane layoutX="804.0" layoutY="227.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+            <AnchorPane fx:id="hayvanGuncelleAnchorPane" layoutX="804.0" layoutY="227.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
                <children>
                   <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -142,14 +142,14 @@
                   <String fx:value="anchora" />
                </styleClass>
             </AnchorPane>
-            <AnchorPane layoutX="804.0" layoutY="297.0" prefHeight="61.0" prefWidth="129.0" style="-fx-border-color: #4E4E4E;">
+            <AnchorPane fx:id="hayvanSilAnchorPane" layoutX="804.0" layoutY="297.0" prefHeight="61.0" prefWidth="129.0" style="-fx-border-color: #4E4E4E;">
                <children>
                   <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/undo.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="hayvanSilButon" layoutX="58.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transparent;" text="sil">
+                  <Button fx:id="hayvanSilButon" layoutX="58.0" layoutY="15.0" mnemonicParsing="false" onAction="#hayvanSilController" style="-fx-background-color: transparent;" text="sil">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

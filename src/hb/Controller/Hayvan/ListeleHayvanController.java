@@ -21,13 +21,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableArrayBase;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -64,30 +67,70 @@ public class ListeleHayvanController implements Initializable {
     Dosya dosya = new Dosya();
 
     @FXML
+    private Button hayvanGuncelleButon;
+    @FXML
+    private AnchorPane hayvanGuncelleAnchorPane;
+    @FXML
+    private AnchorPane hayvanSilAnchorPane;
+
+    @FXML
     public void dataTableSecim() {
         hayvanOzellikleri.setVisible(true);
+        hayvanSilAnchorPane.setVisible(true);
+        hayvanGuncelleAnchorPane.setVisible(true);
         hayvanOzellikTextArea.setText(hayvanTablosu.getSelectionModel().getSelectedItem().toString());
         //System.out.println("Hayvanın İsmi" + hayvanTablosu.getSelectionModel().getSelectedItem()
 
     }
 
     @FXML
+    public void hayvanSilController(ActionEvent event) {
+
+        Hayvan hy = hayvanTablosu.getSelectionModel().getSelectedItem();
+        Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("Hayvan Silme İstegi");
+        alert.setHeaderText(null);
+        alert.setContentText(hy.getIsmi() + " İsimli Hayvanı Silmek İstediginizden Eminmisiniz!!! \n Bu işin Geri Dönüşü Yoktur!!! ");
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+                System.out.println("Secilen hayvan indexi: " + hayvanTablosu.getSelectionModel().getSelectedIndex() + "-*-*-*-*-*-*");
+                List<Hayvan> HayvanList = new ArrayList<>();
+                HayvanList = dosya.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya.hayvanDosyaYaz(HayvanList);
+            } else {
+                //cancel tusuna basılınca yılacak işlem ancak yapılacak işlem yok 
+            }
+        });
+        initTable();
+        loadDate();
+
+    }
+
+    @FXML
     private void hayvanGuncelleController(ActionEvent event) {
+        System.out.println("bastım");
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanGuncelleFXML.fxml"));
         try {
-            System.out.println("bastım");
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanGuncelleFXML.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 680);
+
+            // fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanGuncelleFXML.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Scene scene = new Scene(root, 1200, 680);
             Stage stage = new Stage();
             stage.setResizable(false);
             stage.setTitle("Hayvanları Güncelle");
             stage.setScene(scene);
+            GuncelleHayvanController hayvanguncelle = fxmlLoader.getController();
+            hayvanguncelle.hayvanDoldur(hayvanTablosu.getSelectionModel().getSelectedItem());
+            hayvanguncelle.setHayvanIndex(hayvanTablosu.getSelectionModel().getSelectedIndex());
             stage.show();
 
             final Node anaPencere = (Node) event.getSource();
             final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
             anaStage.close();
         } catch (IOException ex) {
+            System.out.println("Pencereden Kaynaklı Sorun " + ex.getMessage());
             Logger.getLogger(ListeleHayvanController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -129,7 +172,7 @@ public class ListeleHayvanController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         initTable();
         loadDate();
-        hayvanOzellikleri.setVisible(false);
+
     }
 
     private void initTable() {
@@ -137,7 +180,9 @@ public class ListeleHayvanController implements Initializable {
     }
 
     private void initCol() {
-
+        hayvanOzellikleri.setVisible(false);
+        hayvanSilAnchorPane.setVisible(false);
+        hayvanGuncelleAnchorPane.setVisible(false);
         col_hayvanNo.setCellValueFactory(new PropertyValueFactory<>("hayvanNo"));
         col_irk.setCellValueFactory(new PropertyValueFactory<>("irki"));
         col_isim.setCellValueFactory(new PropertyValueFactory<>("ismi"));
@@ -172,7 +217,7 @@ public class ListeleHayvanController implements Initializable {
         HayvanList = dosya.hayvanDosyaOku();
 
         for (Hayvan hayvan : HayvanList) {
-            System.out.println("geldim buraya kadar ");
+
             System.out.println(hayvan.toString());
             data_table.add(hayvan);
         }

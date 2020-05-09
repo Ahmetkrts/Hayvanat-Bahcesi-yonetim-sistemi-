@@ -6,6 +6,7 @@
 package hb.Controller.Hayvan;
 
 import hb.Controller.Dosya;
+import hb.Controller.TheController;
 import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan;
 import hb.Model.Hayvan.denizCanlisiOlustur;
@@ -41,7 +42,7 @@ import javafx.stage.Stage;
  *
  * @author Casper
  */
-public class EkleHayvanController implements Initializable {
+public class EkleHayvanController extends TheController implements Initializable {
 
     @FXML
     private ComboBox sinifComboBox;
@@ -93,7 +94,7 @@ public class EkleHayvanController implements Initializable {
         try {
             switch (this.sinifSecim) {
                 case "Memeli":
-                    memeliOlustur memeli = new memeliOlustur("Memeli",irki, isim, dogum, gelis, cinsiyet, ilac, asi);
+                    memeliOlustur memeli = new memeliOlustur("Memeli", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     memeli.setOfkeli(secilimi(extra1CheckBox.isSelected()));
                     memeli.setYirtici(secilimi(extra2CheckBox.isSelected()));
                     memeli.setGuvenlik(secilimi(extra3CheckBox.isSelected()));
@@ -102,13 +103,13 @@ public class EkleHayvanController implements Initializable {
                     hayvan = memeli;
                     break;
                 case "Memeli Deniz Canlısı":
-                    memeliDenizCanlisiOlustur memeliDenizCanlisi = new memeliDenizCanlisiOlustur("Memeli Deniz Canlısı",irki, isim, dogum, gelis, cinsiyet, ilac, asi);
+                    memeliDenizCanlisiOlustur memeliDenizCanlisi = new memeliDenizCanlisiOlustur("Memeli Deniz Canlısı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     memeliDenizCanlisi.setOfkeli(secilimi(extra1CheckBox.isSelected()));
                     memeliDenizCanlisi.setAquaDisindaYasar(secilimi(extra2CheckBox.isSelected()));
                     hayvan = memeliDenizCanlisi;
                     break;
                 case "Sürüngen":
-                    surungenOlustur surungen = new surungenOlustur("Sürüngen",irki, isim, dogum, gelis, cinsiyet, ilac, asi);
+                    surungenOlustur surungen = new surungenOlustur("Sürüngen", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     surungen.setZehirli(secilimi(extra1CheckBox.isSelected()));
                     surungen.setGuvenlik(secilimi(extra2CheckBox.isSelected()));
                     surungen.setYemek(secilimi(extra3CheckBox.isSelected()));
@@ -117,7 +118,7 @@ public class EkleHayvanController implements Initializable {
                     hayvan = surungen;
                     break;
                 case "Sürüngen Deniz Canlısı":
-                    surungenDenizCanlisiOlustur surungenDenizCanlisi = new surungenDenizCanlisiOlustur("Sürüngen Deniz Canlısı",irki, isim, dogum, gelis, cinsiyet, ilac, asi);
+                    surungenDenizCanlisiOlustur surungenDenizCanlisi = new surungenDenizCanlisiOlustur("Sürüngen Deniz Canlısı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     surungenDenizCanlisi.setZehirli(secilimi(extra1CheckBox.isSelected()));
                     surungenDenizCanlisi.setAquaDisindaYasar(secilimi(extra2CheckBox.isSelected()));
                     surungenDenizCanlisi.setGuvenlik(secilimi(extra3CheckBox.isSelected()));
@@ -127,7 +128,7 @@ public class EkleHayvanController implements Initializable {
                     hayvan = surungenDenizCanlisi;
                     break;
                 case "Deniz Canlısı":
-                    denizCanlisiOlustur denizCanlisi = new denizCanlisiOlustur("Deniz Canlısı",irki, isim, dogum, gelis, cinsiyet, ilac, asi);
+                    denizCanlisiOlustur denizCanlisi = new denizCanlisiOlustur("Deniz Canlısı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     denizCanlisi.setAquaDisindaYasar(secilimi(extra1CheckBox.isSelected()));
                     denizCanlisi.setYemek(secilimi(extra2CheckBox.isSelected()));
                     denizCanlisi.setYirtici(secilimi(extra3CheckBox.isSelected()));
@@ -137,7 +138,7 @@ public class EkleHayvanController implements Initializable {
 
                     break;
                 case "Kanatlı":
-                    kanatliOlustur kanatli = new kanatliOlustur("Kanatlı",irki, isim, dogum, gelis, cinsiyet, ilac, asi);
+                    kanatliOlustur kanatli = new kanatliOlustur("Kanatlı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     kanatli.setUcaBilir(secilimi(extra1CheckBox.isSelected()));
                     kanatli.setYirtici(secilimi(extra2CheckBox.isSelected()));
                     kanatli.setBeslenme(secilimi(extra3CheckBox.isSelected()));
@@ -151,7 +152,7 @@ public class EkleHayvanController implements Initializable {
 
             //hayvan = new Hayvan(irki, isim, dogum, gelis, cinsiyet, ilac, asi);
             this.dosya.hayvanEkle((Hayvan) hayvan);
-            
+
         } catch (Exception e) {
             System.out.println("ekle hayvan geldi hata");
             e.getMessage();
@@ -191,9 +192,9 @@ public class EkleHayvanController implements Initializable {
     }
 
     @FXML
-    public void turDoldur(Event event) {
+    public void turDoldur() {
         String secim = (String) sinifComboBox.getValue();
-        
+
         switch (secim) {
             case "Memeli":
                 sinifSecim = "Memeli";
@@ -236,6 +237,18 @@ public class EkleHayvanController implements Initializable {
             default:
                 System.out.println("Boş ");
                 break;
+        }
+
+    }
+
+    private void check(CheckBox ch, String s) {
+        if (s == null) {
+            ch.setVisible(false);
+            ch.setText("Null");
+        } else {
+            ch.setSelected(false);
+            ch.setVisible(true);
+            ch.setText(s);
         }
 
     }
