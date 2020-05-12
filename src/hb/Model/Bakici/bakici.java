@@ -5,44 +5,29 @@
  */
 package hb.Model.Bakici;
 
-import hb.Model.Hayvan.Hayvan;
+import hb.Controller.BakiciId;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class bakici {
-
-    private static int id;
+public class bakici implements bakiciNitelikleri,Serializable {
+    private BakiciId Bakiciid = new BakiciId();
+    private int id = Bakiciid.IdDosyaOku();
     private final int bakiciNo;
     private String isim;
     private String dogumTarihi;
-    private int maxHayvanSayisi;
-    private int maxTurSayisi;
-    private String cinsiyeti;
-    private List<Hayvan> hayvanList;
+    private String memeliNitelik;
+    private String balikNitelik;
+    private String surungenNitelik;
+    private String kusNitelik;
 
     public bakici() {
         this.bakiciNo = id;
         id++;
-
-    }
-
-    public bakici(String isim, String dogumTarihi, int maxHayvanSayisi, int maxTurSayisi, int cinsiyeti, List<Hayvan> hayvanList) {
-        this.bakiciNo = id;
-        id++;
-        this.isim = isim;
-        this.dogumTarihi = dogumTarihi;
-        this.maxHayvanSayisi = maxHayvanSayisi;
-        this.maxTurSayisi = maxTurSayisi;
-        if (cinsiyeti == 1) {
-            this.cinsiyeti = "Bay";
-        } else {
-            this.cinsiyeti = "Bayan";
-        }
-        this.hayvanList = hayvanList;
+        Bakiciid.IdEkle(id);
     }
 
     public ArrayList<String> bakiciListesi() {
@@ -50,16 +35,82 @@ public class bakici {
         list.add(String.valueOf(getBakiciNo()));
         list.add(getDogumTarihi());
         list.add(getIsim());
-        list.add(String.valueOf(getCinsiyeti()));
         return list;
     }
 
-    public static int getId() {
-        return id;
-    }
-
-    public static void setId(int id) {
-        bakici.id = id;
+    public String toString() {
+        if (getBalikNitelik() == null && getKusNitelik() == null && getMemeliNitelik() == null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \nYok\n";
+        } else if (getBalikNitelik() != null && getKusNitelik() == null && getMemeliNitelik() == null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getBalikNitelik() + "\n";
+        } else if (getBalikNitelik() == null && getKusNitelik() != null && getMemeliNitelik() == null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getKusNitelik() + "\n";
+        } else if (getBalikNitelik() == null && getKusNitelik() == null && getMemeliNitelik() != null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getMemeliNitelik() + "\n";
+        } else if (getBalikNitelik() == null && getKusNitelik() == null && getMemeliNitelik() == null && getSurungenNitelik() != null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getSurungenNitelik() + "\n";
+        } else if (getBalikNitelik() != null && getKusNitelik() != null && getMemeliNitelik() == null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getBalikNitelik() + "\n"
+                    + getKusNitelik() + "\n";
+        } else if (getBalikNitelik() != null && getKusNitelik() == null && getMemeliNitelik() != null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getBalikNitelik() + "\n"
+                    + getMemeliNitelik() + "\n";
+        } else if (getBalikNitelik() != null && getKusNitelik() == null && getMemeliNitelik() == null && getSurungenNitelik() != null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getBalikNitelik() + "\n"
+                    + getSurungenNitelik() + "\n";
+        } else if (getBalikNitelik() == null && getKusNitelik() != null && getMemeliNitelik() != null && getSurungenNitelik() == null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getMemeliNitelik() + "\n"
+                    + getKusNitelik() + "\n";
+        } else if (getBalikNitelik() == null && getKusNitelik() != null && getMemeliNitelik() == null && getSurungenNitelik() != null) {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getKusNitelik() + "\n"
+                    + getSurungenNitelik() + "\n";
+        } else {
+            return "Bakici Numarasi: " + this.getBakiciNo() + "\n"
+                    + "İsim: " + getIsim() + "\n"
+                    + "Doğum Tarihi: " + getDogumTarihi() + "\n"
+                    + "--------->Nitelikleri<---------: \n"
+                    + getMemeliNitelik() + "\n"
+                    + getSurungenNitelik() + "\n";
+        }
     }
 
     public String getIsim() {
@@ -78,40 +129,40 @@ public class bakici {
         this.dogumTarihi = dogumTarihi;
     }
 
-    public int getMaxHayvanSayisi() {
-        return maxHayvanSayisi;
-    }
-
-    public void setMaxHayvanSayisi(int maxHayvanSayisi) {
-        this.maxHayvanSayisi = maxHayvanSayisi;
-    }
-
-    public int getMaxTurSayisi() {
-        return maxTurSayisi;
-    }
-
-    public void setMaxTurSayisi(int maxTurSayisi) {
-        this.maxTurSayisi = maxTurSayisi;
-    }
-
-    public String getCinsiyeti() {
-        return cinsiyeti;
-    }
-
-    public void setCinsiyeti(String cinsiyeti) {
-        this.cinsiyeti = cinsiyeti;
-    }
-
-    public List<Hayvan> getHayvanList() {
-        return hayvanList;
-    }
-
-    public void setHayvanList(List<Hayvan> hayvanList) {
-        this.hayvanList = hayvanList;
-    }
-
     public int getBakiciNo() {
         return bakiciNo;
+    }
+
+    public String getMemeliNitelik() {
+        return memeliNitelik;
+    }
+
+    public void setMemeliNitelik(String memeliNitelik) {
+        this.memeliNitelik = memeliNitelik;
+    }
+
+    public String getBalikNitelik() {
+        return balikNitelik;
+    }
+
+    public void setBalikNitelik(String balikNitelik) {
+        this.balikNitelik = balikNitelik;
+    }
+
+    public String getSurungenNitelik() {
+        return surungenNitelik;
+    }
+
+    public void setSurungenNitelik(String surungenNitelik) {
+        this.surungenNitelik = surungenNitelik;
+    }
+
+    public String getKusNitelik() {
+        return kusNitelik;
+    }
+
+    public void setKusNitelik(String kusNitelik) {
+        this.kusNitelik = kusNitelik;
     }
 
 }

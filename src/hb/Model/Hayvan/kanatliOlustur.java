@@ -7,37 +7,41 @@ package hb.Model.Hayvan;
 
 import hb.Model.Ilac;
 import hb.Model.Asi;
-import hb.Model.HayvanOzelliklerii.baglanti;
-import hb.Model.Hucre.Hucre;
-import java.io.Serializable;
+import hb.Model.HayvanOzelliklerii.beslenmeBicimi;
+import hb.Model.HayvanOzelliklerii.guvenlik;
+import hb.Model.HayvanOzelliklerii.hayvanHuylari;
+import hb.Model.HayvanOzelliklerii.ozellikler;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class kanatliOlustur extends Hayvan  implements Serializable {
+public class kanatliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler  {
 
     private int ucaBilir;
     private int yirtici;
     private int beslenme;
     private int guvenlik;
-    private baglanti baglanti;
 
-    public kanatliOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
+    public kanatliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
+    }
+
+    public kanatliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
     @Override
     public ArrayList<String> hayvanListesi() {
         ArrayList<String> list = super.hayvanListesi();
-        list.add(getBaglanti().getHayvanhuy().yirticiMi(yirtici));
-        list.add(getBaglanti().getBeslenmeBicimi().et_yem_yemekBicimi(beslenme));
-        list.add(getBaglanti().getOzellikler().ucaBilirMi(ucaBilir));
-        list.add(getBaglanti().getGuvenlik().guvenlik(guvenlik));
+        list.add(yirticiMi(yirtici));
+        list.add(et_yem_yemekBicimi(beslenme));
+        list.add(ucaBilirMi(ucaBilir));
+        list.add(guvenlik(guvenlik));
         return list;
     }
+
     @Override
     public String toString() {
         return "Hayvan Numarası: " + super.getHayvanNo() + "\n"
@@ -49,11 +53,12 @@ public class kanatliOlustur extends Hayvan  implements Serializable {
                 + "Cinsiyeti: " + super.getCinsiyeti() + "\n"
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
-                + "Extra Özellikleri: \n"            
-                + "Yırtıcı: "+getBaglanti().getHayvanhuy().yirticiMi(yirtici)+"\n"
-                + "Beslenme: "+getBaglanti().getBeslenmeBicimi().et_yem_yemekBicimi(beslenme)+"\n"
-                + "Uça Bilir: "+getBaglanti().getOzellikler().ucaBilirMi(ucaBilir)+"\n"
-                + "Güvenlik: "+getBaglanti().getGuvenlik().guvenlik(guvenlik)+"\n";
+                + "Extra Özellikleri: \n"
+                + "Yırtıcı: " + yirticiMi(yirtici) + "\n"
+                + "Beslenme: " + et_yem_yemekBicimi(beslenme) + "\n"
+                + "Uça Bilir: " + ucaBilirMi(ucaBilir) + "\n"
+                + "Hücre: "+super.getHucre()+"\n"
+                + "Güvenlik: " + guvenlik(guvenlik) + "\n";
 
     }
 
@@ -65,17 +70,6 @@ public class kanatliOlustur extends Hayvan  implements Serializable {
         isim.add("ucabilir");
         isim.add("güvenlik");
         return isim;
-    }
-
-    public baglanti getBaglanti() {
-        if (this.baglanti == null) {
-            this.baglanti = new baglanti();
-        }
-        return baglanti;
-    }
-
-    public void setBaglanti(baglanti baglanti) {
-        this.baglanti = baglanti;
     }
 
     public int getGuvenlik() {

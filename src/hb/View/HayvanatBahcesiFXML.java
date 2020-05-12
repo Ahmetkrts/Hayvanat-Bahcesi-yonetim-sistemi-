@@ -28,8 +28,8 @@ public class HayvanatBahcesiFXML extends Application {
             
             stage.setScene(scene);
             stage.setTitle("Hayvanat Bahçesi DashBoard");
-            stage.setWidth(600);
-            stage.setHeight(450);
+            stage.setWidth(1206);
+            stage.setHeight(479);
             stage.setResizable(false);
             stage.show();
         } catch (IOException ex) {

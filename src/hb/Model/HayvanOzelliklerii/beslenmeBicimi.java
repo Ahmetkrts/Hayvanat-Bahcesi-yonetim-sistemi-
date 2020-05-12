@@ -5,29 +5,17 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
-import java.io.Serializable;
-
 /**
  *
  * @author techn
  */
-public class beslenmeBicimi implements Serializable {
+public interface beslenmeBicimi{
     
-    public String et_yem_yemekBicimi(int a) {
-
-        if (a == 1) {
-            return "Et Ile Beslenir";
-        } else {
-            return "Yem Ile Beslenir";
-        }
+    default String et_yem_yemekBicimi(int a) {
+        return a == 1 ? "Et Ile Beslenir" : "Yem Ile Beslenir";
     }
     
-    public String et_ot_yemekBicimi(int a) {
-
-        if (a == 1) {
-            return "Et Ile Beslenir";
-        } else {
-            return "Ot Ile Beslenir";
-        }
+    default String et_ot_yemekBicimi(int a) {
+        return a == 1 ? "Et Ile Beslenir" : "Ot Ile Beslenir";
     }
 }

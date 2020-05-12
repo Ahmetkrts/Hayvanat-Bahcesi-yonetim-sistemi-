@@ -88,6 +88,77 @@ public class AnaPanelController implements Initializable {
         final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
         anaStage.close();
     }
+    @FXML
+     private void akvaryum(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/AkvaryumAyrimi.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setTitle("Akvaryumları Listele");
+        stage.setScene(scene);
+        stage.show();
+
+        final Node anaPencere = (Node) event.getSource();
+        final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
+        anaStage.close();
+
+    }
+     
+     @FXML
+     private void acıkalan(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/AcikAlanAyrimi.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 439);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setTitle("Acık Alan Listele");
+        stage.setScene(scene);
+        stage.show();
+
+        final Node anaPencere = (Node) event.getSource();
+        final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
+        anaStage.close();
+
+    }
+     
+     @FXML
+     private void kus(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/KusKafesi.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 683, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setTitle("Kus Listele");
+        stage.setScene(scene);
+        stage.show();
+
+        final Node anaPencere = (Node) event.getSource();
+        final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
+        anaStage.close();
+
+    }
+     
+     @FXML
+     private void suluacık(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/SuluAcikAlan.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 683, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setTitle("Sulu Acık Listele");
+        stage.setScene(scene);
+        stage.show();
+
+        final Node anaPencere = (Node) event.getSource();
+        final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
+        anaStage.close();
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

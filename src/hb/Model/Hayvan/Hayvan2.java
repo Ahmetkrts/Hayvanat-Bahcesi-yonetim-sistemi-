@@ -5,20 +5,19 @@
  */
 package hb.Model.Hayvan;
 
+import hb.Controller.HayvanId;
 import hb.Model.Ilac;
 import hb.Model.Asi;
-import hb.Model.Hucre.Hucre;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class Hayvan implements Serializable {
-
-    private static int id;
+public class Hayvan2 implements Serializable {
+    private HayvanId hayvanId = new HayvanId();
+    private int id = hayvanId.IdDosyaOku();
     private final int hayvanNo;
     private String sinif;
     private String irki;
@@ -28,18 +27,40 @@ public class Hayvan implements Serializable {
     private String cinsiyeti;
     private Ilac ilac;
     private Asi asi;
-    private Hucre hucre;
+    private String Hucre;
     private Long serialVersionUID = 1L;
 
-    public Hayvan() {
-        hayvanNo = id;
+    public Hayvan2() {
+        this.hayvanNo = id;
         id++;
+        hayvanId.IdEkle(id);
     }
 
-    public Hayvan(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+    public Hayvan2(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
 
         hayvanNo = id;
         id++;
+        hayvanId.IdEkle(id);
+        this.sinif = sinif;
+        this.irki = irki;
+        this.ismi = ismi;
+        this.Hucre = Hucre;
+        this.dogumTarihi = dogumTarihi;
+        this.gelisTarihi = gelisTarihi;
+        if (cinsiyeti == 1) {
+            this.cinsiyeti = "Erkek";
+        } else if (cinsiyeti == 0) {
+            this.cinsiyeti = "Dişi";
+        }
+        this.ilac = ilac;
+        this.asi = asi;
+    }
+
+    public Hayvan2(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+
+        hayvanNo = id;
+        id++;
+        hayvanId.IdEkle(id);
         this.sinif = sinif;
         this.irki = irki;
         this.ismi = ismi;
@@ -53,29 +74,6 @@ public class Hayvan implements Serializable {
         this.ilac = ilac;
         this.asi = asi;
     }
-
-    public Hayvan(String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, Hucre hucre) {
-
-        hayvanNo = id;
-        id++;
-        this.irki = irki;
-        this.hucre = hucre;
-        this.ismi = ismi;
-        this.dogumTarihi = dogumTarihi;
-        this.gelisTarihi = gelisTarihi;
-        if (cinsiyeti == 1) {
-            this.cinsiyeti = "Erkek";
-        } else if (cinsiyeti == 0) {
-            this.cinsiyeti = "Dişi";
-        }
-        this.ilac = ilac;
-        this.asi = asi;
-    }
-
-    public static void setId(int id) {
-        Hayvan.id = id;
-    }
-
     public String getSinif() {
         return sinif;
     }
@@ -86,10 +84,6 @@ public class Hayvan implements Serializable {
 
     public void setIrki(String irki) {
         this.irki = irki;
-    }
-
-    public void setHucre(Hucre hucre) {
-        this.hucre = hucre;
     }
 
     public void setIsmi(String ismi) {
@@ -116,20 +110,12 @@ public class Hayvan implements Serializable {
         this.asi = asi;
     }
 
-    public static int getId() {
-        return id;
-    }
-
     public int getHayvanNo() {
         return hayvanNo;
     }
 
     public String getIrki() {
         return irki;
-    }
-
-    public Hucre getHucre() {
-        return hucre;
     }
 
     public String getIsmi() {
@@ -154,6 +140,14 @@ public class Hayvan implements Serializable {
 
     public Asi getAsi() {
         return asi;
+    }
+
+    public String getHucre() {
+        return Hucre;
+    }
+
+    public void setHucre(String Hucre) {
+        this.Hucre = Hucre;
     }
 
     public ArrayList<String> hayvanListesi() {

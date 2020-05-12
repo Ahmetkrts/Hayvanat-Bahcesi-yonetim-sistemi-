@@ -6,9 +6,15 @@
 package hb.Controller.Hayvan;
 
 import hb.Controller.Dosya;
+import hb.Model.Kapasite;
+import hb.Controller.KusKafesiDosya;
+import hb.Controller.NormalAcikAlanDosya;
+import hb.Controller.NormalBalıkAkvaryumuDosya;
+import hb.Controller.SuluAcikDosya;
+import hb.Controller.TehlikeliAcikAlanDosya;
+import hb.Controller.TehlikeliBalıkAkvaryumuDosya;
 import hb.Model.Asi;
-import hb.Model.Hayvan.Hayvan;
-import hb.Model.Hucre.Hucre;
+import hb.Model.Hayvan.Hayvan2;
 import hb.Model.Ilac;
 import java.io.IOException;
 import java.net.URL;
@@ -47,24 +53,31 @@ import javafx.stage.Stage;
 public class ListeleHayvanController implements Initializable {
 
     @FXML
-    private TableView<Hayvan> hayvanTablosu;
+    private TableView<Hayvan2> hayvanTablosu;
     @FXML
-    private TableColumn<Hayvan, Integer> col_hayvanNo;
+    private TableColumn<Hayvan2, Integer> col_hayvanNo;
     @FXML
-    private TableColumn<Hayvan, String> col_irk;
+    private TableColumn<Hayvan2, String> col_irk;
     @FXML
-    private TableColumn<Hayvan, String> col_isim;
+    private TableColumn<Hayvan2, String> col_isim;
     @FXML
-    private TableColumn<Hayvan, String> col_dogumTarih;
+    private TableColumn<Hayvan2, String> col_dogumTarih;
     @FXML
-    private TableColumn<Hayvan, String> col_gelisTarih;
+    private TableColumn<Hayvan2, String> col_gelisTarih;
     @FXML
-    private TableColumn<Hayvan, String> col_cinsiyet;
+    private TableColumn<Hayvan2, String> col_cinsiyet;
     @FXML
     private AnchorPane hayvanOzellikleri;
     @FXML
     private TextArea hayvanOzellikTextArea;
     Dosya dosya = new Dosya();
+    TehlikeliBalıkAkvaryumuDosya dosya2 = new TehlikeliBalıkAkvaryumuDosya();
+    NormalBalıkAkvaryumuDosya dosya3 = new NormalBalıkAkvaryumuDosya();
+    NormalAcikAlanDosya dosya4 = new NormalAcikAlanDosya();
+    TehlikeliAcikAlanDosya dosya5 = new TehlikeliAcikAlanDosya();
+    KusKafesiDosya dosya6 = new KusKafesiDosya();
+    SuluAcikDosya dosya7 = new SuluAcikDosya();
+    private Kapasite kapasite;
 
     @FXML
     private Button hayvanGuncelleButon;
@@ -72,6 +85,10 @@ public class ListeleHayvanController implements Initializable {
     private AnchorPane hayvanGuncelleAnchorPane;
     @FXML
     private AnchorPane hayvanSilAnchorPane;
+    @FXML
+    private Button anaGeriButon;
+    @FXML
+    private Button hayvanSilButon;
 
     @FXML
     public void dataTableSecim() {
@@ -86,7 +103,7 @@ public class ListeleHayvanController implements Initializable {
     @FXML
     public void hayvanSilController(ActionEvent event) {
 
-        Hayvan hy = hayvanTablosu.getSelectionModel().getSelectedItem();
+        Hayvan2 hy = hayvanTablosu.getSelectionModel().getSelectedItem();
         Alert alert = new Alert(AlertType.WARNING);
         alert.setTitle("Hayvan Silme İstegi");
         alert.setHeaderText(null);
@@ -94,7 +111,7 @@ public class ListeleHayvanController implements Initializable {
         alert.showAndWait().ifPresent(rs -> {
             if (rs == ButtonType.OK) {
                 System.out.println("Secilen hayvan indexi: " + hayvanTablosu.getSelectionModel().getSelectedIndex() + "-*-*-*-*-*-*");
-                List<Hayvan> HayvanList = new ArrayList<>();
+                List<Hayvan2> HayvanList = new ArrayList<>();
                 HayvanList = dosya.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya.hayvanDosyaYaz(HayvanList);
@@ -102,6 +119,54 @@ public class ListeleHayvanController implements Initializable {
                 //cancel tusuna basılınca yılacak işlem ancak yapılacak işlem yok 
             }
         });
+        List<Hayvan2> HayvanList = new ArrayList<>();
+        this.kapasite = new Kapasite();
+        switch (hy.getHucre()) {
+            case "Tehlikeli Balık Akvaryumu":
+                this.kapasite.TehlikeliAkvaryumKapasiteAzalt();
+                HayvanList = dosya2.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya2.hayvanDosyaYaz(HayvanList);
+                
+                break;
+            case "Normal Balık Akvaryumu":
+                this.kapasite.NormalAkvaryumKapasiteAzalt();
+                HayvanList = dosya3.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya3.hayvanDosyaYaz(HayvanList);
+                
+                break;
+            case "Normal Açık Alan":
+                this.kapasite.NormalAcikAlanAzalt();
+                HayvanList = dosya4.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya4.hayvanDosyaYaz(HayvanList);
+                
+                break;    
+            case "Tehlikeli Açık Alan":
+                this.kapasite.TehlikeliAcikAlanKapasiteAzalt();
+                HayvanList = dosya5.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya5.hayvanDosyaYaz(HayvanList);
+               
+                break;
+            case "Kuş Kafesi":
+                this.kapasite.KusKapasiteAzalt();
+                
+                HayvanList = dosya6.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya6.hayvanDosyaYaz(HayvanList);
+                
+                break;    
+            case "Sulu Açık Alan":
+                this.kapasite.SuluAcikkapasiteAzalt();
+                HayvanList = dosya7.hayvanDosyaOku();
+                HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
+                dosya7.hayvanDosyaYaz(HayvanList);
+                
+                break;     
+        }
+
         initTable();
         loadDate();
 
@@ -147,7 +212,7 @@ public class ListeleHayvanController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
                     Stage stage = new Stage();
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
@@ -198,30 +263,14 @@ public class ListeleHayvanController implements Initializable {
     }
 
     private void loadDate() {
-        ObservableList<Hayvan> data_table = FXCollections.observableArrayList();
-        List<Hayvan> HayvanList = new ArrayList<>();
-        /*
-        List<Hayvan> HayvanList=new ArrayList<>();
-        for (Hayvan hayvan : HayvanList) {
-             data_table.add(hayvan);
-        }*/
-
- /*
-        for (int i = 0; i < 10; i++) {
-            HayvanList.add(new Hayvan("Memeli-" + i,  "Deneme-" + i, ""
-                    + "15.03.1998-" + i, "15.03.2001-" + i, 1, new Ilac("Parol" + i), new Asi("Tetenoz" + i)));
-            /*data_table.add(new Hayvan("Memeli-" + i, "Kafes-" + i, "Deneme-" + i, ""
-                    + "15.03.1998-" + i, "15.03.2001-" + i, 1, new Ilac("Parol" + i), new Asi("Tetenoz" + i),new Hucre(i, i, "ahmet", "asd", i, i)));
-
-        }*/
+        ObservableList<Hayvan2> data_table = FXCollections.observableArrayList();
+        List<Hayvan2> HayvanList = new ArrayList<>();
         HayvanList = dosya.hayvanDosyaOku();
 
-        for (Hayvan hayvan : HayvanList) {
-
+        for (Hayvan2 hayvan : HayvanList) {
             System.out.println(hayvan.toString());
             data_table.add(hayvan);
         }
-
         hayvanTablosu.setItems(data_table);
     }
 }

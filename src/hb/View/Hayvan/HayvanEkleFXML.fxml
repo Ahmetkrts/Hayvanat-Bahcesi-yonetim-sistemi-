@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hayvan.EkleHayvanController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hayvan.EkleHayvanController">
     <children>
         <Pane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #b0eacd;">
             <children>
@@ -57,7 +57,7 @@
         </Pane>
         <AnchorPane prefHeight="415.0" prefWidth="900.0" style="-fx-background-color: #EEEEEE;">
             <children>
-                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="366.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="326.0" layoutY="276.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Images/lion.png" />
                     </image>
@@ -149,7 +149,7 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <AnchorPane layoutX="695.0" layoutY="307.0" prefHeight="59.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;" styleClass="buttons">
+                <AnchorPane layoutX="724.0" layoutY="308.0" prefHeight="59.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;" styleClass="buttons">
                     <children>
                         <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="16.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0">
                             <image>
@@ -194,7 +194,7 @@
                         <Image url="@../Images/pet.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="46.0" fitWidth="62.0" layoutX="782.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="46.0" fitWidth="62.0" layoutX="807.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../Images/sloth.png" />
                     </image>
@@ -204,7 +204,7 @@
                         <Image url="@../Images/doctor.png" />
                     </image>
                 </ImageView>
-            <AnchorPane layoutX="296.0" layoutY="287.0" prefHeight="86.0" prefWidth="309.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+            <AnchorPane layoutX="247.0" layoutY="288.0" prefHeight="86.0" prefWidth="309.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
                <children>
                   <Label layoutX="14.0" layoutY="-14.0" prefHeight="29.0" prefWidth="62.0" text="Extraları">
                      <font>
@@ -219,6 +219,16 @@
                   <CheckBox fx:id="extra6CheckBox" layoutX="155.0" layoutY="60.0" mnemonicParsing="false" text="CheckBox" />
                </children>
             </AnchorPane>
+            <AnchorPane layoutX="574.0" layoutY="308.0" prefHeight="59.0" prefWidth="131.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+               <children>
+                  <ChoiceBox fx:id="hucreChoiceBox" layoutX="7.0" layoutY="17.0" prefHeight="25.0" prefWidth="117.0" />
+               </children>
+            </AnchorPane>
+            <Label layoutX="620.0" layoutY="298.0" text="Hücre">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

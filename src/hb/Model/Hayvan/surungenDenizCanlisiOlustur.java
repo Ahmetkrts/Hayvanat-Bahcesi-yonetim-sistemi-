@@ -7,17 +7,17 @@ package hb.Model.Hayvan;
 
 import hb.Model.Ilac;
 import hb.Model.Asi;
-import hb.Model.HayvanOzelliklerii.baglanti;
-import hb.Model.Hucre.Hucre;
-import java.io.Serializable;
+import hb.Model.HayvanOzelliklerii.beslenmeBicimi;
+import hb.Model.HayvanOzelliklerii.guvenlik;
+import hb.Model.HayvanOzelliklerii.hayvanHuylari;
+import hb.Model.HayvanOzelliklerii.ozellikler;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class surungenDenizCanlisiOlustur extends Hayvan  implements Serializable {
+public class surungenDenizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler {
 
     private int zehirli;
     private int aquaDisindaYasar;
@@ -25,21 +25,23 @@ public class surungenDenizCanlisiOlustur extends Hayvan  implements Serializable
     private int yemek;
     private int yirtici;
     private int boy;
-    private baglanti baglanti;
 
-    public surungenDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
+    public surungenDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
+        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
+    }
+    public surungenDenizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
     @Override
     public ArrayList<String> hayvanListesi() {
         ArrayList<String> list = super.hayvanListesi();
-        list.add(getBaglanti().getOzellikler().aquaDisindaYasarMi(aquaDisindaYasar));
-        list.add(getBaglanti().getOzellikler().zehirliMi(zehirli));
-        list.add(getBaglanti().getGuvenlik().guvenlik(guvenlik));
-        list.add(getBaglanti().getBeslenmeBicimi().et_yem_yemekBicimi(yemek));
-        list.add(getBaglanti().getHayvanhuy().yirticiMi(yirtici));
-        list.add(getBaglanti().getOzellikler().boyuBesMetredenBuyukMu(boy));
+        list.add(aquaDisindaYasarMi(aquaDisindaYasar));
+        list.add(zehirliMi(zehirli));
+        list.add(guvenlik(guvenlik));
+        list.add(et_yem_yemekBicimi(yemek));
+        list.add(yirticiMi(yirtici));
+        list.add(boyuBesMetredenBuyukMu(boy));
         return list;
     }
     @Override
@@ -54,12 +56,13 @@ public class surungenDenizCanlisiOlustur extends Hayvan  implements Serializable
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Aqua Dışında Yaşar: " + getBaglanti().getOzellikler().aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
-                + "Zehirli: "+getBaglanti().getOzellikler().zehirliMi(zehirli)+"\n"
-                + "Güvenlik: "+getBaglanti().getGuvenlik().guvenlik(guvenlik)+"\n"
-                + "Yemek: "+getBaglanti().getBeslenmeBicimi().et_yem_yemekBicimi(yemek)+"\n"
-                + "Yırtıcı: "+getBaglanti().getHayvanhuy().yirticiMi(yirtici)+"\n"
-                + "Boyu 5 Metre: "+getBaglanti().getOzellikler().boyuBesMetredenBuyukMu(boy)+"\n";
+                + "Aqua Dışında Yaşar: " +aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
+                + "Zehirli: "+zehirliMi(zehirli)+"\n"
+                + "Güvenlik: "+guvenlik(guvenlik)+"\n"
+                + "Yemek: "+et_yem_yemekBicimi(yemek)+"\n"
+                + "Yırtıcı: "+yirticiMi(yirtici)+"\n"
+                + "Hücre: "+super.getHucre()+"\n"
+                + "Boyu 5 Metre: "+boyuBesMetredenBuyukMu(boy)+"\n";
                 
                 
 
@@ -125,14 +128,4 @@ public class surungenDenizCanlisiOlustur extends Hayvan  implements Serializable
         this.aquaDisindaYasar = aquaDisindaYasar;
     }
 
-    public baglanti getBaglanti() {
-        if (this.baglanti == null) {
-            this.baglanti = new baglanti();
-        }
-        return baglanti;
-    }
-
-    public void setBaglanti(baglanti baglanti) {
-        this.baglanti = baglanti;
-    }
 }

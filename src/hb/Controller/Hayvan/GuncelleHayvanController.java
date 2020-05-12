@@ -7,7 +7,7 @@ package hb.Controller.Hayvan;
 
 import hb.Controller.Dosya;
 import hb.Model.Asi;
-import hb.Model.Hayvan.Hayvan;
+import hb.Model.Hayvan.Hayvan2;
 import hb.Model.Hayvan.denizCanlisiOlustur;
 import hb.Model.Hayvan.kanatliOlustur;
 import hb.Model.Hayvan.memeliDenizCanlisiOlustur;
@@ -30,6 +30,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
@@ -76,11 +77,15 @@ public class GuncelleHayvanController implements Initializable {
     private int hayvanIndex;
     
     private String sinifSecim;
+    @FXML
+    private Button anaGeriButon;
+    @FXML
+    private Button hayvanGuncelleButon;
     
     @FXML
     public void kayitGuncelleController(ActionEvent event) {
         
-        Hayvan hayvan = null;
+        Hayvan2 hayvan = null;
         String isim = adTextField.getText();
         String irki = turChoiceBox.getValue().toString();
         String dogum = dogumTarihiDatePicker.getValue().toString();
@@ -149,7 +154,7 @@ public class GuncelleHayvanController implements Initializable {
                     System.out.println("Boş ");
                     break;
             }
-            List<Hayvan> hayvanList = dosya.hayvanDosyaOku();
+            List<Hayvan2> hayvanList = dosya.hayvanDosyaOku();
             hayvanList.set(hayvanIndex, hayvan);
             dosya.hayvanDosyaYaz(hayvanList);
             
@@ -169,7 +174,7 @@ public class GuncelleHayvanController implements Initializable {
         
     }
     
-    public void hayvanDoldur(Hayvan hayvan) {
+    public void hayvanDoldur(Hayvan2 hayvan) {
         String sinif = hayvan.getSinif();
         sinifComboBox.setValue(hayvan.getSinif());
         adTextField.setText(hayvan.getIsmi());
@@ -410,8 +415,8 @@ public class GuncelleHayvanController implements Initializable {
             if (rs == ButtonType.OK) {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+                    fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanListeleFXML.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
                     Stage stage = new Stage();
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);

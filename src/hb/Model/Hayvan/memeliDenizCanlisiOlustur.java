@@ -7,31 +7,32 @@ package hb.Model.Hayvan;
 
 import hb.Model.Ilac;
 import hb.Model.Asi;
-import hb.Model.HayvanOzelliklerii.baglanti;
-import hb.Model.Hucre.Hucre;
-import java.io.Serializable;
+import hb.Model.HayvanOzelliklerii.beslenmeBicimi;
+import hb.Model.HayvanOzelliklerii.guvenlik;
+import hb.Model.HayvanOzelliklerii.hayvanHuylari;
+import hb.Model.HayvanOzelliklerii.ozellikler;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class memeliDenizCanlisiOlustur extends Hayvan  implements Serializable {
+public class memeliDenizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler  {
 
     private int ofkeli;
     private int aquaDisindaYasar;
-    private baglanti baglanti;
 
-    public memeliDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
+    public memeliDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
+        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi,Hucre);
     }
-
+    public memeliDenizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
+    }
     @Override
     public ArrayList<String> hayvanListesi() {
         ArrayList<String> list = super.hayvanListesi();
-        list.add(getBaglanti().getOzellikler().aquaDisindaYasarMi(aquaDisindaYasar));
-        list.add(getBaglanti().getHayvanhuy().ofkeliMi(ofkeli));
+        list.add(aquaDisindaYasarMi(aquaDisindaYasar));
+        list.add(ofkeliMi(ofkeli));
         return list;
     }
     @Override
@@ -46,8 +47,9 @@ public class memeliDenizCanlisiOlustur extends Hayvan  implements Serializable {
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Aqua Dışında Yaşar: " + getBaglanti().getOzellikler().aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
-                + "Öfekeli: "+getBaglanti().getHayvanhuy().ofkeliMi(ofkeli)+"\n";
+                + "Aqua Dışında Yaşar: " + aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
+                + "Hücre: "+super.getHucre()+"\n"
+                + "Öfekeli: "+ofkeliMi(ofkeli)+"\n";
 
     }
 
@@ -75,14 +77,4 @@ public class memeliDenizCanlisiOlustur extends Hayvan  implements Serializable {
         this.aquaDisindaYasar = aquaDisindaYasar;
     }
 
-    public baglanti getBaglanti() {
-        if (this.baglanti == null) {
-            this.baglanti = new baglanti();
-        }
-        return baglanti;
-    }
-
-    public void setBaglanti(baglanti baglanti) {
-        this.baglanti = baglanti;
-    }
 }

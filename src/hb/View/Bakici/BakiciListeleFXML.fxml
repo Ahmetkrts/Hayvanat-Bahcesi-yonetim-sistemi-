@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.ListeleBakiciController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.ListeleBakiciController">
    <children>
       <AnchorPane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #ff5722;">
          <children>
@@ -63,12 +63,11 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TableView layoutX="4.0" layoutY="15.0" prefHeight="470.0" prefWidth="470.0">
+                  <TableView fx:id="bakiciTablosu" layoutX="4.0" layoutY="15.0" onMouseClicked="#dataTableSecim" prefHeight="470.0" prefWidth="470.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Bakıcı No" />
-                      <TableColumn prefWidth="75.0" text="Bakıcı Ad" />
-                        <TableColumn prefWidth="125.0" text="Bakıcı Dogum Tarihi" />
-                        <TableColumn prefWidth="95.0" text="Bakıcı Nitelikleri" />
+                      <TableColumn fx:id="col_bakiciNo" prefWidth="139.0" text="Bakıcı No" />
+                      <TableColumn fx:id="col_bakiciAd" prefWidth="160.0" text="Bakıcı Ad" />
+                        <TableColumn fx:id="col_bakiciDogumTarihi" prefWidth="170.0" text="Bakıcı Dogum Tarihi" />
                     </columns>
                   </TableView>
                </children>
@@ -101,7 +100,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="769.0" layoutY="318.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+            <AnchorPane fx:id="guncelleAnchorPane" layoutX="769.0" layoutY="318.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
                <children>
                   <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -119,14 +118,14 @@
                   <String fx:value="anchora" />
                </styleClass>
             </AnchorPane>
-            <AnchorPane layoutX="769.0" layoutY="387.0" prefHeight="61.0" prefWidth="137.0" style="-fx-border-color: #4E4E4E;">
+            <AnchorPane fx:id="silAnchorPane" layoutX="769.0" layoutY="387.0" prefHeight="61.0" prefWidth="137.0" style="-fx-border-color: #4E4E4E;">
                <children>
                   <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/undo.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="silButon" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transaparent;" text="Sil">
+                  <Button fx:id="silButon" layoutX="54.0" layoutY="15.0" mnemonicParsing="false" onAction="#bakiciSilController" style="-fx-background-color: transaparent;" text="Sil">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

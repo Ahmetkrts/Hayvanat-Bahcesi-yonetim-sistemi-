@@ -5,56 +5,30 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
-import java.io.Serializable;
-
 /**
  *
  * @author techn
  */
-public class ozellikler implements Serializable {
+public interface ozellikler {
 
-    public String ucaBilirMi(int a) {
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayır";
-        }
+    default String ucaBilirMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
-    public String aquaDisindaYasarMi(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayır";
-        }
+    default String aquaDisindaYasarMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
-    public String killiMi(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayır";
-        }
+    default String killiMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
-    public String zehirliMi(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayır";
-        }
+    default String zehirliMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
-    public String boyuBesMetredenBuyukMu(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayır";
-        }
+    default String boyuBesMetredenBuyukMu(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
 }

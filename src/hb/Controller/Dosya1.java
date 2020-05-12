@@ -5,7 +5,7 @@
  */
 package hb.Controller;
 
-import hb.Model.Hayvan.Hayvan;
+import hb.Model.Hayvan.Hayvan2;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,8 +21,8 @@ public class Dosya1 {
 
     private String hayvanDosyaYolu = "HayvanListesi.txt";
 
-    public void hayvanEkle(Hayvan hayvan) {
-        List<Hayvan> hayvanList = hayvanDosyaOku();
+    public void hayvanEkle(Hayvan2 hayvan) {
+        List<Hayvan2> hayvanList = hayvanDosyaOku();
         hayvanList.add(hayvan);
         hayvanDosyaYaz(hayvanList);
 
@@ -30,13 +30,13 @@ public class Dosya1 {
 
     
     
-    public void hayvanDosyaYaz(List<Hayvan> hayvanList) {
+    public void hayvanDosyaYaz(List<Hayvan2> hayvanList) {
         FileWriter hayvanlarDosyasi = null;
         
         try {
             hayvanlarDosyasi = new FileWriter(hayvanDosyaYolu);
 
-            for (Hayvan hayvan : hayvanList) {
+            for (Hayvan2 hayvan : hayvanList) {
                 ArrayList<String> hayvanListesi = hayvan.hayvanListesi();
                 for (String string : hayvanListesi) {
                     hayvanlarDosyasi.write(string + "-/-");
@@ -56,16 +56,16 @@ public class Dosya1 {
 
     }
 
-    public List<Hayvan> hayvanDosyaOku() {
-        List<Hayvan> hayvanList = new ArrayList<>();
+    public List<Hayvan2> hayvanDosyaOku() {
+        List<Hayvan2> hayvanList = new ArrayList<>();
         Scanner scanner = null;
         try {
             scanner = new Scanner(new FileReader(hayvanDosyaYolu));
             scanner.useDelimiter("-/-");
             while (scanner.hasNextLine()) {
-                Hayvan tmp = new Hayvan();
+                Hayvan2 tmp = new Hayvan2();
                 scanner.skip(scanner.delimiter());
-                tmp.setId(scanner.nextInt());
+                //tmp.setId(scanner.nextInt());
 
                 scanner.skip(scanner.delimiter());
                 tmp.setIrki(scanner.next());

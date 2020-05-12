@@ -2,7 +2,6 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -14,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.EkleBakiciController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.EkleBakiciController">
    <children>
       <AnchorPane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #ff5722;">
          <children>
@@ -25,7 +24,7 @@
                         <Image url="@../Images/left.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="anaGeriButon" layoutX="51.0" layoutY="16.0" mnemonicParsing="false" style="-fx-background-color: transparent;" onAction="#anaGeriController" text="Geri">
+                  <Button fx:id="anaGeriButon" layoutX="51.0" layoutY="16.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transparent;" text="Geri">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
@@ -87,22 +86,22 @@
                      <children>
                         <VBox layoutX="16.0" layoutY="50.0" prefHeight="144.0" prefWidth="117.0">
                            <children>
-                              <CheckBox mnemonicParsing="false" text="Memeli">
+                              <CheckBox fx:id="nitelikMemeli" mnemonicParsing="false" onAction="#sayacArttir" text="Memeli">
                                  <VBox.margin>
                                     <Insets bottom="9.0" left="20.0" />
                                  </VBox.margin>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Sürüngen">
+                              <CheckBox fx:id="nitelikSurungen" mnemonicParsing="false" onAction="#sayacArttir" text="Sürüngen">
                                  <VBox.margin>
                                     <Insets bottom="9.0" left="20.0" />
                                  </VBox.margin>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Kuş">
+                              <CheckBox fx:id="nitelikKus" mnemonicParsing="false" onAction="#sayacArttir" text="Kuş">
                                  <VBox.margin>
                                     <Insets bottom="9.0" left="20.0" />
                                  </VBox.margin>
                               </CheckBox>
-                              <CheckBox mnemonicParsing="false" text="Balık">
+                              <CheckBox fx:id="nitelikBalik" mnemonicParsing="false" onAction="#sayacArttir" text="Balık">
                                  <VBox.margin>
                                     <Insets bottom="9.0" left="20.0" />
                                  </VBox.margin>
@@ -140,7 +139,7 @@
                         <Image url="@../Images/audit.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="bakiciEkleButon" layoutX="50.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Ekle">
+                  <Button fx:id="bakiciEkleButon" layoutX="50.0" layoutY="14.0" mnemonicParsing="false" onAction="#kayitEkleController" style="-fx-background-color: transparent;" text="Ekle">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>

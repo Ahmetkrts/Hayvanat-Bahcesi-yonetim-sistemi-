@@ -5,39 +5,23 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
-import java.io.Serializable;
 
 /**
  *
  * @author techn
  */
-public class hayvanHuylari implements Serializable {
+public interface hayvanHuylari {
 
-    public String yirticiMi(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayir";
-        }
+    default String yirticiMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
-    public String sosyalMi(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayir";
-        }
+    default String sosyalMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
-    public String ofkeliMi(int a) {
-
-        if (a == 1) {
-            return "Evet";
-        } else {
-            return "Hayır";
-        }
+    default String ofkeliMi(int a) {
+        return a == 1 ? "Evet" : "Hayir";
     }
 
 }

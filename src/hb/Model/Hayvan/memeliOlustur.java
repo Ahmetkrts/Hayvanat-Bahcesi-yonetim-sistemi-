@@ -7,37 +7,39 @@ package hb.Model.Hayvan;
 
 import hb.Model.Ilac;
 import hb.Model.Asi;
-import hb.Model.HayvanOzelliklerii.baglanti;
-import hb.Model.Hucre.Hucre;
-import java.io.Serializable;
+import hb.Model.HayvanOzelliklerii.beslenmeBicimi;
+import hb.Model.HayvanOzelliklerii.guvenlik;
+import hb.Model.HayvanOzelliklerii.hayvanHuylari;
+import hb.Model.HayvanOzelliklerii.ozellikler;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class memeliOlustur extends Hayvan implements Serializable {
+public class memeliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler {
 
     private int ofkeli;
     private int yirtici;
     private int guvenlik;
     private int killi;
     private int sosyal;
-    private baglanti baglanti;
 
-    public memeliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+     public memeliOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
+        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi,Hucre);
+    }
+     public memeliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
     @Override
     public ArrayList<String> hayvanListesi() {
         ArrayList<String> list = super.hayvanListesi();
-        list.add(getBaglanti().getHayvanhuy().ofkeliMi(ofkeli));
-        list.add(getBaglanti().getHayvanhuy().yirticiMi(yirtici));
-        list.add(getBaglanti().getGuvenlik().guvenlik(guvenlik));
-        list.add(getBaglanti().getOzellikler().killiMi(killi));
-        list.add(getBaglanti().getHayvanhuy().sosyalMi(sosyal));
+        list.add(ofkeliMi(ofkeli));
+        list.add(yirticiMi(yirtici));
+        list.add(guvenlik(guvenlik));
+        list.add(killiMi(killi));
+        list.add(sosyalMi(sosyal));
         return list;
     }
 
@@ -53,11 +55,12 @@ public class memeliOlustur extends Hayvan implements Serializable {
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Öfkeli: " + getBaglanti().getHayvanhuy().ofkeliMi(ofkeli)+"\n"
-                + "Yırtıcı: "+getBaglanti().getHayvanhuy().yirticiMi(yirtici)+"\n"
-                + "Güvenlik: "+getBaglanti().getGuvenlik().guvenlik(guvenlik)+"\n"
-                + "Kıllı: "+getBaglanti().getOzellikler().killiMi(killi)+"\n"
-                + "Sosyal: "+getBaglanti().getHayvanhuy().sosyalMi(sosyal)+"\n";
+                + "Öfkeli: " +ofkeliMi(ofkeli)+"\n"
+                + "Yırtıcı: "+yirticiMi(yirtici)+"\n"
+                + "Güvenlik: "+guvenlik(guvenlik)+"\n"
+                + "Kıllı: "+killiMi(killi)+"\n"
+                + "Hücre: "+super.getHucre()+"\n"
+                + "Sosyal: "+sosyalMi(sosyal)+"\n";
 
     }
 
@@ -112,15 +115,5 @@ public class memeliOlustur extends Hayvan implements Serializable {
         this.ofkeli = ofkeli;
     }
 
-    public baglanti getBaglanti() {
-        if (this.baglanti == null) {
-            this.baglanti = new baglanti();
-        }
-        return baglanti;
-    }
-
-    public void setBaglanti(baglanti baglanti) {
-        this.baglanti = baglanti;
-    }
 
 }

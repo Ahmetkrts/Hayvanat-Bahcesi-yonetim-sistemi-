@@ -5,7 +5,7 @@
  */
 package hb.Controller;
 
-import hb.Model.Hayvan.Hayvan;
+import hb.Model.Hayvan.Hayvan2;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.EOFException;
@@ -30,16 +30,16 @@ public class Dosya {
 
     private String hayvanDosyaYolu = "HayvanListesi.dat";
 
-    public void hayvanEkle(Hayvan hayvan) {
-        List<Hayvan> hayvanList = hayvanDosyaOku();
+    public void hayvanEkle(Hayvan2 hayvan) {
+        List<Hayvan2> hayvanList = hayvanDosyaOku();
         hayvanList.add(hayvan);
         hayvanDosyaYaz(hayvanList);
 
     }
 
-    public void hayvanDosyaYaz(List<Hayvan> hayvanList) {
+    public void hayvanDosyaYaz(List<Hayvan2> hayvanList) {
         try (ObjectOutputStream hayvanDosyasi = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(hayvanDosyaYolu)))) {
-            for (Hayvan hayvan : hayvanList) {
+            for (Hayvan2 hayvan : hayvanList) {
                 hayvanDosyasi.writeObject(hayvan);
             }
 
@@ -48,15 +48,15 @@ public class Dosya {
 
     }
 
-    public List<Hayvan> hayvanDosyaOku() {
+    public List<Hayvan2> hayvanDosyaOku() {
 
-        List<Hayvan> hayvanList = new ArrayList<>();
+        List<Hayvan2> hayvanList = new ArrayList<>();
         try (ObjectInputStream hayvanDosyasi = new ObjectInputStream(new BufferedInputStream(new FileInputStream(hayvanDosyaYolu)))) {
             boolean eof = false;
             while (!eof) {
                 try {
 
-                    Hayvan hayvan = (Hayvan) hayvanDosyasi.readObject();
+                    Hayvan2 hayvan = (Hayvan2) hayvanDosyasi.readObject();
                     System.out.println("buray gelemedin daha");
                     System.out.println(hayvan.toString());
                     hayvanList.add(hayvan);

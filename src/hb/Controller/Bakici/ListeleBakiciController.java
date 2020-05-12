@@ -5,12 +5,16 @@
  */
 package hb.Controller.Bakici;
 
+import hb.Controller.BakiciDosya;
 import hb.Controller.Hayvan.*;
 import hb.Model.Asi;
-import hb.Model.Hayvan.Hayvan;
+import hb.Model.Bakici.bakici;
+import hb.Model.Hayvan.Hayvan2;
 import hb.Model.Ilac;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,14 +26,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -38,7 +45,32 @@ import javafx.stage.Stage;
  */
 public class ListeleBakiciController implements Initializable {
 
-    
+    @FXML
+    private Button anaGeriButon;
+    @FXML
+    private Button guncelleButon;
+    @FXML
+    private Button silButon;
+    @FXML
+    private TableColumn<?, ?> col_bakiciNo;
+    @FXML
+    private TableColumn<?, ?> col_bakiciAd;
+    @FXML
+    private TableColumn<?, ?> col_bakiciDogumTarihi;
+    @FXML
+    private AnchorPane guncelleAnchorPane;
+    @FXML
+    private AnchorPane silAnchorPane;
+    @FXML
+    private TableView<bakici> bakiciTablosu;
+    private BakiciDosya dosya = new BakiciDosya();
+
+    @FXML
+    public void dataTableSecim() {
+        silAnchorPane.setVisible(true);
+        guncelleAnchorPane.setVisible(true);
+
+    }
 
     @FXML
     private void anaGeriController(ActionEvent event) {
@@ -51,7 +83,7 @@ public class ListeleBakiciController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
                     Stage stage = new Stage();
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
@@ -70,10 +102,35 @@ public class ListeleBakiciController implements Initializable {
         });
 
     }
+
+    @FXML
+    public void bakiciSilController(ActionEvent event) {
+
+        bakici Bakici = bakiciTablosu.getSelectionModel().getSelectedItem();
+        Alert alert = new Alert(AlertType.WARNING);
+        alert.setTitle("Bakici Silme İstegi");
+        alert.setHeaderText(null);
+        alert.setContentText(Bakici.getIsim() + " İsimli Bakici Silmek İstediginizden Eminmisiniz!!! \n Bu işin Geri Dönüşü Yoktur!!! ");
+        alert.showAndWait().ifPresent(rs -> {
+            if (rs == ButtonType.OK) {
+//                System.out.println("Secilen hayvan indexi: " + hayvanTablosu.getSelectionModel().getSelectedIndex() + "-*-*-*-*-*-*");
+                List<bakici> BakiciList = new ArrayList<>();
+                BakiciList = dosya.bakiciDosyaOku();
+                BakiciList.remove(bakiciTablosu.getSelectionModel().getSelectedIndex());
+                dosya.bakiciDosyaYaz(BakiciList);
+                System.out.println("Bakici Basariyla Silindi");
+            } else {
+                //cancel tusuna basılınca yılacak işlem ancak yapılacak işlem yok 
+            }
+        });
+        initTable();
+        loadDate();
+    }
+
     @FXML
     private void bakiciGuncelleController(ActionEvent event) {
         try {
-            
+
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Bakici/BakiciGuncelleFXML.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 680);
@@ -81,8 +138,11 @@ public class ListeleBakiciController implements Initializable {
             stage.setResizable(false);
             stage.setTitle("Bakıcıları Güncelle");
             stage.setScene(scene);
+            GuncelleBakiciController bakiciguncelle = fxmlLoader.getController();
+            bakiciguncelle.bakiciDoldur(bakiciTablosu.getSelectionModel().getSelectedItem());
+            bakiciguncelle.setBakiciIndex(bakiciTablosu.getSelectionModel().getSelectedIndex());
             stage.show();
-            
+
             final Node anaPencere = (Node) event.getSource();
             final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
             anaStage.close();
@@ -94,8 +154,8 @@ public class ListeleBakiciController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       initTable();
-       loadDate();
+        initTable();
+        loadDate();
     }
 
     private void initTable() {
@@ -103,25 +163,29 @@ public class ListeleBakiciController implements Initializable {
     }
 
     private void initCol() {
-        
-       
-        
+        silAnchorPane.setVisible(false);
+        guncelleAnchorPane.setVisible(false);
+        col_bakiciNo.setCellValueFactory(new PropertyValueFactory<>("bakiciNo"));
+        col_bakiciAd.setCellValueFactory(new PropertyValueFactory<>("isim"));
+        col_bakiciDogumTarihi.setCellValueFactory(new PropertyValueFactory<>("dogumTarihi"));
         editTableCol();
     }
 
     private void editTableCol() {
-        
-        
+
     }
-    private void loadDate()
-    {/*
-        ObservableList<Hayvan> data_table =FXCollections.observableArrayList();
-        
-        for (int i = 0; i < 25; i++) {
-            data_table.add(new Hayvan("Memeli-"+i, "Kafes-"+i,"Deneme-"+i, ""
-                    + "15.03.1998-"+i, "15.03.2001-"+i, 1, new Ilac("Parol"+i),new Asi("Tetenoz"+i)));
-            
-        }*/
-        
+
+    private void loadDate() {
+        ObservableList<bakici> data_table = FXCollections.observableArrayList();
+        List<bakici> BakiciList = new ArrayList<>();
+        BakiciList = dosya.bakiciDosyaOku();
+
+        for (bakici bakici : BakiciList) {
+
+            System.out.println(bakici.toString());
+            data_table.add(bakici);
+        }
+
+        bakiciTablosu.setItems(data_table);
     }
 }
