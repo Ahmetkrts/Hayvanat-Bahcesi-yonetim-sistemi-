@@ -25,7 +25,10 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -64,8 +67,11 @@ public class EkleBakiciController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
+                    Scene scene = new Scene(fxmlLoader.load(), 1195, 479);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -187,5 +193,31 @@ public class EkleBakiciController implements Initializable {
             nitelikBalik.setDisable(false);
             nitelikKus.setDisable(false);
         }
+    }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }

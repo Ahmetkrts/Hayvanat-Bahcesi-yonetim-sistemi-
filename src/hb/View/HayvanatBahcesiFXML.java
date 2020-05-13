@@ -13,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -25,10 +27,12 @@ public class HayvanatBahcesiFXML extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("AnaPanel.fxml"));
             Scene scene = new Scene(root);
-            
+            Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+            stage.getIcons().add(image);
             stage.setScene(scene);
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.setTitle("Hayvanat Bahçesi DashBoard");
-            stage.setWidth(1206);
+            stage.setWidth(1195);
             stage.setHeight(479);
             stage.setResizable(false);
             stage.show();

@@ -41,8 +41,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -76,6 +79,7 @@ public class TehlikleliAcikAlanController implements Initializable {
     public void dataTableSecim() {
         hayvanOzellikleri.setVisible(true);
     }
+
     @FXML
     private void anaGeriController(ActionEvent event) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -87,8 +91,11 @@ public class TehlikleliAcikAlanController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/AcikAlanAyrimi.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 600, 439);
+                    Scene scene = new Scene(fxmlLoader.load(), 600, 476);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -107,6 +114,7 @@ public class TehlikleliAcikAlanController implements Initializable {
         });
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         kapasite();
@@ -147,9 +155,35 @@ public class TehlikleliAcikAlanController implements Initializable {
 
         hayvanTablosu.setItems(data_table);
     }
-    
-    private void kapasite(){
+
+    private void kapasite() {
         this.kapasite = new Kapasite();
-        this.kapasiteLabel.setText("Kapasite ="+this.kapasite.getTehlikeliAcikAlanKapasite()+"/50");
+        this.kapasiteLabel.setText("Kapasite =" + this.kapasite.getTehlikeliAcikAlanKapasite() + "/50");
+    }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }

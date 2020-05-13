@@ -15,97 +15,127 @@ and open the template in the editor.
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox cache="true" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #c1d5e0;" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hucre.AcikAlanAyrimiController">
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hucre.AcikAlanAyrimiController">
    <children>
-      <AnchorPane prefHeight="55.0" prefWidth="835.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #4E4E4E; -fx-border-width: 0 1 0 0;">
+      <AnchorPane prefHeight="477.0" prefWidth="600.0">
          <children>
-            <Label layoutX="193.0" layoutY="2.0" prefHeight="46.0" prefWidth="214.0" text="Açık Alan Seçimi">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
-            <Button fx:id="anaGeriButon" layoutX="526.0" layoutY="8.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transaparent; -fx-border-color: #000000;" text="Geri">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #fdd998;">
-         <children>
-            <ImageView fitHeight="132.0" fitWidth="108.0" layoutX="325.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/side-view.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="71.0" fitWidth="147.0" layoutX="180.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/shape%20(6).png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="152.0" fitWidth="147.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/puma.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="56.0" fitWidth="126.0" layoutX="458.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/silhouette.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="18.0" layoutY="4.0" text="Tehlikeli Memeli Hücresi">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" onAction="#yirticiacıkalan" prefHeight="25.0" prefWidth="354.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #b0eacd;">
-         <children>
-            <ImageView fitHeight="123.0" fitWidth="120.0" layoutX="425.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/camel-silhouette.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="120.0" layoutX="150.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/deer.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="99.0" fitWidth="181.0" layoutX="265.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/elephant-side-view.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="168.0" fitWidth="176.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/shape%20(5).png" />
-               </image>
-            </ImageView>
-            <Label layoutX="17.0" layoutY="6.0" text="Normal Memeli Hücresi">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Button layoutX="248.0" layoutY="81.0" mnemonicParsing="false" onAction="#normalacıkalan" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <ImageView fitHeight="46.0" fitWidth="41.0" layoutX="121.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/monkey.png" />
-               </image>
-            </ImageView>
+            <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="27.0" prefWidth="600.0" style="-fx-background-color: #888888;">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="9.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/circle.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="36.0" layoutY="4.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/signs%20(2).png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <VBox cache="true" layoutY="27.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #c1d5e0;" stylesheets="@../CSS/Style.css">
+               <children>
+                  <AnchorPane prefHeight="55.0" prefWidth="835.0" style="-fx-background-color: #EEEEEE; -fx-border-color: #4E4E4E; -fx-border-width: 0 1 0 0;">
+                     <children>
+                        <Label layoutX="193.0" layoutY="2.0" prefHeight="46.0" prefWidth="214.0" text="Açık Alan Seçimi">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="anaGeriButon1" layoutX="526.0" layoutY="8.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transaparent; -fx-border-color: #000000;" text="Geri">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #fdd998;">
+                     <children>
+                        <ImageView fitHeight="132.0" fitWidth="108.0" layoutX="325.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/side-view.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="71.0" fitWidth="147.0" layoutX="180.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/shape%20(6).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="152.0" fitWidth="147.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/puma.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="56.0" fitWidth="126.0" layoutX="458.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/silhouette.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="18.0" layoutY="4.0" text="Tehlikeli Memeli Hücresi">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#yirticiacıkalan" prefHeight="25.0" prefWidth="354.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #b0eacd;">
+                     <children>
+                        <ImageView fitHeight="123.0" fitWidth="120.0" layoutX="425.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/camel-silhouette.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="81.0" fitWidth="120.0" layoutX="150.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/deer.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="99.0" fitWidth="181.0" layoutX="265.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/elephant-side-view.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="168.0" fitWidth="176.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/shape%20(5).png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="17.0" layoutY="6.0" text="Normal Memeli Hücresi">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="248.0" layoutY="81.0" mnemonicParsing="false" onAction="#normalacıkalan" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="46.0" fitWidth="41.0" layoutX="121.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/monkey.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="477.0" prefWidth="600.0" />
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </children>
-</VBox>
+</AnchorPane>

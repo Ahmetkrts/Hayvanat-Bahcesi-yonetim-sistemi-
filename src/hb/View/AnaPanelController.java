@@ -14,7 +14,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -27,8 +30,11 @@ public class AnaPanelController implements Initializable {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanListeleFXML.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 715);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Hayvanları Listele");
         stage.setScene(scene);
@@ -44,8 +50,11 @@ public class AnaPanelController implements Initializable {
     private void hayvanEkleController(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanEkleFXML.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 900, 500);
+        Scene scene = new Scene(fxmlLoader.load(), 900, 520);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Yeni Hayvan Ekle ");
         stage.setScene(scene);
@@ -55,13 +64,17 @@ public class AnaPanelController implements Initializable {
         final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
         anaStage.close();
     }
+
     @FXML
-     private void bakiciListesiController(ActionEvent event) throws IOException {
+    private void bakiciListesiController(ActionEvent event) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Bakici/BakiciListeleFXML.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 720);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Bakıcıları Listele");
         stage.setScene(scene);
@@ -77,8 +90,11 @@ public class AnaPanelController implements Initializable {
     private void bakiciEkleController(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Bakici/BakiciEkleFXML.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 900, 500);
+        Scene scene = new Scene(fxmlLoader.load(), 900, 520);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Yeni Bakıcı Ekle ");
         stage.setScene(scene);
@@ -88,13 +104,17 @@ public class AnaPanelController implements Initializable {
         final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
         anaStage.close();
     }
+
     @FXML
-     private void akvaryum(ActionEvent event) throws IOException {
+    private void akvaryum(ActionEvent event) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/AkvaryumAyrimi.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 450);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 476);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Akvaryumları Listele");
         stage.setScene(scene);
@@ -105,14 +125,17 @@ public class AnaPanelController implements Initializable {
         anaStage.close();
 
     }
-     
-     @FXML
-     private void acıkalan(ActionEvent event) throws IOException {
+
+    @FXML
+    private void acıkalan(ActionEvent event) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/AcikAlanAyrimi.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 439);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 476);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Acık Alan Listele");
         stage.setScene(scene);
@@ -123,14 +146,17 @@ public class AnaPanelController implements Initializable {
         anaStage.close();
 
     }
-     
-     @FXML
-     private void kus(ActionEvent event) throws IOException {
+
+    @FXML
+    private void kus(ActionEvent event) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/KusKafesi.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 683, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Kus Listele");
         stage.setScene(scene);
@@ -141,14 +167,17 @@ public class AnaPanelController implements Initializable {
         anaStage.close();
 
     }
-     
-     @FXML
-     private void suluacık(ActionEvent event) throws IOException {
+
+    @FXML
+    private void suluacık(ActionEvent event) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/SuluAcikAlan.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 683, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
         stage.setTitle("Sulu Acık Listele");
         stage.setScene(scene);
@@ -159,10 +188,36 @@ public class AnaPanelController implements Initializable {
         anaStage.close();
 
     }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 
 }

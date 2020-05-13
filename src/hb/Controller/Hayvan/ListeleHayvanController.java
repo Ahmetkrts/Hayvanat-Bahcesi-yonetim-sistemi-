@@ -43,8 +43,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -127,44 +130,44 @@ public class ListeleHayvanController implements Initializable {
                 HayvanList = dosya2.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya2.hayvanDosyaYaz(HayvanList);
-                
+
                 break;
             case "Normal Balık Akvaryumu":
                 this.kapasite.NormalAkvaryumKapasiteAzalt();
                 HayvanList = dosya3.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya3.hayvanDosyaYaz(HayvanList);
-                
+
                 break;
             case "Normal Açık Alan":
                 this.kapasite.NormalAcikAlanAzalt();
                 HayvanList = dosya4.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya4.hayvanDosyaYaz(HayvanList);
-                
-                break;    
+
+                break;
             case "Tehlikeli Açık Alan":
                 this.kapasite.TehlikeliAcikAlanKapasiteAzalt();
                 HayvanList = dosya5.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya5.hayvanDosyaYaz(HayvanList);
-               
+
                 break;
             case "Kuş Kafesi":
                 this.kapasite.KusKapasiteAzalt();
-                
+
                 HayvanList = dosya6.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya6.hayvanDosyaYaz(HayvanList);
-                
-                break;    
+
+                break;
             case "Sulu Açık Alan":
                 this.kapasite.SuluAcikkapasiteAzalt();
                 HayvanList = dosya7.hayvanDosyaOku();
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
                 dosya7.hayvanDosyaYaz(HayvanList);
-                
-                break;     
+
+                break;
         }
 
         initTable();
@@ -181,8 +184,11 @@ public class ListeleHayvanController implements Initializable {
             // fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanGuncelleFXML.fxml"));
             Parent root = fxmlLoader.load();
 
-            Scene scene = new Scene(root, 1200, 680);
+            Scene scene = new Scene(root, 1200, 700);
             Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+            stage.getIcons().add(image);
             stage.setResizable(false);
             stage.setTitle("Hayvanları Güncelle");
             stage.setScene(scene);
@@ -212,8 +218,11 @@ public class ListeleHayvanController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
+                    Scene scene = new Scene(fxmlLoader.load(), 1195, 479);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -273,4 +282,31 @@ public class ListeleHayvanController implements Initializable {
         }
         hayvanTablosu.setItems(data_table);
     }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
+    }
+
 }

@@ -2,6 +2,7 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -15,162 +16,187 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hayvan.ListeleHayvanController">
-    <children>
-        <AnchorPane prefHeight="86.0" prefWidth="1000.0" style="-fx-background-color: #b0eacd;">
-            <children>
-                <AnchorPane layoutX="850.0" layoutY="14.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
-                    <children>
-                        <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/left.png" />
-                            </image>
-                        </ImageView>
-                        <Button fx:id="anaGeriButon" layoutX="46.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transparent;" text="Geri">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font>
-                        </Button>
-                    </children>
-               
-                    <styleClass>
-                        <String fx:value="buttons" />
-                        <String fx:value="anchora" />
-                    </styleClass>
-                </AnchorPane>
-                <Label layoutX="72.0" layoutY="32.0" prefHeight="29.0" prefWidth="223.0" text="Kayıtlı Hayvanların Listesi">
-                    <font>
-                        <Font name="System Bold" size="18.0" />
-                    </font>
-                </Label>
-                <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Images/pet.png" />
-                    </image>
-                </ImageView>
-            </children>
-        </AnchorPane>
-        <AnchorPane prefHeight="613.0" prefWidth="1000.0">
-            <children>
-                <AnchorPane layoutX="565.0" layoutY="77.0" prefHeight="139.0" prefWidth="368.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
-                    <children>
-                        <VBox layoutX="14.0" layoutY="25.0" prefHeight="106.0" prefWidth="76.0">
-                            <children>
-                                <CheckBox mnemonicParsing="false" text="Sınıf">
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                </CheckBox>
-                                <CheckBox mnemonicParsing="false" text="Tür">
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                </CheckBox>
-                                <CheckBox mnemonicParsing="false" text="Adı">
-                                    <VBox.margin>
-                                        <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                </CheckBox>
-                                <CheckBox mnemonicParsing="false" prefHeight="19.0" prefWidth="78.0" text="Bakıcı" />
-                            </children>
-                        </VBox>
-                        <Button layoutX="265.0" layoutY="64.0" mnemonicParsing="false" text="Ara">
+
+<AnchorPane prefHeight="726.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hayvan.ListeleHayvanController">
+   <children>
+      <VBox layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../CSS/Style.css">
+          <children>
+              <AnchorPane prefHeight="86.0" prefWidth="1000.0" style="-fx-background-color: #b0eacd;">
+                  <children>
+                      <AnchorPane layoutX="850.0" layoutY="14.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+                          <children>
+                              <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/left.png" />
+                                  </image>
+                              </ImageView>
+                              <Button fx:id="anaGeriButon" layoutX="46.0" layoutY="15.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transparent;" text="Geri">
+                                  <font>
+                                      <Font name="System Bold" size="15.0" />
+                                  </font>
+                              </Button>
+                          </children>
+                     
+                          <styleClass>
+                              <String fx:value="buttons" />
+                              <String fx:value="anchora" />
+                          </styleClass>
+                      </AnchorPane>
+                      <Label layoutX="72.0" layoutY="32.0" prefHeight="29.0" prefWidth="223.0" text="Kayıtlı Hayvanların Listesi">
+                          <font>
+                              <Font name="System Bold" size="18.0" />
+                          </font>
+                      </Label>
+                      <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../Images/pet.png" />
+                          </image>
+                      </ImageView>
+                  </children>
+              </AnchorPane>
+              <AnchorPane prefHeight="613.0" prefWidth="1000.0">
+                  <children>
+                      <AnchorPane layoutX="565.0" layoutY="77.0" prefHeight="139.0" prefWidth="368.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+                          <children>
+                              <VBox layoutX="14.0" layoutY="25.0" prefHeight="106.0" prefWidth="76.0">
+                                  <children>
+                                      <CheckBox mnemonicParsing="false" text="Sınıf">
+                                          <VBox.margin>
+                                              <Insets bottom="10.0" />
+                                          </VBox.margin>
+                                      </CheckBox>
+                                      <CheckBox mnemonicParsing="false" text="Tür">
+                                          <VBox.margin>
+                                              <Insets bottom="10.0" />
+                                          </VBox.margin>
+                                      </CheckBox>
+                                      <CheckBox mnemonicParsing="false" text="Adı">
+                                          <VBox.margin>
+                                              <Insets bottom="10.0" />
+                                          </VBox.margin>
+                                      </CheckBox>
+                                      <CheckBox mnemonicParsing="false" prefHeight="19.0" prefWidth="78.0" text="Bakıcı" />
+                                  </children>
+                              </VBox>
+                              <Button layoutX="265.0" layoutY="64.0" mnemonicParsing="false" text="Ara">
                     
                         </Button>
-                        <Label layoutX="146.0" layoutY="-10.0" text="Hızlı Arama">
-                            <font>
-                                <Font size="15.0" />
-                            </font>
+                              <Label layoutX="146.0" layoutY="-10.0" text="Hızlı Arama">
+                                  <font>
+                                      <Font size="15.0" />
+                                  </font>
+                              </Label>
+                              <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="127.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/flamingo.png" />
+                                  </image>
+                              </ImageView>
+                              <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="164.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/flamingo.png" />
+                                  </image>
+                              </ImageView>
+                              <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="203.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../Images/flamingo.png" />
+                                  </image>
+                              </ImageView>
+                              <TextField layoutX="93.0" layoutY="66.0" />
+                          </children>
+                      </AnchorPane>
+                      <AnchorPane layoutX="38.0" layoutY="77.0" prefHeight="486.0" prefWidth="479.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+                          <children>
+                              <TableView fx:id="hayvanTablosu" layoutX="2.0" layoutY="13.0" onMouseClicked="#dataTableSecim" prefHeight="467.0" prefWidth="479.0">
+                                  <columns>
+                                      <TableColumn fx:id="col_hayvanNo" prefWidth="68.0" text="Hayvan No" />
+                                      <TableColumn fx:id="col_irk" prefWidth="82.0" text="Irkı" />
+                                      <TableColumn fx:id="col_isim" prefWidth="82.0" text="İsmi" />
+                                      <TableColumn fx:id="col_dogumTarih" prefWidth="82.0" text="Doğum Tarihi" />
+                                      <TableColumn fx:id="col_gelisTarih" prefWidth="82.0" text="Geliş Tarihi" />
+                                      <TableColumn fx:id="col_cinsiyet" prefWidth="82.0" text="Cinsiyeti" />
+                                  </columns>
+                              </TableView>
+                              <Label layoutX="223.0" layoutY="-10.0" text="Liste">
+                                  <font>
+                                      <Font size="18.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </AnchorPane>
+                      <ImageView fitHeight="189.0" fitWidth="208.0" layoutX="797.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../Images/chicken.png" />
+                          </image>
+                      </ImageView>
+                  <AnchorPane fx:id="hayvanGuncelleAnchorPane" layoutX="804.0" layoutY="227.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/update.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="hayvanGuncelleButon" layoutX="59.0" layoutY="15.0" mnemonicParsing="false" onAction="#hayvanGuncelleController" style="-fx-background-color: transparent;" text="Güncelle">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="anchora" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane fx:id="hayvanSilAnchorPane" layoutX="804.0" layoutY="297.0" prefHeight="61.0" prefWidth="129.0" style="-fx-border-color: #4E4E4E;">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/undo.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="hayvanSilButon" layoutX="58.0" layoutY="15.0" mnemonicParsing="false" onAction="#hayvanSilController" style="-fx-background-color: transparent;" text="sil">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="buttons" />
+                        <String fx:value="anchora" />
+                     </styleClass>
+                  </AnchorPane>
+                  <AnchorPane fx:id="hayvanOzellikleri" layoutX="533.0" layoutY="236.0" prefHeight="328.0" prefWidth="251.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+                     <children>
+                        <Label layoutX="67.0" layoutY="-10.0" text="Hayvan Özellikleri">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
                         </Label>
-                        <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="127.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/flamingo.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="164.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/flamingo.png" />
-                            </image>
-                        </ImageView>
-                        <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="203.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../Images/flamingo.png" />
-                            </image>
-                        </ImageView>
-                        <TextField layoutX="93.0" layoutY="66.0" />
-                    </children>
-                </AnchorPane>
-                <AnchorPane layoutX="38.0" layoutY="77.0" prefHeight="486.0" prefWidth="479.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
-                    <children>
-                        <TableView fx:id="hayvanTablosu" layoutX="2.0" layoutY="13.0" onMouseClicked="#dataTableSecim" prefHeight="467.0" prefWidth="479.0">
-                            <columns>
-                                <TableColumn fx:id="col_hayvanNo" prefWidth="68.0" text="Hayvan No" />
-                                <TableColumn fx:id="col_irk" prefWidth="82.0" text="Irkı" />
-                                <TableColumn fx:id="col_isim" prefWidth="82.0" text="İsmi" />
-                                <TableColumn fx:id="col_dogumTarih" prefWidth="82.0" text="Doğum Tarihi" />
-                                <TableColumn fx:id="col_gelisTarih" prefWidth="82.0" text="Geliş Tarihi" />
-                                <TableColumn fx:id="col_cinsiyet" prefWidth="82.0" text="Cinsiyeti" />
-                            </columns>
-                        </TableView>
-                        <Label layoutX="223.0" layoutY="-10.0" text="Liste">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                        </Label>
-                    </children>
-                </AnchorPane>
-                <ImageView fitHeight="189.0" fitWidth="208.0" layoutX="797.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Images/chicken.png" />
-                    </image>
-                </ImageView>
-            <AnchorPane fx:id="hayvanGuncelleAnchorPane" layoutX="804.0" layoutY="227.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
-               <children>
-                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/update.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="hayvanGuncelleButon" layoutX="59.0" layoutY="15.0" mnemonicParsing="false" onAction="#hayvanGuncelleController" style="-fx-background-color: transparent;" text="Güncelle">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="anchora" />
-               </styleClass>
-            </AnchorPane>
-            <AnchorPane fx:id="hayvanSilAnchorPane" layoutX="804.0" layoutY="297.0" prefHeight="61.0" prefWidth="129.0" style="-fx-border-color: #4E4E4E;">
-               <children>
-                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/undo.png" />
-                     </image>
-                  </ImageView>
-                  <Button fx:id="hayvanSilButon" layoutX="58.0" layoutY="15.0" mnemonicParsing="false" onAction="#hayvanSilController" style="-fx-background-color: transparent;" text="sil">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-               <styleClass>
-                  <String fx:value="buttons" />
-                  <String fx:value="anchora" />
-               </styleClass>
-            </AnchorPane>
-            <AnchorPane fx:id="hayvanOzellikleri" layoutX="533.0" layoutY="236.0" prefHeight="328.0" prefWidth="251.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
-               <children>
-                  <Label layoutX="67.0" layoutY="-10.0" text="Hayvan Özellikleri">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <TextArea fx:id="hayvanOzellikTextArea" layoutX="4.0" layoutY="9.0" prefHeight="313.0" prefWidth="243.0" />
-               </children>
-            </AnchorPane>
-            </children>
-        </AnchorPane>
-    </children>
-</VBox>
+                        <TextArea fx:id="hayvanOzellikTextArea" layoutX="4.0" layoutY="9.0" prefHeight="313.0" prefWidth="243.0" />
+                     </children>
+                  </AnchorPane>
+                  </children>
+              </AnchorPane>
+          </children>
+      </VBox>
+      <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="27.0" prefWidth="1000.0" style="-fx-background-color: #888888;">
+         <children>
+            <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="18.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/circle.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="47.0" layoutY="4.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/signs%20(2).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -45,7 +45,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -181,19 +184,19 @@ public class EkleHayvanController extends TheController implements Initializable
                 case "Tehlikeli Balık Akvaryumu":
                     this.TehlikeliBalıkAkvaryumuDosya.hayvanEkle((Hayvan2) hayvan);
                     this.kapasite.TehlikeliAkvaryumKapasiteArttir();
-                    
+
                     System.out.println("Tehlikeli Balık Akvaryumuna dosya eklendi");
                     break;
                 case "Normal Balık Akvaryumu":
                     this.normalBalıkAkvaryumuDosya.hayvanEkle((Hayvan2) hayvan);
                     this.kapasite.NormalAkvaryumKapasiteArttir();
-                    
+
                     System.out.println("Normal Balık Akvaryumuna dosya eklendi");
                     break;
                 case "Tehlikeli Açık Alan":
                     this.TehlikeliAcikAlanDosya.hayvanEkle((Hayvan2) hayvan);
                     this.kapasite.TehlikeliAcikAlanKapasiteArttir();
-                    
+
                     System.out.println("Tehlikeli Memeli Acik alana eklendi");
                     break;
                 case "Normal Açık Alan":
@@ -395,8 +398,11 @@ public class EkleHayvanController extends TheController implements Initializable
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
+                    Scene scene = new Scene(fxmlLoader.load(), 1195, 479);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -436,5 +442,31 @@ public class EkleHayvanController extends TheController implements Initializable
 
     public void setSinifSecim(String sinifSecim) {
         this.sinifSecim = sinifSecim;
+    }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }

@@ -37,14 +37,17 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
  * @author Casper
  */
 public class GuncelleHayvanController implements Initializable {
-    
+
     @FXML
     private ComboBox sinifComboBox;
     @FXML
@@ -75,16 +78,16 @@ public class GuncelleHayvanController implements Initializable {
     private CheckBox extra6CheckBox;
     private Dosya dosya = new Dosya();
     private int hayvanIndex;
-    
+
     private String sinifSecim;
     @FXML
     private Button anaGeriButon;
     @FXML
     private Button hayvanGuncelleButon;
-    
+
     @FXML
     public void kayitGuncelleController(ActionEvent event) {
-        
+
         Hayvan2 hayvan = null;
         String isim = adTextField.getText();
         String irki = turChoiceBox.getValue().toString();
@@ -140,7 +143,7 @@ public class GuncelleHayvanController implements Initializable {
                     denizCanlisi.setSosyal(secilimi(extra4CheckBox.isSelected()));
                     denizCanlisi.setGuvenlik(secilimi(extra5CheckBox.isSelected()));
                     hayvan = denizCanlisi;
-                    
+
                     break;
                 case "Kanatlı":
                     kanatliOlustur kanatli = new kanatliOlustur("Kanatlı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
@@ -157,7 +160,7 @@ public class GuncelleHayvanController implements Initializable {
             List<Hayvan2> hayvanList = dosya.hayvanDosyaOku();
             hayvanList.set(hayvanIndex, hayvan);
             dosya.hayvanDosyaYaz(hayvanList);
-            
+
         } catch (Exception e) {
             System.out.println("ekle hayvan geldi hata");
             e.getMessage();
@@ -167,13 +170,13 @@ public class GuncelleHayvanController implements Initializable {
             alert.setTitle("Başarılı");
             alert.setHeaderText(null);
             alert.setContentText("Hayvan Güncelleme İşlemi Başarıyla Tamamlanmıştır...");
-            
+
             alert.showAndWait();
-            
+
         }
-        
+
     }
-    
+
     public void hayvanDoldur(Hayvan2 hayvan) {
         String sinif = hayvan.getSinif();
         sinifComboBox.setValue(hayvan.getSinif());
@@ -185,7 +188,7 @@ public class GuncelleHayvanController implements Initializable {
         // System.out.println("ilaç ismi " + hayvan.getIlac().getIlacIsmi().get(0));
         cinsiyetChoiceBox.setValue(hayvan.getCinsiyeti());
         asiChoiceBox.setValue(hayvan.getAsi().getAsiIsmi().get(0));
-        
+
         switch (sinif) {
             case "Memeli":
                 memeliOlustur memeli = (memeliOlustur) hayvan;
@@ -198,7 +201,7 @@ public class GuncelleHayvanController implements Initializable {
                 checkedControl(extra3CheckBox, memeli.getGuvenlik());
                 checkedControl(extra4CheckBox, memeli.getKilli());
                 checkedControl(extra5CheckBox, memeli.getSosyal());
-                
+
                 break;
             case "Memeli Deniz Canlısı":
                 memeliDenizCanlisiOlustur memelideDenizCanlisi = (memeliDenizCanlisiOlustur) hayvan;
@@ -208,7 +211,7 @@ public class GuncelleHayvanController implements Initializable {
                 checkBoxControl("Öfkeli", "Aqua Dışında Yaşar", null, null, null, null);
                 checkedControl(extra1CheckBox, memelideDenizCanlisi.getOfkeli());
                 checkedControl(extra2CheckBox, memelideDenizCanlisi.getAquaDisindaYasar());
-                
+
                 break;
             case "Sürüngen":
                 surungenOlustur surungen = (surungenOlustur) hayvan;
@@ -257,33 +260,33 @@ public class GuncelleHayvanController implements Initializable {
                 checkedControl(extra2CheckBox, kanatli.getYirtici());
                 checkedControl(extra3CheckBox, kanatli.getBeslenme());
                 checkedControl(extra4CheckBox, kanatli.getGuvenlik());
-                
+
                 break;
             default:
                 System.out.println("Boş ");
                 break;
         }
-        
+
     }
-    
+
     private void checkedControl(CheckBox ch, int a) {
         if (a == 1) {
             ch.setSelected(true);
         } else {
             ch.setSelected(false);
         }
-        
+
     }
-    
+
     private int secilimi(boolean secim) {
-        
+
         if (secim) {
             return 1;
         } else {
             return 0;
         }
     }
-    
+
     private void alanTemizle() {
         sinifComboBox.getSelectionModel().clearSelection();;
         adTextField.setText(null);
@@ -293,28 +296,28 @@ public class GuncelleHayvanController implements Initializable {
         ilacChoiceBox.getSelectionModel().clearSelection();
         cinsiyetChoiceBox.getSelectionModel().clearSelection();
         asiChoiceBox.getSelectionModel().clearSelection();
-        
+
         checkBoxControl(null, null, null, null, null, null);
     }
-    
+
     @FXML
     public void turDoldur() {
         String secim = (String) sinifComboBox.getValue();
-        
+
         switch (secim) {
             case "Memeli":
                 sinifSecim = "Memeli";
                 turChoiceBox.getItems().clear();
                 turChoiceBox.getItems().addAll("Kaplan", "Aslan", "Yunus Balığı", "Yarasa");
                 checkBoxControl("Öfkeli", "Yırtıcı", "Extra Güvenlik", "Kıllı", "Sosyal", null);
-                
+
                 break;
             case "Memeli Deniz Canlısı":
                 sinifSecim = "Memeli Deniz Canlısı";
                 turChoiceBox.getItems().clear();
                 turChoiceBox.getItems().addAll("Kaplan", "Aslan", "Yunus Balığı", "Yarasa");
                 checkBoxControl("Öfkeli", "Aqua Dışında Yaşar", null, null, null, null);
-                
+
                 break;
             case "Sürüngen":
                 sinifSecim = "Sürüngen";
@@ -344,9 +347,9 @@ public class GuncelleHayvanController implements Initializable {
                 System.out.println("Boş ");
                 break;
         }
-        
+
     }
-    
+
     private void checkBoxControl(String extra1, String extra2, String extra3, String extra4, String extra5, String extra6) {
         if (extra1 != null) {
             extra1CheckBox.setSelected(false);
@@ -402,9 +405,9 @@ public class GuncelleHayvanController implements Initializable {
             extra6CheckBox.setVisible(false);
             extra6CheckBox.setText("null");
         }
-        
+
     }
-    
+
     @FXML
     private void anaGeriController(ActionEvent event) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -416,14 +419,17 @@ public class GuncelleHayvanController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hayvan/HayvanListeleFXML.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 1000, 700);
+                    Scene scene = new Scene(fxmlLoader.load(), 1000, 715);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
-                    
+
                     stage.show();
-                    
+
                     final Node anaPencere = (Node) event.getSource();
                     final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
                     anaStage.close();
@@ -434,9 +440,9 @@ public class GuncelleHayvanController implements Initializable {
                 //cancel tusuna basılınca yılacak işlem ancak yapılacak işlem yok 
             }
         });
-        
+
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         extra1CheckBox.setVisible(false);
@@ -449,22 +455,48 @@ public class GuncelleHayvanController implements Initializable {
         cinsiyetChoiceBox.getItems().addAll("Erkek", "Dişi");
         ilacChoiceBox.getItems().addAll("AVA-BioThrax", "DTaP", "PCV13", "Rabies", "RV1", "RV5", "Vaccinia", "Tenivac", "MMRV", "Typhoid-Oral", "Flulaval", "MenACWY", "MenB", "Fluzone", "Zostavax");
         asiChoiceBox.getItems().addAll("Lovetoin", "Trandoronate", "Afanuma", "Cortimadin", "Tetapitant", "Ablastral", "Bactaxime", "Allokyn", "Sublamin", "Nornex", "Adiline", "Veratasol");
-        
+
     }
-    
+
     public String getSinifSecim() {
         return sinifSecim;
     }
-    
+
     public void setSinifSecim(String sinifSecim) {
         this.sinifSecim = sinifSecim;
     }
-    
+
     public int getHayvanIndex() {
         return hayvanIndex;
     }
-    
+
     public void setHayvanIndex(int hayvanIndex) {
         this.hayvanIndex = hayvanIndex;
+    }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }

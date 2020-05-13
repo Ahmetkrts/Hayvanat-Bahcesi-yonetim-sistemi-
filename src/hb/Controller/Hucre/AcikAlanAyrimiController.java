@@ -20,7 +20,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -43,8 +46,11 @@ public class AcikAlanAyrimiController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
+                    Scene scene = new Scene(fxmlLoader.load(), 1195, 479);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -62,47 +68,75 @@ public class AcikAlanAyrimiController implements Initializable {
         });
 
     }
+
     @FXML
-     private void yirticiacıkalan(ActionEvent event) throws IOException {
+    private void yirticiacıkalan(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/TehlikeliAcikAlan.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 683, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
-        stage.setTitle("Akvaryumları Listele");
+        stage.setTitle("Acik Alanlari Listele");
         stage.setScene(scene);
         stage.show();
 
         final Node anaPencere = (Node) event.getSource();
         final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
         anaStage.close();
-        
-     
-     }
-     
+
+    }
+
     @FXML
-     private void normalacıkalan(ActionEvent event) throws IOException {
+    private void normalacıkalan(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Hucre/NormalAcikAlan.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 683, 650);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+        stage.getIcons().add(image);
         stage.setResizable(false);
-        stage.setTitle("Akvaryumları Listele");
+        stage.setTitle("Acik Alanlari Listele");
         stage.setScene(scene);
         stage.show();
 
         final Node anaPencere = (Node) event.getSource();
         final Stage anaStage = (Stage) anaPencere.getScene().getWindow();
         anaStage.close();
-        
-     
-     }
-    
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }  
+    }
+    double x, y;
 
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
 
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
 
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
+    }
 }

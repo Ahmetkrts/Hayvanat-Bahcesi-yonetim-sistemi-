@@ -36,8 +36,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -83,8 +86,11 @@ public class ListeleBakiciController implements Initializable {
                 try {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/AnaPanel.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load(), 1190, 440);
+                    Scene scene = new Scene(fxmlLoader.load(), 1195, 479);
                     Stage stage = new Stage();
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+                    stage.getIcons().add(image);
                     stage.setTitle("Hayvanat Bahçesi DashBoard");
                     stage.setResizable(false);
                     stage.setScene(scene);
@@ -133,8 +139,11 @@ public class ListeleBakiciController implements Initializable {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getClassLoader().getResource("hb/View/Bakici/BakiciGuncelleFXML.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 680);
+            Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
             Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            Image image = new Image(getClass().getResourceAsStream("/hb/View/Images/chicken.png"));
+            stage.getIcons().add(image);
             stage.setResizable(false);
             stage.setTitle("Bakıcıları Güncelle");
             stage.setScene(scene);
@@ -187,5 +196,31 @@ public class ListeleBakiciController implements Initializable {
         }
 
         bakiciTablosu.setItems(data_table);
+    }
+    double x, y;
+
+    @FXML
+    void pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
+    }
+
+    @FXML
+    void dragged(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setX(event.getScreenX() - x);
+        stage.setY(event.getScreenY() - y);
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    private void min(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }
