@@ -5,8 +5,8 @@
  */
 package hb.Controller.Hucre;
 
+import hb.Controller.Dosya;
 import hb.Model.Kapasite;
-import hb.Controller.SuluAcikDosya;
 import hb.Model.Hayvan.Hayvan2;
 import java.io.IOException;
 import java.net.URL;
@@ -64,7 +64,7 @@ public class SuluAcikController implements Initializable {
     private TableColumn<Hayvan2, String> col_cinsiyet;
     private AnchorPane hayvanOzellikleri;
     private Kapasite kapasite;
-    SuluAcikDosya dosya = new SuluAcikDosya();
+    Dosya dosya = new Dosya();
     @FXML
     private Button anaGeriButon1;
     @FXML
@@ -140,7 +140,7 @@ public class SuluAcikController implements Initializable {
     private void loadDate() {
         ObservableList<Hayvan2> data_table = FXCollections.observableArrayList();
         List<Hayvan2> HayvanList = new ArrayList<>();
-        HayvanList = dosya.hayvanDosyaOku();
+        HayvanList = dosya.HayvanDosyaOku("dosya/SuluAcik.dat");
 
         for (Hayvan2 hayvan : HayvanList) {
 

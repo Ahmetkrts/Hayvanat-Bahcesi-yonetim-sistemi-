@@ -78,13 +78,14 @@ public class GuncelleHayvanController implements Initializable {
     private CheckBox extra6CheckBox;
     private Dosya dosya = new Dosya();
     private int hayvanIndex;
+    private int id;
+    private String hucre;
 
     private String sinifSecim;
     @FXML
     private Button anaGeriButon;
     @FXML
     private Button hayvanGuncelleButon;
-
     @FXML
     public void kayitGuncelleController(ActionEvent event) {
 
@@ -100,6 +101,7 @@ public class GuncelleHayvanController implements Initializable {
         Asi asi = new Asi(asiChoiceBox.getValue().toString());
         Ilac ilac = new Ilac(ilacChoiceBox.getValue().toString());
         try {
+            
             switch (this.sinifSecim) {
                 case "Memeli":
                     memeliOlustur memeli = new memeliOlustur("Memeli", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
@@ -109,12 +111,16 @@ public class GuncelleHayvanController implements Initializable {
                     memeli.setKilli(secilimi(extra4CheckBox.isSelected()));
                     memeli.setSosyal(secilimi(extra5CheckBox.isSelected()));
                     hayvan = memeli;
+                    hayvan.setHayvanNo(getId());
+                    hayvan.setHucre(getHucre());
                     break;
                 case "Memeli Deniz Canlısı":
                     memeliDenizCanlisiOlustur memeliDenizCanlisi = new memeliDenizCanlisiOlustur("Memeli Deniz Canlısı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
                     memeliDenizCanlisi.setOfkeli(secilimi(extra1CheckBox.isSelected()));
                     memeliDenizCanlisi.setAquaDisindaYasar(secilimi(extra2CheckBox.isSelected()));
                     hayvan = memeliDenizCanlisi;
+                    hayvan.setHayvanNo(getId());
+                    hayvan.setHucre(getHucre());
                     break;
                 case "Sürüngen":
                     surungenOlustur surungen = new surungenOlustur("Sürüngen", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
@@ -124,6 +130,8 @@ public class GuncelleHayvanController implements Initializable {
                     surungen.setYirtici(secilimi(extra4CheckBox.isSelected()));
                     surungen.setBoy(secilimi(extra5CheckBox.isSelected()));
                     hayvan = surungen;
+                    hayvan.setHayvanNo(getId());
+                    hayvan.setHucre(getHucre());
                     break;
                 case "Sürüngen Deniz Canlısı":
                     surungenDenizCanlisiOlustur surungenDenizCanlisi = new surungenDenizCanlisiOlustur("Sürüngen Deniz Canlısı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
@@ -134,6 +142,8 @@ public class GuncelleHayvanController implements Initializable {
                     surungenDenizCanlisi.setYirtici(secilimi(extra5CheckBox.isSelected()));
                     surungenDenizCanlisi.setBoy(secilimi(extra6CheckBox.isSelected()));
                     hayvan = surungenDenizCanlisi;
+                    hayvan.setHayvanNo(getId());
+                    hayvan.setHucre(getHucre());
                     break;
                 case "Deniz Canlısı":
                     denizCanlisiOlustur denizCanlisi = new denizCanlisiOlustur("Deniz Canlısı", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
@@ -143,6 +153,8 @@ public class GuncelleHayvanController implements Initializable {
                     denizCanlisi.setSosyal(secilimi(extra4CheckBox.isSelected()));
                     denizCanlisi.setGuvenlik(secilimi(extra5CheckBox.isSelected()));
                     hayvan = denizCanlisi;
+                    hayvan.setHayvanNo(getId());
+                    hayvan.setHucre(getHucre());
 
                     break;
                 case "Kanatlı":
@@ -152,14 +164,16 @@ public class GuncelleHayvanController implements Initializable {
                     kanatli.setBeslenme(secilimi(extra3CheckBox.isSelected()));
                     kanatli.setGuvenlik(secilimi(extra4CheckBox.isSelected()));
                     hayvan = kanatli;
+                    hayvan.setHayvanNo(getId());
+                    hayvan.setHucre(getHucre());
                     break;
                 default:
                     System.out.println("Boş ");
                     break;
             }
-            List<Hayvan2> hayvanList = dosya.hayvanDosyaOku();
+            List<Hayvan2> hayvanList = dosya.HayvanDosyaOku("dosya/HayvanListesi.dat");
             hayvanList.set(hayvanIndex, hayvan);
-            dosya.hayvanDosyaYaz(hayvanList);
+            dosya.HayvanDosyaYaz(hayvanList,"dosya/HayvanListesi.dat");
 
         } catch (Exception e) {
             System.out.println("ekle hayvan geldi hata");
@@ -188,6 +202,8 @@ public class GuncelleHayvanController implements Initializable {
         // System.out.println("ilaç ismi " + hayvan.getIlac().getIlacIsmi().get(0));
         cinsiyetChoiceBox.setValue(hayvan.getCinsiyeti());
         asiChoiceBox.setValue(hayvan.getAsi().getAsiIsmi().get(0));
+        setId(hayvan.getHayvanNo());
+        setHucre(hayvan.getHucre());
 
         switch (sinif) {
             case "Memeli":
@@ -499,4 +515,21 @@ public class GuncelleHayvanController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getHucre() {
+        return hucre;
+    }
+
+    public void setHucre(String hucre) {
+        this.hucre = hucre;
+    }
+    
 }

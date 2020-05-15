@@ -5,7 +5,7 @@
  */
 package hb.Model.Hayvan;
 
-import hb.Controller.HayvanId;
+import hb.Controller.Dosya;
 import hb.Model.Ilac;
 import hb.Model.Asi;
 import java.io.Serializable;
@@ -16,9 +16,9 @@ import java.util.ArrayList;
  * @author Casper
  */
 public class Hayvan2 implements Serializable {
-    private HayvanId hayvanId = new HayvanId();
-    private int id = hayvanId.IdDosyaOku();
-    private final int hayvanNo;
+    private Dosya hayvanId = new Dosya();
+    private int id = hayvanId.KapasiteDosyaOku("dosya/HayvanId.dat");
+    private int hayvanNo;
     private String sinif;
     private String irki;
     private String ismi;
@@ -33,14 +33,14 @@ public class Hayvan2 implements Serializable {
     public Hayvan2() {
         this.hayvanNo = id;
         id++;
-        hayvanId.IdEkle(id);
+        hayvanId.Ekle(id, "dosya/HayvanId.dat");
     }
 
     public Hayvan2(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
 
         hayvanNo = id;
         id++;
-        hayvanId.IdEkle(id);
+        hayvanId.Ekle(id, "dosya/HayvanId.dat");
         this.sinif = sinif;
         this.irki = irki;
         this.ismi = ismi;
@@ -60,7 +60,7 @@ public class Hayvan2 implements Serializable {
 
         hayvanNo = id;
         id++;
-        hayvanId.IdEkle(id);
+        hayvanId.Ekle(id, "dosya/HayvanId.dat");
         this.sinif = sinif;
         this.irki = irki;
         this.ismi = ismi;
@@ -148,6 +148,10 @@ public class Hayvan2 implements Serializable {
 
     public void setHucre(String Hucre) {
         this.Hucre = Hucre;
+    }
+
+    public void setHayvanNo(int hayvanNo) {
+        this.hayvanNo = hayvanNo;
     }
 
     public ArrayList<String> hayvanListesi() {

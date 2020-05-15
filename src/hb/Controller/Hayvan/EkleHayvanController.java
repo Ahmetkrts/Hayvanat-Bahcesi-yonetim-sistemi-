@@ -7,13 +7,6 @@ package hb.Controller.Hayvan;
 
 import hb.Controller.Dosya;
 import hb.Model.Kapasite;
-import hb.Controller.Hucre.SuluAcikController;
-import hb.Controller.KusKafesiDosya;
-import hb.Controller.NormalAcikAlanDosya;
-import hb.Controller.NormalBalıkAkvaryumuDosya;
-import hb.Controller.SuluAcikDosya;
-import hb.Controller.TehlikeliAcikAlanDosya;
-import hb.Controller.TehlikeliBalıkAkvaryumuDosya;
 import hb.Controller.TheController;
 import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan2;
@@ -30,7 +23,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -86,12 +78,6 @@ public class EkleHayvanController extends TheController implements Initializable
     private CheckBox extra6CheckBox;
 
     private Dosya dosya = new Dosya();
-    private TehlikeliBalıkAkvaryumuDosya TehlikeliBalıkAkvaryumuDosya = new TehlikeliBalıkAkvaryumuDosya();
-    private NormalBalıkAkvaryumuDosya normalBalıkAkvaryumuDosya = new NormalBalıkAkvaryumuDosya();
-    private TehlikeliAcikAlanDosya TehlikeliAcikAlanDosya = new TehlikeliAcikAlanDosya();
-    private NormalAcikAlanDosya NormalAcikAlan = new NormalAcikAlanDosya();
-    private KusKafesiDosya KusKafesi = new KusKafesiDosya();
-    private SuluAcikDosya suluAcik = new SuluAcikDosya();
     private Kapasite kapasite;
 
     private String sinifSecim;
@@ -178,39 +164,39 @@ public class EkleHayvanController extends TheController implements Initializable
             }
 
             //hayvan = new Hayvan(irki, isim, dogum, gelis, cinsiyet, ilac, asi);
-            this.dosya.hayvanEkle((Hayvan2) hayvan);
+            this.dosya.Ekle(hayvan,"dosya/HayvanListesi.dat");
             this.kapasite = new Kapasite();
             switch (this.hucresecim) {
                 case "Tehlikeli Balık Akvaryumu":
-                    this.TehlikeliBalıkAkvaryumuDosya.hayvanEkle((Hayvan2) hayvan);
+                    this.dosya.Ekle(hayvan , "dosya/TehlikeliBalıkAkvaryumu.dat");
                     this.kapasite.TehlikeliAkvaryumKapasiteArttir();
 
                     System.out.println("Tehlikeli Balık Akvaryumuna dosya eklendi");
                     break;
                 case "Normal Balık Akvaryumu":
-                    this.normalBalıkAkvaryumuDosya.hayvanEkle((Hayvan2) hayvan);
+                    this.dosya.Ekle(hayvan , "dosya/NormalBalıkAkvaryumu.dat");
                     this.kapasite.NormalAkvaryumKapasiteArttir();
 
                     System.out.println("Normal Balık Akvaryumuna dosya eklendi");
                     break;
                 case "Tehlikeli Açık Alan":
-                    this.TehlikeliAcikAlanDosya.hayvanEkle((Hayvan2) hayvan);
+                    this.dosya.Ekle(hayvan , "dosya/TehlikeliAcikAlan.dat");
                     this.kapasite.TehlikeliAcikAlanKapasiteArttir();
 
                     System.out.println("Tehlikeli Memeli Acik alana eklendi");
                     break;
                 case "Normal Açık Alan":
-                    this.NormalAcikAlan.hayvanEkle((Hayvan2) hayvan);
+                    this.dosya.Ekle(hayvan , "dosya/NormalAcikAlan.dat");
                     this.kapasite.NormalAcikAlanArttir();
                     System.out.println("Normal Memeli Acik alana eklendi");
                     break;
                 case "Kuş Kafesi":
-                    this.KusKafesi.hayvanEkle((Hayvan2) hayvan);
+                    this.dosya.Ekle(hayvan , "dosya/KusKafesi.dat");
                     this.kapasite.KusKapasiteArttir();
                     System.out.println("Kus Kafesi alana eklendi");
                     break;
                 case "Sulu Açık Alan":
-                    this.suluAcik.hayvanEkle((Hayvan2) hayvan);
+                    this.dosya.Ekle(hayvan , "dosya/SuluAcik.dat");
                     this.kapasite.SuluAcikkapasiteArttir();
                     System.out.println("Sulu Acik alana eklendi");
                     break;
@@ -257,7 +243,7 @@ public class EkleHayvanController extends TheController implements Initializable
 
     @FXML
     public void turDoldur() {
-        String secim = (String) sinifComboBox.getValue();
+        String secim = sinifComboBox.getValue().toString();
 
         switch (secim) {
             case "Memeli":

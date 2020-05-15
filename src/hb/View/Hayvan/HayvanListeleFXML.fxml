@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="726.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Hayvan.ListeleHayvanController">
    <children>
@@ -56,54 +52,6 @@
               </AnchorPane>
               <AnchorPane prefHeight="613.0" prefWidth="1000.0">
                   <children>
-                      <AnchorPane layoutX="565.0" layoutY="77.0" prefHeight="139.0" prefWidth="368.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
-                          <children>
-                              <VBox layoutX="14.0" layoutY="25.0" prefHeight="106.0" prefWidth="76.0">
-                                  <children>
-                                      <CheckBox mnemonicParsing="false" text="Sınıf">
-                                          <VBox.margin>
-                                              <Insets bottom="10.0" />
-                                          </VBox.margin>
-                                      </CheckBox>
-                                      <CheckBox mnemonicParsing="false" text="Tür">
-                                          <VBox.margin>
-                                              <Insets bottom="10.0" />
-                                          </VBox.margin>
-                                      </CheckBox>
-                                      <CheckBox mnemonicParsing="false" text="Adı">
-                                          <VBox.margin>
-                                              <Insets bottom="10.0" />
-                                          </VBox.margin>
-                                      </CheckBox>
-                                      <CheckBox mnemonicParsing="false" prefHeight="19.0" prefWidth="78.0" text="Bakıcı" />
-                                  </children>
-                              </VBox>
-                              <Button layoutX="265.0" layoutY="64.0" mnemonicParsing="false" text="Ara">
-                    
-                        </Button>
-                              <Label layoutX="146.0" layoutY="-10.0" text="Hızlı Arama">
-                                  <font>
-                                      <Font size="15.0" />
-                                  </font>
-                              </Label>
-                              <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="127.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                                  <image>
-                                      <Image url="@../Images/flamingo.png" />
-                                  </image>
-                              </ImageView>
-                              <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="164.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                                  <image>
-                                      <Image url="@../Images/flamingo.png" />
-                                  </image>
-                              </ImageView>
-                              <ImageView fitHeight="39.0" fitWidth="88.0" layoutX="203.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-                                  <image>
-                                      <Image url="@../Images/flamingo.png" />
-                                  </image>
-                              </ImageView>
-                              <TextField layoutX="93.0" layoutY="66.0" />
-                          </children>
-                      </AnchorPane>
                       <AnchorPane layoutX="38.0" layoutY="77.0" prefHeight="486.0" prefWidth="479.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
                           <children>
                               <TableView fx:id="hayvanTablosu" layoutX="2.0" layoutY="13.0" onMouseClicked="#dataTableSecim" prefHeight="467.0" prefWidth="479.0">
@@ -164,7 +112,7 @@
                         <String fx:value="anchora" />
                      </styleClass>
                   </AnchorPane>
-                  <AnchorPane fx:id="hayvanOzellikleri" layoutX="533.0" layoutY="236.0" prefHeight="328.0" prefWidth="251.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+                  <AnchorPane fx:id="hayvanOzellikleri" layoutX="539.0" layoutY="143.0" prefHeight="328.0" prefWidth="251.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
                      <children>
                         <Label layoutX="67.0" layoutY="-10.0" text="Hayvan Özellikleri">
                            <font>

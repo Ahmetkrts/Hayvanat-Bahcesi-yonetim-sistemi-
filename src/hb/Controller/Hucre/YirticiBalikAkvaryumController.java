@@ -7,7 +7,6 @@ package hb.Controller.Hucre;
 
 import hb.Controller.Hayvan.*;
 import hb.Controller.Dosya;
-import hb.Controller.TehlikeliBalıkAkvaryumuDosya;
 import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan2;
 import hb.Model.Ilac;
@@ -68,7 +67,7 @@ public class YirticiBalikAkvaryumController implements Initializable {
     private TableColumn<Hayvan2, String> col_cinsiyet;
     private AnchorPane hayvanOzellikleri;
     private Kapasite kapasite;
-    TehlikeliBalıkAkvaryumuDosya dosya = new TehlikeliBalıkAkvaryumuDosya();
+    Dosya dosya = new Dosya();
     @FXML
     private Label kapasiteLabel;
     @FXML
@@ -170,7 +169,7 @@ public class YirticiBalikAkvaryumController implements Initializable {
     private void loadDate() {
         ObservableList<Hayvan2> data_table = FXCollections.observableArrayList();
         List<Hayvan2> HayvanList = new ArrayList<>();
-        HayvanList = dosya.hayvanDosyaOku();
+        HayvanList = dosya.HayvanDosyaOku("dosya/TehlikeliBalıkAkvaryumu.dat");
 
         for (Hayvan2 hayvan : HayvanList) {
 

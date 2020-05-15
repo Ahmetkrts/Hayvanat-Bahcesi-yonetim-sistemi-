@@ -7,8 +7,6 @@ package hb.Controller.Hucre;
 
 import hb.Controller.Hayvan.*;
 import hb.Controller.Dosya;
-import hb.Controller.TehlikeliAcikAlanDosya;
-import hb.Controller.TehlikeliBalıkAkvaryumuDosya;
 import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan2;
 import hb.Model.Ilac;
@@ -69,7 +67,7 @@ public class TehlikleliAcikAlanController implements Initializable {
     private TableColumn<Hayvan2, String> col_cinsiyet;
     private AnchorPane hayvanOzellikleri;
     private Kapasite kapasite;
-    TehlikeliAcikAlanDosya dosya = new TehlikeliAcikAlanDosya();
+    Dosya dosya = new Dosya();
     @FXML
     private Button anaGeriButon1;
     @FXML
@@ -145,7 +143,7 @@ public class TehlikleliAcikAlanController implements Initializable {
     private void loadDate() {
         ObservableList<Hayvan2> data_table = FXCollections.observableArrayList();
         List<Hayvan2> HayvanList = new ArrayList<>();
-        HayvanList = dosya.hayvanDosyaOku();
+        HayvanList = dosya.HayvanDosyaOku("dosya/TehlikeliAcikAlan.dat");
 
         for (Hayvan2 hayvan : HayvanList) {
 

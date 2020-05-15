@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="725.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.ListeleBakiciController">
    <children>
@@ -76,35 +73,12 @@
                         </TableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="591.0" layoutY="213.0" prefHeight="94.0" prefWidth="315.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
+                  <AnchorPane layoutX="534.0" layoutY="126.0" prefHeight="361.0" prefWidth="409.0" style="-fx-border-color: #000000; -fx-border-width: 0 1 1 1;">
                      <children>
-                        <VBox layoutX="15.0" layoutY="26.0" prefHeight="46.0" prefWidth="81.0">
-                           <children>
-                              <CheckBox mnemonicParsing="false" text="Adı">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </CheckBox>
-                              <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="78.0" text="Nitelikleri">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </CheckBox>
-                           </children>
-                        </VBox>
-                        <TextField layoutX="104.0" layoutY="40.0" />
-                        <Button layoutX="266.0" layoutY="40.0" mnemonicParsing="false" text="Ara">
-                    
-                  </Button>
-                        <TextField layoutX="107.0" layoutY="40.0" />
+                        <TextArea fx:id="bakicininOzekleri" layoutX="14.0" layoutY="14.0" prefHeight="337.0" prefWidth="383.0" />
                      </children>
                   </AnchorPane>
-                  <Label layoutX="711.0" layoutY="203.0" text="Hızlı Arama">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Label>
-                  <AnchorPane fx:id="guncelleAnchorPane" layoutX="769.0" layoutY="318.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+                  <AnchorPane fx:id="guncelleAnchorPane" layoutX="785.0" layoutY="501.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
                      <children>
                         <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -122,7 +96,7 @@
                         <String fx:value="anchora" />
                      </styleClass>
                   </AnchorPane>
-                  <AnchorPane fx:id="silAnchorPane" layoutX="769.0" layoutY="387.0" prefHeight="61.0" prefWidth="137.0" style="-fx-border-color: #4E4E4E;">
+                  <AnchorPane fx:id="silAnchorPane" layoutX="573.0" layoutY="501.0" prefHeight="61.0" prefWidth="137.0" style="-fx-border-color: #4E4E4E;">
                      <children>
                         <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package hb.Controller.Bakici;
-
-import hb.Controller.BakiciDosya;
+import hb.Controller.Dosya;
 import hb.Model.Bakici.bakici;
 import java.io.IOException;
 import java.net.URL;
@@ -45,8 +44,13 @@ public class GuncelleBakiciController implements Initializable {
     private TextField bakiciAd;
     @FXML
     private Button bakiciGuncelleButon;
+    private int id;
+    private String balikNitelikleri;
+    private String memeliNitelikleri;
+    private String kusNitelikleri;
+    private String surungenNitelikleri;
     private int bakiciIndex;
-    private BakiciDosya dosya = new BakiciDosya();
+    private Dosya dosya = new Dosya();
 
     @FXML
     private void anaGeriController(ActionEvent event) {
@@ -81,18 +85,22 @@ public class GuncelleBakiciController implements Initializable {
         });
 
     }
-
     @FXML
     public void kayitGuncelleController(ActionEvent event) {
 
         bakici Bakici = new bakici();
         Bakici.setIsim(bakiciAd.getText());
         Bakici.setDogumTarihi(bakiciDogumTarihi.getValue().toString());
+        Bakici.setBakiciNo(getId());
+        Bakici.setBalikNitelik(getBalikNitelikleri());
+        Bakici.setKusNitelik(getKusNitelikleri());
+        Bakici.setMemeliNitelik(getMemeliNitelikleri());
+        Bakici.setSurungenNitelik(getSurungenNitelikleri());
         try {
-
-            List<bakici> bakiciList = dosya.bakiciDosyaOku();
-            bakiciList.set(bakiciIndex, Bakici);
-            dosya.bakiciDosyaYaz(bakiciList);
+            
+            List<bakici> bakiciList = dosya.BakiciDosyaOku("dosya/BakiciDosya.dat");
+            bakiciList.set(bakiciIndex,Bakici);
+            dosya.BakiciDosyaYaz(bakiciList,"dosya/BakiciDosya.dat");
 
         } catch (Exception e) {
             System.out.println("bakici guncelleme hata verdi");
@@ -126,6 +134,11 @@ public class GuncelleBakiciController implements Initializable {
     public void bakiciDoldur(bakici bakici) {
         bakiciAd.setText(bakici.getIsim());
         bakiciDogumTarihi.setValue(LocalDate.parse(bakici.getDogumTarihi()));
+        setId(bakici.getBakiciNo());
+        setBalikNitelikleri(bakici.getBalikNitelik());
+        setKusNitelikleri(bakici.getKusNitelik());
+        setMemeliNitelikleri(bakici.getMemeliNitelik());
+        setSurungenNitelikleri(bakici.getSurungenNitelik());
     }
 
     @Override
@@ -158,4 +171,49 @@ public class GuncelleBakiciController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBalikNitelikleri() {
+        return balikNitelikleri;
+    }
+
+    public void setBalikNitelikleri(String balikNitelikleri) {
+        this.balikNitelikleri = balikNitelikleri;
+    }
+
+    public String getMemeliNitelikleri() {
+        return memeliNitelikleri;
+    }
+
+    public void setMemeliNitelikleri(String memeliNitelikleri) {
+        this.memeliNitelikleri = memeliNitelikleri;
+    }
+
+    public String getKusNitelikleri() {
+        return kusNitelikleri;
+    }
+
+    public void setKusNitelikleri(String kusNitelikleri) {
+        this.kusNitelikleri = kusNitelikleri;
+    }
+
+    public String getSurungenNitelikleri() {
+        return surungenNitelikleri;
+    }
+
+    public void setSurungenNitelikleri(String surungenNitelikleri) {
+        this.surungenNitelikleri = surungenNitelikleri;
+    }
+
+    
+
+    
+    
 }

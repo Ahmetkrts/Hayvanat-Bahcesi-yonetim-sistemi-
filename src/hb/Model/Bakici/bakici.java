@@ -5,7 +5,7 @@
  */
 package hb.Model.Bakici;
 
-import hb.Controller.BakiciId;
+import hb.Controller.Dosya;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,9 +14,9 @@ import java.util.ArrayList;
  * @author Casper
  */
 public class bakici implements bakiciNitelikleri,Serializable {
-    private BakiciId Bakiciid = new BakiciId();
-    private int id = Bakiciid.IdDosyaOku();
-    private final int bakiciNo;
+    private Dosya Bakiciid = new Dosya();
+    private int id = Bakiciid.KapasiteDosyaOku("dosya/BakiciId.dat");
+    private int bakiciNo;
     private String isim;
     private String dogumTarihi;
     private String memeliNitelik;
@@ -27,7 +27,7 @@ public class bakici implements bakiciNitelikleri,Serializable {
     public bakici() {
         this.bakiciNo = id;
         id++;
-        Bakiciid.IdEkle(id);
+        Bakiciid.Ekle(id, "dosya/BakiciId.dat");
     }
 
     public ArrayList<String> bakiciListesi() {
@@ -163,6 +163,10 @@ public class bakici implements bakiciNitelikleri,Serializable {
 
     public void setKusNitelik(String kusNitelik) {
         this.kusNitelik = kusNitelik;
+    }
+
+    public void setBakiciNo(int bakiciNo) {
+        this.bakiciNo = bakiciNo;
     }
 
 }

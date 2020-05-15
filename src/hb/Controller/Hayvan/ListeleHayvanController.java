@@ -7,12 +7,6 @@ package hb.Controller.Hayvan;
 
 import hb.Controller.Dosya;
 import hb.Model.Kapasite;
-import hb.Controller.KusKafesiDosya;
-import hb.Controller.NormalAcikAlanDosya;
-import hb.Controller.NormalBalıkAkvaryumuDosya;
-import hb.Controller.SuluAcikDosya;
-import hb.Controller.TehlikeliAcikAlanDosya;
-import hb.Controller.TehlikeliBalıkAkvaryumuDosya;
 import hb.Model.Asi;
 import hb.Model.Hayvan.Hayvan2;
 import hb.Model.Ilac;
@@ -74,12 +68,6 @@ public class ListeleHayvanController implements Initializable {
     @FXML
     private TextArea hayvanOzellikTextArea;
     Dosya dosya = new Dosya();
-    TehlikeliBalıkAkvaryumuDosya dosya2 = new TehlikeliBalıkAkvaryumuDosya();
-    NormalBalıkAkvaryumuDosya dosya3 = new NormalBalıkAkvaryumuDosya();
-    NormalAcikAlanDosya dosya4 = new NormalAcikAlanDosya();
-    TehlikeliAcikAlanDosya dosya5 = new TehlikeliAcikAlanDosya();
-    KusKafesiDosya dosya6 = new KusKafesiDosya();
-    SuluAcikDosya dosya7 = new SuluAcikDosya();
     private Kapasite kapasite;
 
     @FXML
@@ -115,9 +103,9 @@ public class ListeleHayvanController implements Initializable {
             if (rs == ButtonType.OK) {
                 System.out.println("Secilen hayvan indexi: " + hayvanTablosu.getSelectionModel().getSelectedIndex() + "-*-*-*-*-*-*");
                 List<Hayvan2> HayvanList = new ArrayList<>();
-                HayvanList = dosya.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/HayvanListesi.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList,"dosya/HayvanListesi.dat");
             } else {
                 //cancel tusuna basılınca yılacak işlem ancak yapılacak işlem yok 
             }
@@ -127,45 +115,45 @@ public class ListeleHayvanController implements Initializable {
         switch (hy.getHucre()) {
             case "Tehlikeli Balık Akvaryumu":
                 this.kapasite.TehlikeliAkvaryumKapasiteAzalt();
-                HayvanList = dosya2.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/TehlikeliBalıkAkvaryumu.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya2.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/TehlikeliBalıkAkvaryumu.dat");
 
                 break;
             case "Normal Balık Akvaryumu":
                 this.kapasite.NormalAkvaryumKapasiteAzalt();
-                HayvanList = dosya3.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/NormalBalıkAkvaryumu.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya3.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/NormalBalıkAkvaryumu.dat");
 
                 break;
             case "Normal Açık Alan":
                 this.kapasite.NormalAcikAlanAzalt();
-                HayvanList = dosya4.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/NormalAcikAlan.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya4.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/NormalAcikAlan.dat");
 
                 break;
             case "Tehlikeli Açık Alan":
                 this.kapasite.TehlikeliAcikAlanKapasiteAzalt();
-                HayvanList = dosya5.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/TehlikeliAcikAlan.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya5.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/TehlikeliAcikAlan.dat");
 
                 break;
             case "Kuş Kafesi":
                 this.kapasite.KusKapasiteAzalt();
 
-                HayvanList = dosya6.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/KusKafesi.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya6.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/KusKafesi.dat");
 
                 break;
             case "Sulu Açık Alan":
                 this.kapasite.SuluAcikkapasiteAzalt();
-                HayvanList = dosya7.hayvanDosyaOku();
+                HayvanList = dosya.HayvanDosyaOku("dosya/SuluAcik.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya7.hayvanDosyaYaz(HayvanList);
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/SuluAcik.dat");
 
                 break;
         }
@@ -274,10 +262,10 @@ public class ListeleHayvanController implements Initializable {
     private void loadDate() {
         ObservableList<Hayvan2> data_table = FXCollections.observableArrayList();
         List<Hayvan2> HayvanList = new ArrayList<>();
-        HayvanList = dosya.hayvanDosyaOku();
+        HayvanList = dosya.HayvanDosyaOku("dosya/HayvanListesi.dat");
 
         for (Hayvan2 hayvan : HayvanList) {
-            System.out.println(hayvan.toString());
+            //System.out.println(hayvan.toString());
             data_table.add(hayvan);
         }
         hayvanTablosu.setItems(data_table);

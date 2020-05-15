@@ -5,7 +5,7 @@
  */
 package hb.Controller.Bakici;
 
-import hb.Controller.BakiciDosya;
+import hb.Controller.Dosya;
 import hb.Model.Bakici.bakici;
 import java.io.IOException;
 import java.net.URL;
@@ -53,7 +53,7 @@ public class EkleBakiciController implements Initializable {
     @FXML
     private CheckBox nitelikBalik;
 
-    private BakiciDosya dosya = new BakiciDosya();
+    private Dosya dosya = new Dosya();
     private int sayac = 0;
 
     @FXML
@@ -103,7 +103,7 @@ public class EkleBakiciController implements Initializable {
             Bakici.setKusNitelik(Bakici.Kus(secilimi(nitelikKus.isSelected())));
             Bakici.setMemeliNitelik(Bakici.Memeli(secilimi(nitelikMemeli.isSelected())));
             Bakici.setSurungenNitelik(Bakici.Surungen(secilimi(nitelikSurungen.isSelected())));
-            this.dosya.bakiciEkle((bakici) Bakici);
+            this.dosya.Ekle(Bakici,"dosya/BakiciDosya.dat/");
         } catch (Exception e) {
             System.out.println("Bakici eklenirken hata meydana geldi");
             e.getMessage();
@@ -149,7 +149,7 @@ public class EkleBakiciController implements Initializable {
 
     public void sayacArttir() {
         this.sayac++;
-        System.out.println(secilimi(nitelikBalik.isSelected()));
+        //System.out.println(secilimi(nitelikBalik.isSelected()));
         if (this.sayac == 2) {
             if (nitelikBalik.isSelected() == false && nitelikKus.isSelected() == false && nitelikMemeli.isSelected() != false && nitelikSurungen.isSelected() != false) {
                 nitelikBalik.setDisable(true);

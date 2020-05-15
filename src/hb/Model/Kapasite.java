@@ -5,36 +5,27 @@
  */
 package hb.Model;
 
-import hb.Controller.KusKapasiteDosya;
-import hb.Controller.NormalAcikAlanKapasiteDosya;
-import hb.Controller.NormalAkvaryumKapasiteDosya;
-import hb.Controller.SuluAcikKapasiteDosya;
-import hb.Controller.TehlikeliAcikAlanKapasiteDosya;
-import hb.Controller.TehlikeliAkvaryumKapasiteDosya;
+import hb.Controller.Dosya;
+
 
 /**
  *
  * @author techn
  */
 public class Kapasite {
-    private TehlikeliAcikAlanKapasiteDosya TAAdosya = new TehlikeliAcikAlanKapasiteDosya();
-    private NormalAcikAlanKapasiteDosya NAAkapasite = new NormalAcikAlanKapasiteDosya();
-    private KusKapasiteDosya kusKapasite = new KusKapasiteDosya();
-    private NormalAkvaryumKapasiteDosya NAkapasite = new NormalAkvaryumKapasiteDosya();
-    private TehlikeliAkvaryumKapasiteDosya TAkapasiteDosya = new TehlikeliAkvaryumKapasiteDosya();
-    private SuluAcikKapasiteDosya SAkapasiteDosya = new SuluAcikKapasiteDosya();
-    private int SuluAcikkapasite = SAkapasiteDosya.KapasiteDosyaOku();
-    private int TehlikeliAkvaryumKapasite = TAkapasiteDosya.KapasiteDosyaOku();
-    private int NormalAkvaryumKapasite = NAkapasite.KapasiteDosyaOku();
-    private int KusKapasite = kusKapasite.KapasiteDosyaOku();
-    private int TehlikeliAcikAlanKapasite = TAAdosya.KapasiteDosyaOku();
-    private int NormalAcikAlan = NAAkapasite.KapasiteDosyaOku();
+    private Dosya dosya = new Dosya();
+    private int SuluAcikkapasite = dosya.KapasiteDosyaOku("dosya/SuluAcikKapasite.dat");
+    private int TehlikeliAkvaryumKapasite = dosya.KapasiteDosyaOku("dosya/TehlikeliAkvaryumKapasite.dat");
+    private int NormalAkvaryumKapasite = dosya.KapasiteDosyaOku("dosya/NormalAkvaryumKapasite.dat");
+    private int KusKapasite = dosya.KapasiteDosyaOku("dosya/KusKapasite.dat");
+    private int TehlikeliAcikAlanKapasite = dosya.KapasiteDosyaOku("dosya/TehlikeliAcikAlanKapasite.dat");
+    private int NormalAcikAlan = dosya.KapasiteDosyaOku("dosya/NormalAcikAlanKapasite.dat");
     
     
     public void SuluAcikkapasiteAzalt() {
         if (this.SuluAcikkapasite != 0) {
             SuluAcikkapasite--;
-            SAkapasiteDosya.KapasiteEkle(SuluAcikkapasite);
+            dosya.Ekle(SuluAcikkapasite,"dosya/SuluAcikKapasite.dat");
             System.out.println("kapasite azaltildi");
         }
     }
@@ -42,7 +33,7 @@ public class Kapasite {
     public void SuluAcikkapasiteArttir() {
         if (this.SuluAcikkapasite <= 50) {
             SuluAcikkapasite++;
-            SAkapasiteDosya.KapasiteEkle(SuluAcikkapasite);
+            dosya.Ekle(SuluAcikkapasite,"dosya/SuluAcikKapasite.dat");
             System.out.println("kapasite arttirildi");
         }
     }
@@ -54,7 +45,7 @@ public class Kapasite {
     public void TehlikeliAkvaryumKapasiteAzalt() {
         if (this.TehlikeliAkvaryumKapasite != 0) {
             TehlikeliAkvaryumKapasite--;
-            TAkapasiteDosya.KapasiteEkle(TehlikeliAkvaryumKapasite);
+            dosya.Ekle(TehlikeliAkvaryumKapasite,"dosya/TehlikeliAkvaryumKapasite.dat");
             System.out.println("kapasite azaltildi");
         }
     }
@@ -62,7 +53,7 @@ public class Kapasite {
     public void TehlikeliAkvaryumKapasiteArttir() {
         if (this.TehlikeliAkvaryumKapasite <= 50) {
             TehlikeliAkvaryumKapasite++;
-            TAkapasiteDosya.KapasiteEkle(TehlikeliAkvaryumKapasite);
+            dosya.Ekle(TehlikeliAkvaryumKapasite,"dosya/TehlikeliAkvaryumKapasite.dat");
             System.out.println("kapasite arttirildi");
         }
     }
@@ -74,7 +65,7 @@ public class Kapasite {
     public void NormalAkvaryumKapasiteAzalt() {
         if (this.NormalAkvaryumKapasite != 0) {
             NormalAkvaryumKapasite--;
-            NAkapasite.KapasiteEkle(NormalAkvaryumKapasite);
+            dosya.Ekle(NormalAkvaryumKapasite,"dosya/NormalAkvaryumKapasite.dat");
             System.out.println("kapasite azaltildi");
         }
     }
@@ -82,7 +73,7 @@ public class Kapasite {
     public void NormalAkvaryumKapasiteArttir() {
         if (this.NormalAkvaryumKapasite <= 50) {
             NormalAkvaryumKapasite++;
-            NAkapasite.KapasiteEkle(NormalAkvaryumKapasite);
+            dosya.Ekle(NormalAkvaryumKapasite,"dosya/NormalAkvaryumKapasite.dat");
             System.out.println("kapasite arttirildi");
         }
     }
@@ -94,7 +85,7 @@ public class Kapasite {
     public void KusKapasiteAzalt() {
         if (this.KusKapasite != 0) {
             KusKapasite--;
-            kusKapasite.KapasiteEkle(KusKapasite);
+            dosya.Ekle(KusKapasite,"dosya/KusKapasite.dat");
             System.out.println("kapasite azaltildi");
         }
     }
@@ -102,7 +93,7 @@ public class Kapasite {
     public void KusKapasiteArttir() {
         if (this.KusKapasite <= 50) {
             KusKapasite++;
-            kusKapasite.KapasiteEkle(KusKapasite);
+            dosya.Ekle(KusKapasite,"dosya/KusKapasite.dat");
             System.out.println("kapasite arttirildi");
         }
     }
@@ -114,7 +105,7 @@ public class Kapasite {
     public void TehlikeliAcikAlanKapasiteAzalt() {
         if (this.TehlikeliAcikAlanKapasite != 0) {
             TehlikeliAcikAlanKapasite--;
-            TAAdosya.KapasiteEkle(TehlikeliAcikAlanKapasite);
+            dosya.Ekle(TehlikeliAcikAlanKapasite,"dosya/TehlikeliAcikAlanKapasite.dat");
             System.out.println("kapasite azaltildi");
         }
     }
@@ -122,7 +113,7 @@ public class Kapasite {
     public void TehlikeliAcikAlanKapasiteArttir() {
         if (this.TehlikeliAcikAlanKapasite <= 50) {
             TehlikeliAcikAlanKapasite++;
-            TAAdosya.KapasiteEkle(TehlikeliAcikAlanKapasite);
+            dosya.Ekle(TehlikeliAcikAlanKapasite,"dosya/TehlikeliAcikAlanKapasite.dat");
             System.out.println("kapasite arttirildi");
         }
     }
@@ -135,7 +126,7 @@ public class Kapasite {
     public void NormalAcikAlanAzalt() {
         if (this.NormalAcikAlan != 0) {
             NormalAcikAlan--;
-            NAAkapasite.KapasiteEkle(NormalAcikAlan);
+            dosya.Ekle(NormalAcikAlan,"dosya/NormalAcikAlanKapasite.dat");
             System.out.println("kapasite azaltildi");
         }
     }
@@ -143,7 +134,7 @@ public class Kapasite {
     public void NormalAcikAlanArttir() {
         if (this.NormalAcikAlan <= 50) {
             NormalAcikAlan++;
-            NAAkapasite.KapasiteEkle(NormalAcikAlan);
+            dosya.Ekle(NormalAcikAlan,"dosya/NormalAcikAlanKapasite.dat");
             System.out.println("kapasite arttirildi");
         }
     }
