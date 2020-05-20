@@ -23,7 +23,7 @@ public class denizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guve
     private int yirtici;
     private int sosyal;
     private int guvenlik;
-    private Hayvan2 hayvan;
+   
 
     public denizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
         super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);

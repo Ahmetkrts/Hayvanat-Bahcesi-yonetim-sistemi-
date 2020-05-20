@@ -190,12 +190,13 @@ public class ListeleBakiciController implements Initializable {
 
         for (bakici bakici : BakiciList) {
 
-            System.out.println(bakici.toString());
+           // System.out.println(bakici.toString());
             data_table.add(bakici);
         }
 
         bakiciTablosu.setItems(data_table);
     }
+    
     double x, y;
 
     @FXML

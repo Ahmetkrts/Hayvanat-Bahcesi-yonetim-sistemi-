@@ -67,7 +67,7 @@ public class Dosya implements Serializable{
 
                     Hayvan2 hayvan = (Hayvan2) hayvanDosyasi.readObject();
                     //System.out.println("buray gelemedin daha");
-                    System.out.println(hayvan.toString());
+                    //System.out.println(hayvan.toString());
                     hayvanList.add(hayvan);
                 } catch (EOFException e) {
                     eof = true;

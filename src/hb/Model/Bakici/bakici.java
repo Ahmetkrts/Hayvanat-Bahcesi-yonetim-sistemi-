@@ -6,14 +6,17 @@
 package hb.Model.Bakici;
 
 import hb.Controller.Dosya;
+import hb.Model.Hayvan.Hayvan2;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author Casper
  */
-public class bakici implements bakiciNitelikleri,Serializable {
+public class bakici implements bakiciNitelikleri, Serializable {
+
     private Dosya Bakiciid = new Dosya();
     private int id = Bakiciid.KapasiteDosyaOku("dosya/BakiciId.dat");
     private int bakiciNo;
@@ -23,6 +26,7 @@ public class bakici implements bakiciNitelikleri,Serializable {
     private String balikNitelik;
     private String surungenNitelik;
     private String kusNitelik;
+    private List<Hayvan2> hayvanList;
 
     public bakici() {
         this.bakiciNo = id;
@@ -111,6 +115,14 @@ public class bakici implements bakiciNitelikleri,Serializable {
                     + getMemeliNitelik() + "\n"
                     + getSurungenNitelik() + "\n";
         }
+    }
+
+    public List<Hayvan2> getHayvanList() {
+        return hayvanList;
+    }
+
+    public void setHayvanList(List<Hayvan2> hayvanList) {
+        this.hayvanList = hayvanList;
     }
 
     public String getIsim() {
