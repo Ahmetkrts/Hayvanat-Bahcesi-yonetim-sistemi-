@@ -5,12 +5,12 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
-
 /**
  *
  * @author techn
  */
-public interface guvenlik{
+public interface guvenlik {
+
     default String guvenlik(int a) {
         return a == 1 ? "Yüksek Güvenlik Gerektirir" : "Normal Güvenlik Gerektirir";
     }

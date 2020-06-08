@@ -16,164 +16,164 @@
 
 
 <AnchorPane prefHeight="474.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.Controller.Bakici.EkleBakiciController">
-   <children>
-      <VBox layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css">
-         <children>
-            <AnchorPane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #ff5722;">
-               <children>
-                  <AnchorPane layoutX="739.0" layoutY="14.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
-                     <children>
-                        <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/left.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="anaGeriButon" layoutX="51.0" layoutY="16.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transparent;" text="Geri">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
+    <children>
+        <VBox layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" stylesheets="@../CSS/Style.css">
+            <children>
+                <AnchorPane prefHeight="86.0" prefWidth="900.0" style="-fx-background-color: #ff5722;">
+                    <children>
+                        <AnchorPane layoutX="739.0" layoutY="14.0" prefHeight="61.0" prefWidth="117.0" style="-fx-border-color: #4E4E4E;">
+                            <children>
+                                <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="12.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/left.png" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="anaGeriButon" layoutX="51.0" layoutY="16.0" mnemonicParsing="false" onAction="#anaGeriController" style="-fx-background-color: transparent;" text="Geri">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
                      
-                     <styleClass>
-                        <String fx:value="buttons" />
-                        <String fx:value="anchora" />
-                     </styleClass>
-                  </AnchorPane>
-                  <Label layoutX="66.0" layoutY="31.0" prefHeight="29.0" prefWidth="131.0" text="Bakıcı Ekleme">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/more%20(1).png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="900.0">
-               <children>
-                  <AnchorPane layoutX="76.0" layoutY="74.0" prefHeight="307.0" prefWidth="612.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
-                     <children>
-                        <AnchorPane layoutX="43.0" layoutY="54.0" prefHeight="61.0" prefWidth="210.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
-                           <children>
-                              <Label layoutX="91.0" layoutY="-10.0" text="Adı">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Images/name%20(1).png" />
-                                 </image>
-                              </ImageView>
-                              <TextField fx:id="bakiciAdText" layoutX="54.0" layoutY="18.0" prefHeight="25.0" prefWidth="142.0" />
-                           </children>
+                            <styleClass>
+                                <String fx:value="buttons" />
+                                <String fx:value="anchora" />
+                            </styleClass>
                         </AnchorPane>
-                        <AnchorPane layoutX="43.0" layoutY="192.0" prefHeight="61.0" prefWidth="210.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
-                           <children>
-                              <Label layoutX="57.0" layoutY="-10.0" text="Doğum Tarihi">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <DatePicker fx:id="bakiciDogumTarihiDate" layoutX="47.0" layoutY="18.0" prefHeight="25.0" prefWidth="149.0" />
-                              <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../Images/calendar.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="406.0" layoutY="49.0" prefHeight="208.0" prefWidth="149.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
-                           <children>
-                              <VBox layoutX="16.0" layoutY="50.0" prefHeight="144.0" prefWidth="117.0">
-                                 <children>
-                                    <CheckBox fx:id="nitelikMemeli" mnemonicParsing="false" onAction="#sayacArttir" text="Memeli">
-                                       <VBox.margin>
-                                          <Insets bottom="9.0" left="20.0" />
-                                       </VBox.margin>
-                                    </CheckBox>
-                                    <CheckBox fx:id="nitelikSurungen" mnemonicParsing="false" onAction="#sayacArttir" text="Sürüngen">
-                                       <VBox.margin>
-                                          <Insets bottom="9.0" left="20.0" />
-                                       </VBox.margin>
-                                    </CheckBox>
-                                    <CheckBox fx:id="nitelikKus" mnemonicParsing="false" onAction="#sayacArttir" text="Kuş">
-                                       <VBox.margin>
-                                          <Insets bottom="9.0" left="20.0" />
-                                       </VBox.margin>
-                                    </CheckBox>
-                                    <CheckBox fx:id="nitelikBalik" mnemonicParsing="false" onAction="#sayacArttir" text="Balık">
-                                       <VBox.margin>
-                                          <Insets bottom="9.0" left="20.0" />
-                                       </VBox.margin>
-                                    </CheckBox>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                        <Label layoutX="449.0" layoutY="39.0" text="Nitelikleri">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
+                        <Label layoutX="66.0" layoutY="31.0" prefHeight="29.0" prefWidth="131.0" text="Bakıcı Ekleme">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
                         </Label>
-                     </children>
-                  </AnchorPane>
-                  <Label layoutX="273.0" layoutY="60.0" text="Yeni Bakıcı Detayları">
-                     <font>
-                        <Font name="System Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="455.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/add%20(2).png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="106.0" fitWidth="110.0" layoutX="772.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/bird.png" />
-                     </image>
-                  </ImageView>
-                  <AnchorPane layoutX="746.0" layoutY="320.0" prefHeight="59.0" prefWidth="110.0" style="-fx-border-color: #4E4E4E;" styleClass="buttons">
-                     <children>
-                        <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/audit.png" />
-                           </image>
+                        <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/more%20(1).png" />
+                            </image>
                         </ImageView>
-                        <Button fx:id="bakiciEkleButon" layoutX="50.0" layoutY="14.0" mnemonicParsing="false" onAction="#kayitEkleController" style="-fx-background-color: transparent;" text="Ekle">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Button>
-                     </children>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="900.0">
+                    <children>
+                        <AnchorPane layoutX="76.0" layoutY="74.0" prefHeight="307.0" prefWidth="612.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+                            <children>
+                                <AnchorPane layoutX="43.0" layoutY="54.0" prefHeight="61.0" prefWidth="210.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+                                    <children>
+                                        <Label layoutX="91.0" layoutY="-10.0" text="Adı">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../Images/name%20(1).png" />
+                                            </image>
+                                        </ImageView>
+                                        <TextField fx:id="bakiciAdText" layoutX="54.0" layoutY="18.0" prefHeight="25.0" prefWidth="142.0" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="43.0" layoutY="192.0" prefHeight="61.0" prefWidth="210.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+                                    <children>
+                                        <Label layoutX="57.0" layoutY="-10.0" text="Doğum Tarihi">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Label>
+                                        <DatePicker fx:id="bakiciDogumTarihiDate" layoutX="47.0" layoutY="18.0" prefHeight="25.0" prefWidth="149.0" />
+                                        <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../Images/calendar.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="406.0" layoutY="49.0" prefHeight="208.0" prefWidth="149.0" style="-fx-border-color: #4E4E4E; -fx-border-width: 0 1 1 1;">
+                                    <children>
+                                        <VBox layoutX="16.0" layoutY="50.0" prefHeight="144.0" prefWidth="117.0">
+                                            <children>
+                                                <CheckBox fx:id="nitelikMemeli" mnemonicParsing="false" onAction="#sayacArttir" text="Memeli">
+                                                    <VBox.margin>
+                                                        <Insets bottom="9.0" left="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="nitelikSurungen" mnemonicParsing="false" onAction="#sayacArttir" text="Sürüngen">
+                                                    <VBox.margin>
+                                                        <Insets bottom="9.0" left="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="nitelikKus" mnemonicParsing="false" onAction="#sayacArttir" text="Kuş">
+                                                    <VBox.margin>
+                                                        <Insets bottom="9.0" left="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                                <CheckBox fx:id="nitelikBalik" mnemonicParsing="false" onAction="#sayacArttir" text="Balık">
+                                                    <VBox.margin>
+                                                        <Insets bottom="9.0" left="20.0" />
+                                                    </VBox.margin>
+                                                </CheckBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                                <Label layoutX="449.0" layoutY="39.0" text="Nitelikleri">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                        <Label layoutX="273.0" layoutY="60.0" text="Yeni Bakıcı Detayları">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="46.0" fitWidth="36.0" layoutX="455.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/add%20(2).png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="106.0" fitWidth="110.0" layoutX="772.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/bird.png" />
+                            </image>
+                        </ImageView>
+                        <AnchorPane layoutX="746.0" layoutY="320.0" prefHeight="59.0" prefWidth="110.0" style="-fx-border-color: #4E4E4E;" styleClass="buttons">
+                            <children>
+                                <ImageView fitHeight="29.0" fitWidth="36.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/audit.png" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="bakiciEkleButon" layoutX="50.0" layoutY="14.0" mnemonicParsing="false" onAction="#kayitEkleController" style="-fx-background-color: transparent;" text="Ekle">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
                      
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </children>
-      </VBox>
-      <AnchorPane layoutY="-3.0" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="31.0" prefWidth="900.0" style="-fx-background-color: #888888;">
-         <children>
-            <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="13.0" layoutY="7.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/circle.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="42.0" layoutY="7.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/signs%20(2).png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <AnchorPane layoutY="-3.0" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="31.0" prefWidth="900.0" style="-fx-background-color: #888888;">
+            <children>
+                <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="13.0" layoutY="7.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/circle.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fitHeight="20.0" fitWidth="67.0" layoutX="42.0" layoutY="7.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../Images/signs%20(2).png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

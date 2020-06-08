@@ -105,7 +105,7 @@ public class ListeleHayvanController implements Initializable {
                 List<Hayvan2> HayvanList = new ArrayList<>();
                 HayvanList = dosya.HayvanDosyaOku("dosya/HayvanListesi.dat");
                 HayvanList.remove(hayvanTablosu.getSelectionModel().getSelectedIndex());
-                dosya.HayvanDosyaYaz(HayvanList,"dosya/HayvanListesi.dat");
+                dosya.HayvanDosyaYaz(HayvanList, "dosya/HayvanListesi.dat");
             } else {
                 //cancel tusuna basılınca yılacak işlem ancak yapılacak işlem yok 
             }

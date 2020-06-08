@@ -164,39 +164,39 @@ public class EkleHayvanController extends TheController implements Initializable
             }
 
             //hayvan = new Hayvan(irki, isim, dogum, gelis, cinsiyet, ilac, asi);
-            this.dosya.Ekle(hayvan,"dosya/HayvanListesi.dat");
+            this.dosya.Ekle(hayvan, "dosya/HayvanListesi.dat");
             this.kapasite = new Kapasite();
             switch (this.hucresecim) {
                 case "Tehlikeli Balık Akvaryumu":
-                    this.dosya.Ekle(hayvan , "dosya/TehlikeliBalıkAkvaryumu.dat");
+                    this.dosya.Ekle(hayvan, "dosya/TehlikeliBalıkAkvaryumu.dat");
                     this.kapasite.TehlikeliAkvaryumKapasiteArttir();
 
                     System.out.println("Tehlikeli Balık Akvaryumuna dosya eklendi");
                     break;
                 case "Normal Balık Akvaryumu":
-                    this.dosya.Ekle(hayvan , "dosya/NormalBalıkAkvaryumu.dat");
+                    this.dosya.Ekle(hayvan, "dosya/NormalBalıkAkvaryumu.dat");
                     this.kapasite.NormalAkvaryumKapasiteArttir();
 
                     System.out.println("Normal Balık Akvaryumuna dosya eklendi");
                     break;
                 case "Tehlikeli Açık Alan":
-                    this.dosya.Ekle(hayvan , "dosya/TehlikeliAcikAlan.dat");
+                    this.dosya.Ekle(hayvan, "dosya/TehlikeliAcikAlan.dat");
                     this.kapasite.TehlikeliAcikAlanKapasiteArttir();
 
                     System.out.println("Tehlikeli Memeli Acik alana eklendi");
                     break;
                 case "Normal Açık Alan":
-                    this.dosya.Ekle(hayvan , "dosya/NormalAcikAlan.dat");
+                    this.dosya.Ekle(hayvan, "dosya/NormalAcikAlan.dat");
                     this.kapasite.NormalAcikAlanArttir();
                     System.out.println("Normal Memeli Acik alana eklendi");
                     break;
                 case "Kuş Kafesi":
-                    this.dosya.Ekle(hayvan , "dosya/KusKafesi.dat");
+                    this.dosya.Ekle(hayvan, "dosya/KusKafesi.dat");
                     this.kapasite.KusKapasiteArttir();
                     System.out.println("Kus Kafesi alana eklendi");
                     break;
                 case "Sulu Açık Alan":
-                    this.dosya.Ekle(hayvan , "dosya/SuluAcik.dat");
+                    this.dosya.Ekle(hayvan, "dosya/SuluAcik.dat");
                     this.kapasite.SuluAcikkapasiteArttir();
                     System.out.println("Sulu Acik alana eklendi");
                     break;
@@ -250,7 +250,7 @@ public class EkleHayvanController extends TheController implements Initializable
                 sinifSecim = "Memeli";
                 turChoiceBox.getItems().clear();
                 hucreChoiceBox.getItems().clear();
-                turChoiceBox.getItems().addAll("Kaplan", "Aslan", "Yunus Balığı", "Yarasa");
+                turChoiceBox.getItems().addAll("Kaplan", "Aslan", "Fil", "Ayı", "Geyik", "Sincap", "Maymun", "Sırtlan", "Lemur", "Goril", "Leopar", "Zürafa", "Başak");
                 checkBoxControl("Öfkeli", "Yırtıcı", "Extra Güvenlik", "Kıllı", "Sosyal", null);
                 hucreChoiceBox.getItems().addAll("Tehlikeli Açık Alan", "Normal Açık Alan");
 
@@ -259,7 +259,7 @@ public class EkleHayvanController extends TheController implements Initializable
                 sinifSecim = "Memeli Deniz Canlısı";
                 turChoiceBox.getItems().clear();
                 hucreChoiceBox.getItems().clear();
-                turChoiceBox.getItems().addAll("Kaplan", "Aslan", "Yunus Balığı", "Yarasa");
+                turChoiceBox.getItems().addAll("Yunus", "Penguen", "Manda", "Su Samuru", "Fok Balığı", "Gergedan", "Mühür", "Amerikan Kunduzu", "Deniz İneği", "Kapibara", "Su Aygırı");
                 checkBoxControl("Öfkeli", "Aqua Dışında Yaşar", null, null, null, null);
                 hucreChoiceBox.getItems().addAll("Tehlikeli Balık Akvaryumu", "Normal Balık Akvaryumu");
 
@@ -268,7 +268,7 @@ public class EkleHayvanController extends TheController implements Initializable
                 sinifSecim = "Sürüngen";
                 turChoiceBox.getItems().clear();
                 hucreChoiceBox.getItems().clear();
-                turChoiceBox.getItems().addAll("Kertenkele", "Timsah", "Yılan", "Sümüklü Böcek");
+                turChoiceBox.getItems().addAll("Kertenkele", "Iguana", "Bukalemun", "Kaplumbağa", "Yılan", "Gila Canavarı", "Viper", "Tarantula");
                 checkBoxControl("Zehirli", "Extra Güvenlik", "Et ile Beslenir", "Yırtıcı", "Boy 5 Metreden Büyük", null);
                 hucreChoiceBox.getItems().addAll("Sulu Açık Alan");
                 break;
@@ -276,7 +276,7 @@ public class EkleHayvanController extends TheController implements Initializable
                 sinifSecim = "Sürüngen Deniz Canlısı";
                 turChoiceBox.getItems().clear();
                 hucreChoiceBox.getItems().clear();
-                turChoiceBox.getItems().addAll("Kertenkele", "Timsah", "Yılan", "Sümüklü Böcek");
+                turChoiceBox.getItems().addAll("Timsah", "Anaconda", "Mercan Yılanı", "Kuzey Su Yılanı", "Homalopsis Yılanı", "Kaplumbağa");
                 checkBoxControl("Zehirli", "Aqua Dışında Yaşar", "Extra Güvenlik", "Et ile Beslenir", "Yırtıcı", "Boy 5 Mtreden Büyük");
                 hucreChoiceBox.getItems().addAll("Sulu Açık Alan");
                 break;
@@ -284,7 +284,7 @@ public class EkleHayvanController extends TheController implements Initializable
                 sinifSecim = "Deniz Canlısı";
                 turChoiceBox.getItems().clear();
                 hucreChoiceBox.getItems().clear();
-                turChoiceBox.getItems().addAll("Ala Balık", "Hamsi", "Kılıç Balıgı", "Köpek Balığı");
+                turChoiceBox.getItems().addAll("Fener Balığı", "Deniz Yıldızı", "Elektrikli Yılan Balığı", "Kadife Balığı", "Beyaz Köpek Balığı", "Mercan Balığı", "Denizatı", "Orkinos", "Ay Balığı", "Papaz Balığı", "Deniz Gergedanı", "Balina Köpek Balığı", "Kılıç Balığı", "Balina");
                 checkBoxControl("Aqua Dışında Yaşar", "Et ile beslenir", "Yırtıcı", "Sosyal", "Extra Güvenlik", null);
                 hucreChoiceBox.getItems().addAll("Tehlikeli Balık Akvaryumu", "Normal Balık Akvaryumu");
                 break;
@@ -292,7 +292,7 @@ public class EkleHayvanController extends TheController implements Initializable
                 sinifSecim = "Kanatlı";
                 turChoiceBox.getItems().clear();
                 hucreChoiceBox.getItems().clear();
-                turChoiceBox.getItems().addAll("Papağan", "Serçe", "Bülbül", "Tavus kuşu");
+                turChoiceBox.getItems().addAll("Papağan", "Baykuş", "Tukan", "Kırlangıç", "Serçe", "Kaz", "pelikan", "Sumru", "Yalıçapkını", "Turako", "Kartal ", "Bülbül", "Tavus Kuşu");
                 checkBoxControl("Uçabilir", "Yırtıcı", "Et ile Beslenir", "Extra Güvenlik", null, null);
                 hucreChoiceBox.getItems().addAll("Kuş Kafesi");
                 break;

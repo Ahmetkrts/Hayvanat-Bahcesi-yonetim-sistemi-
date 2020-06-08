@@ -5,7 +5,6 @@
  */
 package hb.Model.HayvanOzelliklerii;
 
-
 /**
  *
  * @author techn

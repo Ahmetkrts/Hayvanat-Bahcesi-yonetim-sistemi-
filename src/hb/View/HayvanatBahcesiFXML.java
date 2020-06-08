@@ -21,9 +21,9 @@ import javafx.stage.StageStyle;
  * @author Casper
  */
 public class HayvanatBahcesiFXML extends Application {
-    
+
     @Override
-    public void start(Stage stage)  {
+    public void start(Stage stage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("AnaPanel.fxml"));
             Scene scene = new Scene(root);
@@ -47,5 +47,5 @@ public class HayvanatBahcesiFXML extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

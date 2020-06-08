@@ -17,17 +17,19 @@ import java.util.ArrayList;
  *
  * @author Casper
  */
-public class memeliDenizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler  {
+public class memeliDenizCanlisiOlustur extends Hayvan2 implements beslenmeBicimi, guvenlik, hayvanHuylari, ozellikler {
 
     private int ofkeli;
     private int aquaDisindaYasar;
 
-    public memeliDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi,Hucre);
+    public memeliDenizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
     }
+
     public memeliDenizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
+
     @Override
     public ArrayList<String> hayvanListesi() {
         ArrayList<String> list = super.hayvanListesi();
@@ -35,6 +37,7 @@ public class memeliDenizCanlisiOlustur extends Hayvan2  implements beslenmeBicim
         list.add(ofkeliMi(ofkeli));
         return list;
     }
+
     @Override
     public String toString() {
         return "Hayvan Numarası: " + super.getHayvanNo() + "\n"
@@ -47,9 +50,9 @@ public class memeliDenizCanlisiOlustur extends Hayvan2  implements beslenmeBicim
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Aqua Dışında Yaşar: " + aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
-                + "Hücre: "+super.getHucre()+"\n"
-                + "Öfekeli: "+ofkeliMi(ofkeli)+"\n";
+                + "Aqua Dışında Yaşar: " + aquaDisindaYasarMi(aquaDisindaYasar) + "\n"
+                + "Hücre: " + super.getHucre() + "\n"
+                + "Öfekeli: " + ofkeliMi(ofkeli) + "\n";
 
     }
 

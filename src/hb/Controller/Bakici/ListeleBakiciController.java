@@ -190,13 +190,13 @@ public class ListeleBakiciController implements Initializable {
 
         for (bakici bakici : BakiciList) {
 
-           // System.out.println(bakici.toString());
+            // System.out.println(bakici.toString());
             data_table.add(bakici);
         }
 
         bakiciTablosu.setItems(data_table);
     }
-    
+
     double x, y;
 
     @FXML
@@ -223,10 +223,9 @@ public class ListeleBakiciController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
-    public void ekranitemizle(){
+
+    public void ekranitemizle() {
         bakicininOzekleri.clear();
     }
 
-
-    
 }

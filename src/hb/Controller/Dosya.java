@@ -25,13 +25,13 @@ import java.util.logging.Logger;
  *
  * @author Casper
  */
-public class Dosya implements Serializable{
+public class Dosya implements Serializable {
 
-    public void Ekle(int kapasite,String DosyaYolu) {
-        KapasiteDosyaYaz(kapasite,DosyaYolu);
+    public void Ekle(int kapasite, String DosyaYolu) {
+        KapasiteDosyaYaz(kapasite, DosyaYolu);
 
     }
-    
+
     public void Ekle(bakici bakici, String DosyaYolu) {
         List<bakici> bakiciList = BakiciDosyaOku(DosyaYolu);
         bakiciList.add(bakici);
@@ -127,16 +127,14 @@ public class Dosya implements Serializable{
         return bakiciList;
 
     }
-    
 
-    public void KapasiteDosyaYaz(int kapasite,String Kapasite) {
+    public void KapasiteDosyaYaz(int kapasite, String Kapasite) {
         try (ObjectOutputStream kapasiteDosya = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(Kapasite)))) {
             kapasiteDosya.writeObject(kapasite);
-            if("dosya/BakiciId.dat".equals(Kapasite)){
-                System.out.println(kapasite-1+" ID Dosyaya yazildi");
-            }
-            else{
-                System.out.println(kapasite+" kapasite Dosyaya yazildi");
+            if ("dosya/BakiciId.dat".equals(Kapasite)) {
+                System.out.println(kapasite - 1 + " ID Dosyaya yazildi");
+            } else {
+                System.out.println(kapasite + " kapasite Dosyaya yazildi");
             }
         } catch (Exception e) {
         }
@@ -145,10 +143,9 @@ public class Dosya implements Serializable{
 
     public int KapasiteDosyaOku(String Kapasite) {
         int x;
-        if("dosya/BakiciId.dat".equals(Kapasite) || "dosya/HayvanId.dat".equals(Kapasite)){
+        if ("dosya/BakiciId.dat".equals(Kapasite) || "dosya/HayvanId.dat".equals(Kapasite)) {
             x = 1;
-        }
-        else{
+        } else {
             x = 0;
         }
         try (ObjectInputStream kapasiteDosya = new ObjectInputStream(new BufferedInputStream(new FileInputStream(Kapasite)))) {
@@ -156,8 +153,8 @@ public class Dosya implements Serializable{
             while (!eof) {
                 try {
 
-                   int kapasite = (int) kapasiteDosya.readObject();
-                   x = kapasite;
+                    int kapasite = (int) kapasiteDosya.readObject();
+                    x = kapasite;
                 } catch (EOFException e) {
                     eof = true;
                 }

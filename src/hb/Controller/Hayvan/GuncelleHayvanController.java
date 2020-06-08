@@ -86,6 +86,7 @@ public class GuncelleHayvanController implements Initializable {
     private Button anaGeriButon;
     @FXML
     private Button hayvanGuncelleButon;
+
     @FXML
     public void kayitGuncelleController(ActionEvent event) {
 
@@ -101,7 +102,7 @@ public class GuncelleHayvanController implements Initializable {
         Asi asi = new Asi(asiChoiceBox.getValue().toString());
         Ilac ilac = new Ilac(ilacChoiceBox.getValue().toString());
         try {
-            
+
             switch (this.sinifSecim) {
                 case "Memeli":
                     memeliOlustur memeli = new memeliOlustur("Memeli", irki, isim, dogum, gelis, cinsiyet, ilac, asi);
@@ -173,7 +174,7 @@ public class GuncelleHayvanController implements Initializable {
             }
             List<Hayvan2> hayvanList = dosya.HayvanDosyaOku("dosya/HayvanListesi.dat");
             hayvanList.set(hayvanIndex, hayvan);
-            dosya.HayvanDosyaYaz(hayvanList,"dosya/HayvanListesi.dat");
+            dosya.HayvanDosyaYaz(hayvanList, "dosya/HayvanListesi.dat");
 
         } catch (Exception e) {
             System.out.println("ekle hayvan geldi hata");
@@ -531,5 +532,5 @@ public class GuncelleHayvanController implements Initializable {
     public void setHucre(String hucre) {
         this.hucre = hucre;
     }
-    
+
 }

@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author Casper
  */
-public class surungenOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler {
+public class surungenOlustur extends Hayvan2 implements beslenmeBicimi, guvenlik, hayvanHuylari, ozellikler {
 
     private int zehirli;
     private int guvenlik;
@@ -27,13 +27,13 @@ public class surungenOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,
     private int yirtici;
     private int boy;
 
-    public surungenOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi,Hucre);
+    public surungenOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
     }
+
     public surungenOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
-
 
     @Override
     public ArrayList<String> hayvanListesi() {
@@ -62,7 +62,7 @@ public class surungenOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,
                 + "Güvenlik: " + guvenlik(guvenlik) + "\n"
                 + "Yemek: " + et_yem_yemekBicimi(yemek) + "\n"
                 + "Yırtıcı: " + yirticiMi(yirtici) + "\n"
-                + "Hücre: "+super.getHucre()+"\n"
+                + "Hücre: " + super.getHucre() + "\n"
                 + "Boyu 5 Metre: " + boyuBesMetredenBuyukMu(boy) + "\n";
 
     }

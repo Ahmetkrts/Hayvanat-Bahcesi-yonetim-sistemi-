@@ -12,24 +12,25 @@ import hb.Model.HayvanOzelliklerii.guvenlik;
 import hb.Model.HayvanOzelliklerii.hayvanHuylari;
 import hb.Model.HayvanOzelliklerii.ozellikler;
 import java.util.ArrayList;
+
 /**
  *
  * @author Casper
  */
-public class denizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler {
+public class denizCanlisiOlustur extends Hayvan2 implements beslenmeBicimi, guvenlik, hayvanHuylari, ozellikler {
 
     private int aquaDisindaYasar;
     private int yemek;
     private int yirtici;
     private int sosyal;
     private int guvenlik;
-   
 
-    public denizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
+    public denizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
     }
-    public denizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
+
+    public denizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
     @Override
@@ -42,7 +43,8 @@ public class denizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guve
         list.add(sosyalMi(sosyal));
         return list;
     }
-     @Override
+
+    @Override
     public String toString() {
         return "Hayvan Numarası: " + super.getHayvanNo() + "\n"
                 + "İsim: " + super.getIsmi() + "\n"
@@ -54,12 +56,12 @@ public class denizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guve
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Aqua Dışında Yaşar: " + aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
-                + "Yemek: "+et_yem_yemekBicimi(yemek)+"\n"
-                + "Güvenlik: "+guvenlik(guvenlik)+"\n"
-                + "Yırtıcı: "+yirticiMi(yirtici)+"\n"
-                + "Hücre: "+super.getHucre()+"\n"
-                + "Sosyal: "+sosyalMi(sosyal)+"\n";
+                + "Aqua Dışında Yaşar: " + aquaDisindaYasarMi(aquaDisindaYasar) + "\n"
+                + "Yemek: " + et_yem_yemekBicimi(yemek) + "\n"
+                + "Güvenlik: " + guvenlik(guvenlik) + "\n"
+                + "Yırtıcı: " + yirticiMi(yirtici) + "\n"
+                + "Hücre: " + super.getHucre() + "\n"
+                + "Sosyal: " + sosyalMi(sosyal) + "\n";
 
     }
 
@@ -73,6 +75,7 @@ public class denizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guve
         isim.add("sosyal");
         return isim;
     }
+
     public int getAquaDisindaYasar() {
         return aquaDisindaYasar;
     }

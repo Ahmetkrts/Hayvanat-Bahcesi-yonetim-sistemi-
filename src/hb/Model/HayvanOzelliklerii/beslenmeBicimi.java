@@ -9,12 +9,12 @@ package hb.Model.HayvanOzelliklerii;
  *
  * @author techn
  */
-public interface beslenmeBicimi{
-    
+public interface beslenmeBicimi {
+
     default String et_yem_yemekBicimi(int a) {
         return a == 1 ? "Et Ile Beslenir" : "Yem Ile Beslenir";
     }
-    
+
     default String et_ot_yemekBicimi(int a) {
         return a == 1 ? "Et Ile Beslenir" : "Ot Ile Beslenir";
     }

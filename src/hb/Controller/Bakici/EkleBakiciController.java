@@ -103,7 +103,7 @@ public class EkleBakiciController implements Initializable {
             Bakici.setKusNitelik(Bakici.Kus(secilimi(nitelikKus.isSelected())));
             Bakici.setMemeliNitelik(Bakici.Memeli(secilimi(nitelikMemeli.isSelected())));
             Bakici.setSurungenNitelik(Bakici.Surungen(secilimi(nitelikSurungen.isSelected())));
-            this.dosya.Ekle(Bakici,"dosya/BakiciDosya.dat/");
+            this.dosya.Ekle(Bakici, "dosya/BakiciDosya.dat/");
         } catch (Exception e) {
             System.out.println("Bakici eklenirken hata meydana geldi");
             e.getMessage();

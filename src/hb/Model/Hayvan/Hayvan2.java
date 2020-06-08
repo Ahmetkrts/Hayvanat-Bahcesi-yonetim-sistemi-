@@ -16,6 +16,7 @@ import java.util.ArrayList;
  * @author Casper
  */
 public class Hayvan2 implements Serializable {
+
     private Dosya hayvanId = new Dosya();
     private int id = hayvanId.KapasiteDosyaOku("dosya/HayvanId.dat");
     private int hayvanNo;
@@ -74,6 +75,7 @@ public class Hayvan2 implements Serializable {
         this.ilac = ilac;
         this.asi = asi;
     }
+
     public String getSinif() {
         return sinif;
     }

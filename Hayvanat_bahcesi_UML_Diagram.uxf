@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>4</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>208</y>
+      <w>432</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Models&gt;&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>208</y>
+      <w>156</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Controller&gt;&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>228</y>
+      <w>80</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Bakici
+--
+-id:int
+-bakiciNumarası:int
+-isim:String
+-dogumTarihi:String
+-maxHayvan:int
+-maxTur:int
+-hayvanList:ArrayList&lt;Hayvan&gt;
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>232</y>
+      <w>56</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>ilac
+--
+-id:int
+-seri:int
+-isim:list&lt;String&gt;
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>276</y>
+      <w>56</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>asi
+--
+-id:int
+-seri:int
+-isim:list&lt;String&gt;
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>404</x>
+      <y>300</y>
+      <w>56</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>Hayvan
+--
+-id:int
+-hayvanNumarasi:int
+-sinif:String
+-tur:String
+-hucre:String
+-isim:String
+-dogumTarihi:String
+-gelisTarihi:String
+-cinsiyet:String
+-ilaclari:ilac
+-asılari:asi
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>908</x>
+      <y>208</y>
+      <w>144</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View&gt;&gt;
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>296</y>
+      <w>68</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>HayvanGuncelle
+--
+-hayvan:Hayvan
+--
++hayvanDoldur(Hayvan hayvan):void
++hayvanGuncelle():void
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>232</y>
+      <w>68</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>HayvanEkle
+--
+-hayvan:Hayvan
+--
++yeniHayvanEkle():void
++turDoldur():void
++checkBoxControl():void
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>340</y>
+      <w>68</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>HayvanListele
+--
+-hayvan:Hayvan
+--
++hayvanBilgileriGetir():list
++hayvanSil():void
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>384</y>
+      <w>68</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>BakiciEkle
+--
+-bakici:Bakici
+--
++yeniBakiciEkle():void
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>420</y>
+      <w>68</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>BakiciGuncelle
+--
+-bakici:Bakici
+--
++bakiciGetir():Bakici
++BakiciGuncelle():void
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>464</y>
+      <w>68</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>BakiciListele
+--
+bakici:Bakici
+--
++BakiciBilgileriGetir():list
++BakiciSil():void
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>276</y>
+      <w>84</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>HayvanArama
+--
+--
++turGoreArama():List
++adGoreArama():List
++hucreGoreArama():List
++cinsiyetGoreArama():List
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>328</y>
+      <w>84</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>BakiciArama
+--
+--
++adGoreArama():List
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>516</y>
+      <w>68</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>MemeliOlustur 
+--
+-ofkeli:int
+-yirtici:int
+-guvenlik:int
+-killi:int
+-sosyal:int
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>572</y>
+      <w>68</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>SürüngenOlustur 
+--
+-zehirli:int
+-guvenlik:int
+-yemek:int
+-yirtici:int
+-boy:int
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>328</x>
+      <y>456</y>
+      <w>68</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>DenizCanlisiOlustur 
+--
+-aquaDisindaYasar:int
+-yemek:int
+-yirtici:int
+-sosyal:int
+-guvenlik:int
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>456</y>
+      <w>80</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>KusOlustur 
+--
+-ucaBilir:int
+-yirtici:int
+-beslenme:int
+-guvenlik:int
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>512</y>
+      <w>80</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>MemeliDenizCanlisiOlustur 
+--
+-aquaDisindaYasar:int
+-ofkeli:int
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>556</y>
+      <w>80</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SurungenDenizCanlisiOlustur 
+--
+-aquaDisindaYasar:int
+-zehirli:int
+-guvenlik:int
+-yemek:int
+-yirtici:int
+-boy:int
+--
++Getter And Setter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>352</y>
+      <w>84</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Dosya
+--
+-dosyaYolu:String
+-dosyaIcerigi:String
+--
++dosyaOku():String
++dosyaYaz():void
++Getter And Setter
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>232</y>
+      <w>84</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AnaPanel
+--
+--
++HayvanListele():void
++HayvanEkle():void
++BakiciListele():void
++BakiciEkle():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>388</y>
+      <w>20</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;170.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>388</y>
+      <w>32</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;320.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>388</y>
+      <w>44</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;90.0;460.0;10.0;460.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>444</x>
+      <y>388</y>
+      <w>24</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;310.0;40.0;310.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>388</y>
+      <w>12</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>388</y>
+      <w>36</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;420.0;70.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>228</y>
+      <w>64</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+bakiciNitelikleri
+--
++Memeli(int:a):String
++Surungen(int:a):String
++Kus(int:a):String
++Balik(int:a):String
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>228</y>
+      <w>44</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>304</y>
+      <w>108</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+beslemeBicimi
+--
++et_yem_yemekBicimi(int:a):String
++et_ot_yemekBicimi(int:a):String
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>344</y>
+      <w>108</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+guvenlik
+--
++guvenlik(int:a):String
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>376</y>
+      <w>108</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+hayvanHuylari
+--
++yirticiMi(int:a):String
++sosyalMi(int:a):String
++ofkeliMi(int:a):String
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>572</x>
+      <y>420</y>
+      <w>108</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+ozellikler
+--
++ucaBilirMi(int:a):String
++aquaDisindaYasarMi(int:a):String
++killiMi(int:a):String
++zehirliMi(int:a):String
++boyuBesMetredenBuyukMu(int:a):String
+
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>312</y>
+      <w>124</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>340</y>
+      <w>124</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>364</y>
+      <w>124</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;10.0;220.0;50.0;290.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>380</y>
+      <w>124</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;10.0;160.0;140.0;290.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>548</y>
+      <w>68</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>kusKafesController
+--
+-kapasite:Kapasite
+--
++hayvanBilgileriGetir():list
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>444</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>NormalAcikAlanController
+--
+-kapasite:Kapasite
+--
++hayvanBilgileriGetir():list
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>484</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>NormalBalikAkvaryumController
+--
+-kapasite:Kapasite
+--
++hayvanBilgileriGetir():list
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>736</x>
+      <y>508</y>
+      <w>68</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>SuluAcikController
+--
+-kapasite:Kapasite
+--
++hayvanBilgileriGetir():list
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>404</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>YirticiBalikAkvaryumController
+--
+-kapasite:Kapasite
+--
++hayvanBilgileriGetir():list
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>808</x>
+      <y>524</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>TehlikleliAcikAlanController
+--
+-kapasite:Kapasite
+--
++hayvanBilgileriGetir():list
++Getter And Setter
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>292</y>
+      <w>104</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>240.0;160.0;160.0;160.0;160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>308</x>
+      <y>236</y>
+      <w>112</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;160.0;260.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>452</x>
+      <y>256</y>
+      <w>60</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+</diagram>

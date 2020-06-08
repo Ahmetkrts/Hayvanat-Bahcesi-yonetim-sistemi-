@@ -12,7 +12,7 @@ import java.util.ArrayList;
  *
  * @author Casper
  */
-public class Asi implements Serializable{
+public class Asi implements Serializable {
 
     private int id;
     private final int seri;
@@ -54,8 +54,6 @@ public class Asi implements Serializable{
     public int getSeri() {
         return seri;
     }
-
-   
 
     public ArrayList<String> getAsiIsmi() {
         return asiIsmi;

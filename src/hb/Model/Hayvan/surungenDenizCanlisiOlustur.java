@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author Casper
  */
-public class surungenDenizCanlisiOlustur extends Hayvan2  implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler {
+public class surungenDenizCanlisiOlustur extends Hayvan2 implements beslenmeBicimi, guvenlik, hayvanHuylari, ozellikler {
 
     private int zehirli;
     private int aquaDisindaYasar;
@@ -26,9 +26,10 @@ public class surungenDenizCanlisiOlustur extends Hayvan2  implements beslenmeBic
     private int yirtici;
     private int boy;
 
-    public surungenDenizCanlisiOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
+    public surungenDenizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
     }
+
     public surungenDenizCanlisiOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
@@ -44,6 +45,7 @@ public class surungenDenizCanlisiOlustur extends Hayvan2  implements beslenmeBic
         list.add(boyuBesMetredenBuyukMu(boy));
         return list;
     }
+
     @Override
     public String toString() {
         return "Hayvan Numarası: " + super.getHayvanNo() + "\n"
@@ -56,15 +58,13 @@ public class surungenDenizCanlisiOlustur extends Hayvan2  implements beslenmeBic
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Aqua Dışında Yaşar: " +aquaDisindaYasarMi(aquaDisindaYasar)+"\n"
-                + "Zehirli: "+zehirliMi(zehirli)+"\n"
-                + "Güvenlik: "+guvenlik(guvenlik)+"\n"
-                + "Yemek: "+et_yem_yemekBicimi(yemek)+"\n"
-                + "Yırtıcı: "+yirticiMi(yirtici)+"\n"
-                + "Hücre: "+super.getHucre()+"\n"
-                + "Boyu 5 Metre: "+boyuBesMetredenBuyukMu(boy)+"\n";
-                
-                
+                + "Aqua Dışında Yaşar: " + aquaDisindaYasarMi(aquaDisindaYasar) + "\n"
+                + "Zehirli: " + zehirliMi(zehirli) + "\n"
+                + "Güvenlik: " + guvenlik(guvenlik) + "\n"
+                + "Yemek: " + et_yem_yemekBicimi(yemek) + "\n"
+                + "Yırtıcı: " + yirticiMi(yirtici) + "\n"
+                + "Hücre: " + super.getHucre() + "\n"
+                + "Boyu 5 Metre: " + boyuBesMetredenBuyukMu(boy) + "\n";
 
     }
 

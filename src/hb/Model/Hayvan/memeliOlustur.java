@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author Casper
  */
-public class memeliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler {
+public class memeliOlustur extends Hayvan2 implements beslenmeBicimi, guvenlik, hayvanHuylari, ozellikler {
 
     private int ofkeli;
     private int yirtici;
@@ -25,10 +25,11 @@ public class memeliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,ha
     private int killi;
     private int sosyal;
 
-     public memeliOlustur(String sinif,String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi,String Hucre) {
-        super(sinif,irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi,Hucre);
+    public memeliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi, String Hucre) {
+        super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi, Hucre);
     }
-     public memeliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
+
+    public memeliOlustur(String sinif, String irki, String ismi, String dogumTarihi, String gelisTarihi, int cinsiyeti, Ilac ilac, Asi asi) {
         super(sinif, irki, ismi, dogumTarihi, gelisTarihi, cinsiyeti, ilac, asi);
     }
 
@@ -55,12 +56,12 @@ public class memeliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,ha
                 + "Aşıları: " + super.getAsi().getAsiIsmi().get(0) + "\n"
                 + "Ilacları: " + super.getIlac().getIlacIsmi().get(0) + "\n"
                 + "Extra Özellikleri: \n"
-                + "Öfkeli: " +ofkeliMi(ofkeli)+"\n"
-                + "Yırtıcı: "+yirticiMi(yirtici)+"\n"
-                + "Güvenlik: "+guvenlik(guvenlik)+"\n"
-                + "Kıllı: "+killiMi(killi)+"\n"
-                + "Hücre: "+super.getHucre()+"\n"
-                + "Sosyal: "+sosyalMi(sosyal)+"\n";
+                + "Öfkeli: " + ofkeliMi(ofkeli) + "\n"
+                + "Yırtıcı: " + yirticiMi(yirtici) + "\n"
+                + "Güvenlik: " + guvenlik(guvenlik) + "\n"
+                + "Kıllı: " + killiMi(killi) + "\n"
+                + "Hücre: " + super.getHucre() + "\n"
+                + "Sosyal: " + sosyalMi(sosyal) + "\n";
 
     }
 
@@ -114,6 +115,5 @@ public class memeliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,ha
     public void setOfkeli(int ofkeli) {
         this.ofkeli = ofkeli;
     }
-
 
 }

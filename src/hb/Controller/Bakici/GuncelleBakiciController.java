@@ -152,7 +152,7 @@ public class GuncelleBakiciController implements Initializable {
             System.out.println("bakici guncelleme hata verdi");
             e.getMessage();
         } finally {
-            alanTemizle();
+
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Başarılı");
             alert.setHeaderText(null);
@@ -161,7 +161,25 @@ public class GuncelleBakiciController implements Initializable {
             alert.showAndWait();
 
         }
+        myBakici = Bakici;
 
+    }
+
+    @FXML
+    public void bakiciHayvanCikar(ActionEvent event) {
+        Hayvan2 secilenHayvan;
+        secilenHayvan = (Hayvan2) bakiciHayvanListesiTableView.getSelectionModel().getSelectedItem();
+        List<Hayvan2> hayvanList = myBakici.getHayvanList();
+        hayvanList.remove(secilenHayvan);
+        myBakici.setHayvanList(hayvanList);
+        loadDate(myBakici.getHayvanList(), 2);
+
+        hayvanList.clear();
+        hayvanList = hayvanListesiTableView.getItems();
+        hayvanList.add(secilenHayvan);
+        hayvanListesiTableView.setItems((ObservableList<Hayvan2>) hayvanList);
+        hayvanYukle(myBakici);
+        kayitGuncelleController(event);
     }
 
     @FXML
@@ -175,19 +193,20 @@ public class GuncelleBakiciController implements Initializable {
         }
 
         data_table.add((Hayvan2) hayvanListesiTableView.getSelectionModel().getSelectedItem());
-        
+
         bakiciHayvanListesiTableView.setItems(data_table);
         hayvanYukle(myBakici);
+        kayitGuncelleController(event);
     }
 
     private void alanTemizle() {
-        
+
         bakiciAd.setText(null);
         bakiciDogumTarihi.setValue(null);
     }
 
     public void bakiciDoldur(bakici bakici) {
-        myBakici=bakici;
+        myBakici = bakici;
         bakiciAd.setText(bakici.getIsim());
         bakiciDogumTarihi.setValue(LocalDate.parse(bakici.getDogumTarihi()));
         setId(bakici.getBakiciNo());
@@ -299,8 +318,7 @@ public class GuncelleBakiciController implements Initializable {
     private void loadDate(List<Hayvan2> HayvanList, int a) {
         ObservableList<Hayvan2> data_table = FXCollections.observableArrayList();
         for (Hayvan2 hayvan : HayvanList) {
-            //System.out.println(hayvan.toString());
-            //System.out.println("Hayvan Eklendi--*-*-*-*-*-*-*-*-*-*-----------------*****************");
+
             data_table.add(hayvan);
         }
         if (a == 1) {

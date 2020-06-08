@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author Casper
  */
-public class kanatliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,hayvanHuylari,ozellikler  {
+public class kanatliOlustur extends Hayvan2 implements beslenmeBicimi, guvenlik, hayvanHuylari, ozellikler {
 
     private int ucaBilir;
     private int yirtici;
@@ -57,7 +57,7 @@ public class kanatliOlustur extends Hayvan2 implements beslenmeBicimi,guvenlik,h
                 + "Yırtıcı: " + yirticiMi(yirtici) + "\n"
                 + "Beslenme: " + et_yem_yemekBicimi(beslenme) + "\n"
                 + "Uça Bilir: " + ucaBilirMi(ucaBilir) + "\n"
-                + "Hücre: "+super.getHucre()+"\n"
+                + "Hücre: " + super.getHucre() + "\n"
                 + "Güvenlik: " + guvenlik(guvenlik) + "\n";
 
     }

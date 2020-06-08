@@ -11,314 +11,314 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="479.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hb.View.AnaPanelController">
-   <children>
-      <AnchorPane layoutY="29.0" prefHeight="450.0" prefWidth="1200.0" stylesheets="@CSS/Style.css">
-         <children>
-            <VBox cache="true" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #c1d5e0; -fx-border-color: #888888; -fx-border-width: 0 1 0 0;" stylesheets="@CSS/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <AnchorPane prefHeight="55.0" prefWidth="835.0" style="-fx-background-color: #EEEEEE;">
-                     <children>
-                        <Label layoutX="84.0" layoutY="5.0" prefHeight="46.0" prefWidth="433.0" text="Hayvanat Bahçesi Denetim Merkezi">
-                           <font>
-                              <Font name="System Bold" size="25.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #ff5722;">
-                     <children>
-                        <ImageView fitHeight="190.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Images/keeper.png" />
-                           </image>
-                        </ImageView>
-                        <AnchorPane layoutX="207.0" layoutY="72.0" prefHeight="46.0" prefWidth="108.0" style="-fx-border-color: #b0eacd;" styleClass="buttons">
-                           <children>
-                              <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/add%20(2).png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="44.0" mnemonicParsing="false" onAction="#bakiciEkleController" prefHeight="46.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="Ekle" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
+    <children>
+        <AnchorPane layoutY="29.0" prefHeight="450.0" prefWidth="1200.0" stylesheets="@CSS/Style.css">
+            <children>
+                <VBox cache="true" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #c1d5e0; -fx-border-color: #888888; -fx-border-width: 0 1 0 0;" stylesheets="@CSS/Style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane prefHeight="55.0" prefWidth="835.0" style="-fx-background-color: #EEEEEE;">
+                            <children>
+                                <Label layoutX="84.0" layoutY="5.0" prefHeight="46.0" prefWidth="433.0" text="Hayvanat Bahçesi Denetim Merkezi">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                </Label>
+                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="380.0" layoutY="72.0" prefHeight="46.0" prefWidth="131.0" style="-fx-border-color: #b0eacd;" styleClass="buttons">
-                           <children>
-                              <ImageView fitHeight="36.0" fitWidth="49.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/exam.png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="41.0" layoutY="1.0" mnemonicParsing="false" onAction="#bakiciListesiController" prefHeight="46.0" prefWidth="88.0" style="-fx-background-color: transparent;" text="Görüntüle" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
+                        <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #ff5722;">
+                            <children>
+                                <ImageView fitHeight="190.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/keeper.png" />
+                                    </image>
+                                </ImageView>
+                                <AnchorPane layoutX="207.0" layoutY="72.0" prefHeight="46.0" prefWidth="108.0" style="-fx-border-color: #b0eacd;" styleClass="buttons">
+                                    <children>
+                                        <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/add%20(2).png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button layoutX="44.0" mnemonicParsing="false" onAction="#bakiciEkleController" prefHeight="46.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="Ekle" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </AnchorPane>
+                                <AnchorPane layoutX="380.0" layoutY="72.0" prefHeight="46.0" prefWidth="131.0" style="-fx-border-color: #b0eacd;" styleClass="buttons">
+                                    <children>
+                                        <ImageView fitHeight="36.0" fitWidth="49.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/exam.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button layoutX="41.0" layoutY="1.0" mnemonicParsing="false" onAction="#bakiciListesiController" prefHeight="46.0" prefWidth="88.0" style="-fx-background-color: transparent;" text="Görüntüle" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </AnchorPane>
+                            </children>
                         </AnchorPane>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #b0eacd;">
-                     <children>
-                        <AnchorPane layoutX="380.0" layoutY="72.0" prefHeight="46.0" prefWidth="131.0" style="-fx-border-color: #ff5722;" styleClass="buttonss">
-                           <children>
-                              <ImageView fitHeight="36.0" fitWidth="49.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/pet%20(1).png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="43.0" mnemonicParsing="false" onAction="#hayvanListesiController" prefHeight="46.0" prefWidth="88.0" style="-fx-background-color: transparent;" text="Görüntüle" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
+                        <AnchorPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #b0eacd;">
+                            <children>
+                                <AnchorPane layoutX="380.0" layoutY="72.0" prefHeight="46.0" prefWidth="131.0" style="-fx-border-color: #ff5722;" styleClass="buttonss">
+                                    <children>
+                                        <ImageView fitHeight="36.0" fitWidth="49.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/pet%20(1).png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button layoutX="43.0" mnemonicParsing="false" onAction="#hayvanListesiController" prefHeight="46.0" prefWidth="88.0" style="-fx-background-color: transparent;" text="Görüntüle" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </AnchorPane>
+                                <ImageView fitHeight="108.0" fitWidth="117.0" layoutX="44.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/hippopotamus.png" />
+                                    </image>
+                                </ImageView>
+                                <AnchorPane layoutX="212.0" layoutY="72.0" prefHeight="46.0" prefWidth="108.0" style="-fx-border-color: #ff5722;" styleClass="buttonss">
+                                    <children>
+                                        <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/snake.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Button layoutX="40.0" layoutY="2.0" mnemonicParsing="false" onAction="#hayvanEkleController" prefHeight="46.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="Ekle" textFill="WHITE">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </AnchorPane>
+                            </children>
                         </AnchorPane>
-                        <ImageView fitHeight="108.0" fitWidth="117.0" layoutX="44.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Images/hippopotamus.png" />
-                           </image>
-                        </ImageView>
-                        <AnchorPane layoutX="212.0" layoutY="72.0" prefHeight="46.0" prefWidth="108.0" style="-fx-border-color: #ff5722;" styleClass="buttonss">
-                           <children>
-                              <ImageView fitHeight="36.0" fitWidth="38.0" layoutX="8.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/snake.png" />
-                                 </image>
-                              </ImageView>
-                              <Button layoutX="40.0" layoutY="2.0" mnemonicParsing="false" onAction="#hayvanEkleController" prefHeight="46.0" prefWidth="63.0" style="-fx-background-color: transparent;" text="Ekle" textFill="WHITE">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
+                    </children>
+                </VBox>
+                <AnchorPane layoutX="600.0" style="-fx-background-color: #dee3e2; -fx-border-color: #888888; -fx-border-width: 0 0 0 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="399.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label layoutX="162.0" layoutY="9.0" text="Hücrelerdeki Hayvanlar">
+                                    <font>
+                                        <Font name="System Bold" size="25.0" />
+                                    </font>
+                                </Label>
+                            </children>
                         </AnchorPane>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
-            <AnchorPane layoutX="600.0" style="-fx-background-color: #dee3e2; -fx-border-color: #888888; -fx-border-width: 0 0 0 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="600.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <AnchorPane prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: #EEEEEE;" AnchorPane.bottomAnchor="399.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label layoutX="162.0" layoutY="9.0" text="Hücrelerdeki Hayvanlar">
-                           <font>
-                              <Font name="System Bold" size="25.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="7.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb385;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
-                     <children>
-                        <HBox layoutX="80.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #00bcd4;">
-                                 <children>
-                                    <ImageView fitHeight="128.0" fitWidth="133.0" layoutX="15.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/whale-shark-shape.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="96.0" fitWidth="116.0" layoutX="12.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/shark%20(1).png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="7.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/animals%20(5).png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="44.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/animals%20(5).png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="75.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/animals%20(5).png" />
-                                       </image>
-                                    </ImageView>
-                                    <AnchorPane layoutX="8.0" layoutY="58.0" prefHeight="152.0" prefWidth="150.0" style="-fx-background-color: #EEEEEE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <ImageView fitHeight="89.0" fitWidth="88.0" layoutX="38.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@Images/dolphin-mammal-animal-silhouette.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Label layoutX="41.0" layoutY="4.0" text="Akvaryum">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                       </children>
-                                    </AnchorPane>
-                                    <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="104.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/fish-shape-of-nassau-grouper.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="19.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/goliath-grouper-fish-shape.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Button mnemonicParsing="false" onAction="#akvaryum" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #fdd998;">
-                                 <children>
-                                    <ImageView fitHeight="108.0" fitWidth="108.0" layoutX="2.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/camel-silhouette.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="96.0" fitWidth="116.0" layoutX="48.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/deer.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="110.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/monkey.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="24.0" layoutY="4.0" text="Açık Alan Kafes">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Button mnemonicParsing="false" onAction="#acıkalan" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #ffb385;">
-                                 <children>
-                                    <Label layoutX="41.0" layoutY="4.0" text="Kuş Kafesi">
-                                       <font>
-                                          <Font name="System Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="11.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/gull-bird-flying-shape.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="81.0" fitWidth="68.0" layoutX="22.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/ostrich-bird-shape-running.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="90.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/bird-crane-shape.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="65.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/bird-stork-shape.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="36.0" fitWidth="29.0" layoutX="8.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/bird%20(1).png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="84.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/swallow.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Button layoutX="45.0" layoutY="28.0" mnemonicParsing="false" onAction="#kus" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #00bcd4;">
-                                 <children>
-                                    <AnchorPane prefHeight="304.0" prefWidth="151.0" style="-fx-background-color: #fdd998;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <Label layoutX="28.0" layoutY="4.0" text="Sulu Açık Alan">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <ImageView fitHeight="96.0" fitWidth="95.0" layoutX="14.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@Images/animals%20(6).png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </AnchorPane>
-                                    <ImageView fitHeight="96.0" fitWidth="102.0" layoutX="14.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Images/nature%20(1).png" />
-                                       </image>
-                                    </ImageView>
-                                    <Button layoutX="123.0" layoutY="330.0" mnemonicParsing="false" onAction="#suluacık" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </HBox>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="29.0" prefWidth="1200.0" style="-fx-background-color: #888888;">
-         <children>
-            <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/circle.png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="42.0" layoutY="4.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/signs%20(2).png" />
-               </image>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Label layoutX="1016.0" layoutY="8.0" text="Hayvanat Bahçesi Ana Sayfa">
-               <font>
-                  <Font name="Century Gothic Bold" size="12.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
+                        <AnchorPane layoutX="7.0" layoutY="51.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffb385;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+                            <children>
+                                <HBox layoutX="80.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #00bcd4;">
+                                            <children>
+                                                <ImageView fitHeight="128.0" fitWidth="133.0" layoutX="15.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/whale-shark-shape.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="96.0" fitWidth="116.0" layoutX="12.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/shark%20(1).png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="7.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/animals%20(5).png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="44.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/animals%20(5).png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="75.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/animals%20(5).png" />
+                                                    </image>
+                                                </ImageView>
+                                                <AnchorPane layoutX="8.0" layoutY="58.0" prefHeight="152.0" prefWidth="150.0" style="-fx-background-color: #EEEEEE;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <ImageView fitHeight="89.0" fitWidth="88.0" layoutX="38.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@Images/dolphin-mammal-animal-silhouette.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <Label layoutX="41.0" layoutY="4.0" text="Akvaryum">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                    </children>
+                                                </AnchorPane>
+                                                <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="104.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/fish-shape-of-nassau-grouper.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="19.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/goliath-grouper-fish-shape.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Button mnemonicParsing="false" onAction="#akvaryum" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #fdd998;">
+                                            <children>
+                                                <ImageView fitHeight="108.0" fitWidth="108.0" layoutX="2.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/camel-silhouette.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="96.0" fitWidth="116.0" layoutX="48.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/deer.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="110.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/monkey.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Label layoutX="24.0" layoutY="4.0" text="Açık Alan Kafes">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button mnemonicParsing="false" onAction="#acıkalan" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #ffb385;">
+                                            <children>
+                                                <Label layoutX="41.0" layoutY="4.0" text="Kuş Kafesi">
+                                                    <font>
+                                                        <Font name="System Bold" size="14.0" />
+                                                    </font>
+                                                </Label>
+                                                <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="11.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/gull-bird-flying-shape.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="81.0" fitWidth="68.0" layoutX="22.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/ostrich-bird-shape-running.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="90.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/bird-crane-shape.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="65.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/bird-stork-shape.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="36.0" fitWidth="29.0" layoutX="8.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/bird%20(1).png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="84.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/swallow.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Button layoutX="45.0" layoutY="28.0" mnemonicParsing="false" onAction="#kus" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: #00bcd4;">
+                                            <children>
+                                                <AnchorPane prefHeight="304.0" prefWidth="151.0" style="-fx-background-color: #fdd998;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Label layoutX="28.0" layoutY="4.0" text="Sulu Açık Alan">
+                                                            <font>
+                                                                <Font name="System Bold" size="14.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <ImageView fitHeight="96.0" fitWidth="95.0" layoutX="14.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@Images/animals%20(6).png" />
+                                                            </image>
+                                                        </ImageView>
+                                                    </children>
+                                                </AnchorPane>
+                                                <ImageView fitHeight="96.0" fitWidth="102.0" layoutX="14.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/nature%20(1).png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Button layoutX="123.0" layoutY="330.0" mnemonicParsing="false" onAction="#suluacık" prefHeight="399.0" prefWidth="150.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <cursor>
+                                                        <Cursor fx:constant="HAND" />
+                                                    </cursor>
+                                                </Button>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="29.0" prefWidth="1200.0" style="-fx-background-color: #888888;">
+            <children>
+                <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="14.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/circle.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fitHeight="20.0" fitWidth="29.0" layoutX="42.0" layoutY="4.0" onMouseClicked="#min" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/signs%20(2).png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Label layoutX="1016.0" layoutY="8.0" text="Hayvanat Bahçesi Ana Sayfa">
+                    <font>
+                        <Font name="Century Gothic Bold" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
